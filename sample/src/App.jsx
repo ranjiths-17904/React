@@ -1,25 +1,26 @@
 
-// import { Loader } from 'lucide-react'
-import './App.css'
+import './assets/css/style.css'
+import Navbar from './components/Navbar'
 
-function App() {
-
+const App = () => {
+  // const arr = ["hello","hii"];
   return (
     <>
-      <div className="h-screen w-screen flex justify-center items-center bg-pink-600">
-        <div className="h-5/6 w-[30%] flex flex-col justify-center items-center bg-white rounded-md shadow-2xl">
-          <form className="w-[80%] h-[100%] flex flex-col justify-center items-center gap-4">
-           <h1 className="font-bold flex flex-row" >FORM</h1>
-            <input type="text" name="" id="" placeholder="Name" className="p-3 bg-[#987585] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-pink-500 rounded-md" />
-            <input type="text" name="" id="" placeholder="email" className="p-3 bg-[#987585] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-pink-500 rounded-md" />
-            <input type="number" name="" id="" placeholder="phone" className="p-3 bg-[#987585] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-pink-500 rounded-md" />
-            <input type="password" name="" id="" placeholder="password" className="p-3 bg-[#987585] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:border-pink-500 rounded-md" />
-            <button type="submit" className="w-full bg-pink-600 text-white p-3 rounded-md justify-center items-center">  Submit</button>
+    <Navbar/>
+    {/* <div className="h-screen w-screen flex flex-col justify-center items-center bg-pink-700  hover:bg-blue-600 " >
+      <div className="h-5/6 w-[30%] flex flex-col justify-center items-center bg-white rounded-md drop-shadow-2xl">
+      <h1 className='text-lg subpixel-antialiased font-sans font-semibold'>LOGIN</h1>
+      <form className="w-[80%] h-[80%] flex flex-col justify-center items-center gap-4">
+      <input type="text" name="" id="" placeholder="Name" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:bg-gray-500 rounded-md" />
+            <input type="text" name="" id="" placeholder="Email" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:bg-gray-500 rounded-md" />
+            <input type="number" name="" id="" placeholder="Phone" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:bg-gray-500 rounded-md" />
+            <input type="password" name="" id="" placeholder="Password" className="p-3 bg-[#f8f8f8] w-full font-bold outline-none active:outline-none focus:border-b-2 hover:bg-gray-500 rounded-md" />
+            <button type="submit" className="w-full bg-pink-700 text-white p-3 rounded-2xl  hover:bg-blue-600 shadow-md font-serif"> LOGIN</button>
           </form>
-        </div>
       </div>
+    </div> */}
     </>
   )
 }
 
-export default App
+export default App;
