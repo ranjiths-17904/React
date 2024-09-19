@@ -39,12 +39,12 @@ const Profile = () => {
         <>
             <div className="h-full w-full flex flex-col lg:flex-row justify-center items-center p-10 animate-fadeIn">
           
-                <div className="flex flex pr-10">
-                    <img src={Profilex} alt="profile" className="h-48 w-48 lg:h-60 lg:w-60 rounded-full shadow-xl object-cover" />
+                <div className="flex pr-0">
+                    <img src={Profilex} alt="profile" className="p-1 h-55 w-55 lg:h-60 lg:w-60 m-10 rounded-full shadow-xl object-cover" />
                 </div>
                 <div className="ml-0 lg:ml-12 mt-6 lg:mt-0 text-center lg:text-left">
                     <h2 className="text-4xl lg:text-5xl font-extrabold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
-                        Hi, I'm Ranjith
+                        Hi, I am Ranjith
                     </h2>
                    
                     <div className="text-2xl lg:text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 mt-4">
