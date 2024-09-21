@@ -4,8 +4,8 @@ import { CircleUserRound } from 'lucide-react';
 const Navbar = () =>
     {
         return(
-        <nav className='h-12 w-88 flex flex-row items-center bg-pink-700 px-6 m-3 rounded-md shadow-xl'>
-        <div className="text-gray-300 font-bold  text-lg">Portfolio</div>
+        <nav className='h100vh   w-100wh flex flex-row items-center bg-pink-700 px-6 m-3 rounded-md shadow-xl'>
+        <div className="text-gray-300 font-bold  text-lg flex flex-col">Portfolio</div>
         <div className="flex flex-grow justify-end">
             <ul className="flex space-x-8">
                 <Link to = {'/Profile'}>
