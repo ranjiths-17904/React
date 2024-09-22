@@ -7,3 +7,17 @@
     margin: 0px;
     padding: 0px;
 }
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+  }
+  
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+  
+  .group:hover .group-hover\:translate-y-2 {
+    transform: translateY(-0.5rem);
+  }
+  

@@ -1,6 +1,6 @@
 
 import './assets/css/style.css'
-import Navbar from './components/Navbar'
+import Navbar from './Components/Navbar'
 import Contactm from './pages/Contactm';
 // import Contact from './pages/Contactm';
 import Login from './pages/Login';
@@ -8,6 +8,7 @@ import Profile from './pages/Profile';
 import Project from './pages/Project'
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Skills from './pages/Skills';
+
 
 
 // import Login from './Login';

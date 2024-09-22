@@ -17,10 +17,16 @@ const Navbar = () =>
                 <Link to = {'/Skills'}>
                 <li className="text-blue-100 font-medium hover:text-gray-800 cursor-pointer  hover:bg-sky-600 p-2 rounded-sm pl-3 pr-3">Skills</li>
                 </Link>
+                <Link to = {'/Project'}>
+                <li className="text-blue-100 font-medium hover:text-gray-800 cursor-pointer  hover:bg-sky-600 p-2 rounded-sm pl-3 pr-3">Project</li>
+                </Link>
                 <Link to = {'/Contactm'}>
                 <li className="text-blue-100 font-medium hover:text-gray-800 cursor-pointer  hover:bg-sky-600 p-2 rounded-sm pl-3 pr-3">Contact</li>
                 </Link>
+
+
                 <CircleUserRound className= 'text-blue-100 font-medium hover:text-gray-800 cursor-pointer h-[100%] w-[100%] hover:bg-sky-600 p-2 pl-5 pr-5 rounded-md justify-center items-center'/>
+
             </ul>
         </div>
 </nav>
