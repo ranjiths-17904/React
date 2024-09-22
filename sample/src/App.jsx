@@ -1,9 +1,9 @@
 
 import './assets/css/style.css'
 import Navbar from './Components/Navbar'
-import Contactm from './pages/Contactm';
+import Contact from './pages/Contact';
 // import Contact from './pages/Contactm';
-import Login from './pages/Login';
+import About from './pages/About';
 import Profile from './pages/Profile';
 import Project from './pages/Project'
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
@@ -21,8 +21,8 @@ const App = () => {
     <Navbar/>
       <Routes>
         <Route path='/Profile' element={<Profile/>}></Route>
-        <Route path='/Contactm' element={<Contactm/>}></Route>
-        <Route path='/' element={<Login/>}></Route>
+        <Route path='/About' element={<About/>}></Route>
+        <Route path='/Contact' element={<Contact/>}></Route>
         <Route path='/Project' element={<Project/>}></Route>
         <Route path='/Skills' element={<Skills/>}></Route>
 

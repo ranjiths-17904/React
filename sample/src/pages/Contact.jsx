@@ -1,45 +1,51 @@
-import { useState } from "react"
 
 
-const Contact = () => {
-  const [visible, setvisible] = useState(false)
+const Contactm = () => {
   return (
-    <>
-      { visible && (
-          <>
-          <div className="h-screen w-screen absolute top-0 left-0 bg-black/20 flex justify-center items-center z-50">
-          <div className="h-[40%] w-[30%] bg-red z-50 flex flex-col bg-white">
-            <div className="w-full h-[20%] flex flex-row justify-center items-center border-2">
-              Login
-          </div>
-          <div className="w-full h-[60%] flex flex-row justify-center items-center">
-            Welcome
-          </div>
-          <div className="w-full h-[60%] flex flex-row justify-center items-center ">
-            <button onClick={() => setvisible(!visible)}
-            className="bg-blue-400 p-3 text-white w-1/2 h-full rounded-md">
-            <button onClick={() => setvisible(!visible)} 
-            className="bg-pink-400 p-3 text-white w-1/2 h-full rounded-md">
-              Close
-              </button>
-              </button>
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center">
+      <div className="container mx-auto p-6 md:flex md:justify-between md:items-start space-y-6 md:space-y-0">
+        {/* Contact Form */}
+        <div className="bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">Get In Touch</h2>
+          <form className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Name</label>
+              <input
+                type="text"
+                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="Your name"
+              />
             </div>
-          </div>
-          </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Email</label>
+              <input
+                type="email"
+                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                placeholder="Your email"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Message</label>
+              <textarea
+                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                rows="4"
+                placeholder="Your message"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
 
-          </>
-        )
-      }
-      <div className="h-[80vh] w-screen flex justify-center -z-10">
-      <button onClick={() => setvisible(true)} className="bg-blue-400 p-3 text-white w-1/2 h-full rounded-md"> Delete </button>
-
-      </div>
-      <h1>Contact</h1>
       
+        {/* <div className="bg-white p-6 rounded-lg shadow-lg w-full md:w-1/3 space-y-4"> */}
+      </div>
+    </div>
+  );
+};
 
-    </>
-    
-  )
-}
-
-export default Contact
+export default Contactm;
