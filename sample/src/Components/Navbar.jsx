@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CircleUserRound } from 'lucide-react';      
+import { CircleUserRound } from 'lucide-react';
 import { Menu, X } from 'lucide-react';  // Icons for the hamburger menu
 
 const Navbar = () => {
@@ -11,32 +11,32 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full px-6 py-4 shadow-xl bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
+    <nav className="w-full px-6 py-2 shadow-xl bg-gradient-to-r from-purple-500 via-pink-500 to-red-500"> {/* Reduced padding for shorter height */}
       <div className="flex justify-between items-center">
         <div className="text-gray-300 font-bold text-lg">Portfolio</div>
 
         {/* Links (Hidden on Mobile) */}
         <div className="hidden md:flex md:space-x-8">
-          <Link to={'/Profile'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-purple-400 via-blue-400 to-red-400">
+          <Link to={'/Profile'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
             Home
           </Link>
-          <Link to={'/About'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-purple-400 via-blue-400 to-red-400">
+          <Link to={'/About'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
             About
           </Link>
-          <Link to={'/Skills'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-purple-400 via-blue-400 to-red-400">
+          <Link to={'/Skills'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
             Skills
           </Link>
-          <Link to={'/Project'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-purple-400 via-blue-400 to-red-400">
+          <Link to={'/Project'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
             Project
           </Link>
-          <Link to={'/Contact'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-purple-400 via-blue-400 to-red-400">
+          <Link to={'/Contact'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
             Contact
           </Link>
         </div>
 
         {/* CircleUser Icon */}
         <div className="hidden md:block">
-          <CircleUserRound className="text-blue-100 cursor-pointer hover:bg-gradient-to-r from-purple-400 via-blue-400 to-red-400 p-2 rounded-md" />
+          <CircleUserRound className="text-blue-100 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-teal-500 p-2 rounded-md" /> {/* Changed hover color */}
         </div>
 
         {/* Hamburger Icon for Mobile */}
@@ -47,22 +47,22 @@ const Navbar = () => {
 
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <div className="grid grid-cols-1 gap-4 mt-4">
-          <Link to={'/Profile'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-purple-400 via-blue-400 to-red-400">
+          <Link to={'/Profile'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
             Home
           </Link>
-          <Link to={'/About'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-purple-400 via-blue-400 to-red-400">
+          <Link to={'/About'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
             About
           </Link>
-          <Link to={'/Skills'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-purple-400 via-blue-400 to-red-400">
+          <Link to={'/Skills'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
             Skills
           </Link>
-          <Link to={'/Project'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-purple-400 via-blue-400 to-red-400">
+          <Link to={'/Project'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
             Project
           </Link>
-          <Link to={'/Contact'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-purple-400 via-blue-400 to-red-400">
+          <Link to={'/Contact'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
             Contact
           </Link>
-          <CircleUserRound className="text-blue-100 cursor-pointer hover:bg-gradient-to-r from-purple-400 via-blue-400 to-red-400 p-2 rounded-md" />
+          <CircleUserRound className="text-blue-100 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-teal-500 p-2 rounded-md" /> {/* Changed hover color */}
         </div>
       </div>
     </nav>

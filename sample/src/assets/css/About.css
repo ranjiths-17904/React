@@ -1,14 +1,15 @@
 /* Optional CSS for smooth transitions */
 @keyframes slideIn {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
+  from {
+    transform: translateX(100%);
   }
-  
-  img {
-    animation: slideIn 0.5s forwards;
+  to {
+    transform: translateX(0);
   }
-  
+}
+
+img {
+  animation: slideIn 0.5s forwards;
+  width: 100%;
+  height: auto;
+}
