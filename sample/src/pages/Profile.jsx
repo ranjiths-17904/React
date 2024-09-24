@@ -34,14 +34,14 @@ const Profile = () => {
     }, [titleIndex, showingTitle, currentTitleIndex, titles]);
 
     return (
-        <div className="h-full w-full flex flex-col lg:flex-row justify-center items-center p-4 lg:p-14">
+        <div className="h-full w-full flex flex-col lg:flex-row justify-center items-center p-4 lg:p-2 gap-28 pr-10">
          
-            <div className="flex justify-center lg:justify-end w-full lg:w-auto">
+            <div className="flex justify-center lg:justify-end w-full lg:w-auto ">
                
                 <img 
                     src={Profilex} 
                     alt="profile" 
-                    className="p-1 sm:h-32 sm:w-32 lg:h-48 lg:w-48 m-0 lg:m-10 rounded-2xl shadow-xl object-cover" 
+                    className="p-2 lg:h-80 lg:w-80 lg:m-10 rounded-3xl shadow-2xl  object-cover" 
                 />
             </div>
             <div className="text-center lg:text-left">

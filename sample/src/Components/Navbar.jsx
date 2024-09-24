@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full px-7 py-2 mb-7  bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 shadow-lg"> {/* Shadow for a more elevated look */}
+    <nav className="w-full px-7 py-2 mb-7  bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 shadow-lg rounded-xl"> {/* Shadow for a more elevated look */}
       <div className="flex justify-between items-center">
         <div className="text-gray-300 font-extrabold text-xl font-serif"> {/* Better font */}
           My Portfolio
