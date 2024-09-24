@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../assets/css/Pro.css';
+import '../assets/css/Pro.css'; // Ensure that you have styles for the card component
 
 const projects = [
   {
@@ -71,48 +71,45 @@ const Project = () => {
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-32 object-cover mb-4 transition-transform transform group-hover:scale-110"
+              className="w-full h-32 object-cover mb-4 transition-transform transform group-hover:scale-110 duration-300"
             />
 
             {/* Project Title */}
             <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
 
-            {/* Bottom Left GitHub Icon */}
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute left-2 bottom-2 text-black hover:text-gray-800 flex items-center"
-            >
-              <i className="fab fa-github fa-2x"></i>
-              {/* Show GitHub link on hover */}
-              <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity text-sm">
-                View on GitHub
-              </span>
-            </a>
-
-            {/* Bottom Right Like Icon */}
-            <button
-              onClick={() => handleLike(project.id)}
-              className="absolute right-2 bottom-2 text-red-500 hover:text-red-700 flex items-center"
-            >
-              <i className="fas fa-heart fa-2x"></i>
-              <span className="ml-1 text-lg font-semibold">{likeCounts[project.id]}</span>
-            </button>
-
-            {/* Overlay Content */}
-            <div className="absolute bottom-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 flex flex-col items-center justify-center text-white text-center opacity-0 group-hover:opacity-100 transition-opacity">
+            {/* Description overlay */}
+            <div className="absolute bottom-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 flex flex-col items-center justify-center text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out">
               <p className="mb-4 px-4">{project.description}</p>
-
-              {/* GitHub Button */}
               <a
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-violet-500 text-white px-4 py-2 rounded-lg hover:bg-violet-600 transition-colors"
+                className="bg-violet-500 text-white px-4 py-2 rounded-lg hover:bg-violet-600 transition-colors duration-300"
               >
                 View on GitHub
               </a>
+            </div>
+
+            {/* Bottom Right Icons - GitHub and Like */}
+            <div className="absolute bottom-4 right-4 flex space-x-4">
+              {/* GitHub Icon */}
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-gray-800 transition-colors duration-300"
+              >
+                <i className="fab fa-github fa-2x"></i>
+              </a>
+
+              {/* Like Icon */}
+              <button
+                onClick={() => handleLike(project.id)}
+                className="text-red-500 hover:text-red-700 transition-transform transform hover:scale-110 duration-300"
+              >
+                <i className="fas fa-heart fa-2x"></i>
+                <span className="ml-1 text-lg font-semibold">{likeCounts[project.id]}</span>
+              </button>
             </div>
           </div>
         ))}
