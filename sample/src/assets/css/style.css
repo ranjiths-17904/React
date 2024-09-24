@@ -4,11 +4,11 @@
 
 *
 {
-    margin: 0px;
-    padding: 0px;
+    margin: 1px;
+    padding: 2px;
 }
 body {
-    margin: 0;
+   
     font-family: 'Inter', sans-serif;
     background-color: #f3f4f6;
   }

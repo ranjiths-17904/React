@@ -29,11 +29,9 @@ const App = () => {
       </Routes>
     
     </BrowserRouter>
-
-
-
-    {/* <Navbar/>
-    <Project/> */}
+    {/* <Skills/>
+    <Project/> 
+    <Contact/> */}
 
 
     {/* <Login/> */}

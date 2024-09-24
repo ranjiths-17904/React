@@ -1,0 +1,27 @@
+/* style.css */
+
+/* Optional additional styles */
+.absolute {
+    position: absolute;
+  }
+  
+  .left-2 {
+    left: 0.5rem;
+  }
+  
+  .right-2 {
+    right: 0.5rem;
+  }
+  
+  .top-2 {
+    top: 0.5rem;
+  }
+  
+  .fab, .fas {
+    cursor: pointer;
+  }
+  
+  .fab:hover, .fas:hover {
+    transition: color 0.3s;
+  }
+  

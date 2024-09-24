@@ -1,15 +1,59 @@
-/* Optional CSS for smooth transitions */
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-img {
-  animation: slideIn 0.5s forwards;
-  width: 100%;
-  height: auto;
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out;
 }
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 1s ease-in-out;
+}
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between image and content */
+  margin: 20px;
+  max-width: 1200px; /* Limit the width to prevent stretching */
+}
+
+.about-image {
+  max-width: 250px; /* Adjust image size */
+  border-radius: 10px; /* Add a slight curve for aesthetics */
+}
+
+.about-content {
+  flex-grow: 1;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.about-content p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+li i {
+  margin-right: 10px;
+}
+

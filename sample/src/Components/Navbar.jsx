@@ -11,58 +11,57 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full px-6 py-2 shadow-xl bg-gradient-to-r from-purple-500 via-pink-500 to-red-500"> {/* Reduced padding for shorter height */}
+    <nav className="w-full px-7 py-2 mb-7  bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 shadow-lg"> {/* Shadow for a more elevated look */}
       <div className="flex justify-between items-center">
-        <div className="text-gray-300 font-bold text-lg">Portfolio</div>
+        <div className="text-gray-300 font-extrabold text-xl font-serif"> {/* Better font */}
+          My Portfolio
+        </div>
 
-        {/* Links (Hidden on Mobile) */}
         <div className="hidden md:flex md:space-x-8">
-          <Link to={'/Profile'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
+          <Link to={'/Profile'} className="text-white font-medium font-serif p-2 px-4 rounded-md transition-transform transform hover:scale-110 hover:bg-gray-900 hover:bg-opacity-50">
             Home
           </Link>
-          <Link to={'/About'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
+          <Link to={'/About'} className="text-white font-medium font-serif p-2 px-4 rounded-md transition-transform transform hover:scale-110 hover:bg-gray-900 hover:bg-opacity-50">
             About
           </Link>
-          <Link to={'/Skills'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
+          <Link to={'/Skills'} className="text-white font-medium font-serif p-2 px-4 rounded-md transition-transform transform hover:scale-110 hover:bg-gray-900 hover:bg-opacity-50">
             Skills
           </Link>
-          <Link to={'/Project'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
+          <Link to={'/Project'} className="text-white font-medium font-serif p-2 px-4 rounded-md transition-transform transform hover:scale-110 hover:bg-gray-900 hover:bg-opacity-50">
             Project
           </Link>
-          <Link to={'/Contact'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm pl-3 pr-3 transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
+          <Link to={'/Contact'} className="text-white font-medium font-serif p-2 px-4 rounded-md transition-transform transform hover:scale-110 hover:bg-gray-900 hover:bg-opacity-50">
             Contact
           </Link>
+          <div className="ml-6">
+            <CircleUserRound className="text-white w-7 h-9 cursor-pointer hover:text-yellow-400 transition-colors" /> {/* User icon on the right */}
+          </div>
         </div>
 
-        {/* CircleUser Icon */}
-        <div className="hidden md:block">
-          <CircleUserRound className="text-blue-100 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-teal-500 p-2 rounded-md" /> {/* Changed hover color */}
-        </div>
-
-        {/* Hamburger Icon for Mobile */}
         <div className="md:hidden" onClick={toggleMenu}>
           {isOpen ? <X className="text-white w-6 h-6" /> : <Menu className="text-white w-6 h-6" />}
         </div>
       </div>
 
+      {/* Mobile Menu */}
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <div className="grid grid-cols-1 gap-4 mt-4">
-          <Link to={'/Profile'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
+          <Link to={'/Profile'} className="text-white font-medium p-2 rounded-md transition-transform hover:scale-105 hover:bg-gray-900 hover:bg-opacity-30">
             Home
           </Link>
-          <Link to={'/About'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
+          <Link to={'/About'} className="text-white font-medium p-2 rounded-md transition-transform hover:scale-105 hover:bg-gray-900 hover:bg-opacity-30">
             About
           </Link>
-          <Link to={'/Skills'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
+          <Link to={'/Skills'} className="text-white font-medium p-2 rounded-md transition-transform hover:scale-105 hover:bg-gray-900 hover:bg-opacity-30">
             Skills
           </Link>
-          <Link to={'/Project'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
+          <Link to={'/Project'} className="text-white font-medium p-2 rounded-md transition-transform hover:scale-105 hover:bg-gray-900 hover:bg-opacity-30">
             Project
           </Link>
-          <Link to={'/Contact'} className="text-blue-100 font-medium cursor-pointer p-2 rounded-sm transition-transform hover:scale-105 hover:bg-gradient-to-r from-blue-500 to-teal-500"> {/* Changed hover color */}
+          <Link to={'/Contact'} className="text-white font-medium p-2 rounded-md transition-transform hover:scale-105 hover:bg-gray-900 hover:bg-opacity-30">
             Contact
           </Link>
-          <CircleUserRound className="text-blue-100 cursor-pointer hover:bg-gradient-to-r from-blue-500 to-teal-500 p-2 rounded-md" /> {/* Changed hover color */}
+          <CircleUserRound className="text-white cursor-pointer hover:text-yellow-400 transition-colors" />
         </div>
       </div>
     </nav>
