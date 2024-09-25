@@ -16,19 +16,19 @@ const Profile = () => {
         if (titleIndex < titles[currentTitleIndex].length && showingTitle) {
             const timer = setTimeout(() => {
                 setTitleIndex(prev => prev + 1);
-            }, 30);  // Further reduced delay for faster typing effect
+            }, 30); 
             return () => clearTimeout(timer);
         } else if (titleIndex === titles[currentTitleIndex].length) {
             const hideTitleTimer = setTimeout(() => {
                 setShowingTitle(false);  
-            }, 100);  // Reduced delay between showing the complete title and switching
+            }, 100);  
             return () => clearTimeout(hideTitleTimer);
         } else if (!showingTitle) {
             const switchTitleTimer = setTimeout(() => {
                 setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
                 setTitleIndex(0); 
                 setShowingTitle(true);  
-            }, 150);  // Reduced delay before switching to the next title
+            }, 150); 
             return () => clearTimeout(switchTitleTimer);
         }
     }, [titleIndex, showingTitle, currentTitleIndex, titles]);

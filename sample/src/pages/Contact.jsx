@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Contactimg from '../assets/img/Contact.gif';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -48,9 +49,8 @@ const Contact = () => {
           </form>
         </div>
 
-        <div className="w-full md:w-1/2 flex justify-center items-center">
-          <img
-            src="../assets/img/Contact.gif" 
+        <div className="w-full h-300 md:w-1/2 flex justify-center items-center">
+          <img src={Contactimg} 
             alt="Contact"
             className="rounded-lg shadow-lg transition-transform duration-700 transform hover:scale-105"
           />
