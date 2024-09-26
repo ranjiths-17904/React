@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaSchool, FaUserTie, FaReact, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa'; // Import icons
 import '../assets/css/About.css'; // Import the CSS
+import aniprofile from '../assets/img/Profile.gif'
 
 const About = () => {
   const [hovered, setHovered] = useState(false);
@@ -22,11 +23,11 @@ const About = () => {
           onMouseLeave={() => setHovered(false)}
         >
           <img
-            src="src/assets/img/Profile.gif"
+            src={aniprofile}
             alt="Profile"
             className={`transition-transform duration-500 ease-in-out transform ${
               hovered ? 'scale-110 translate-x-3' : 'scale-100'
-            } w-full max-w-xs lg:max-w-full h-auto shadow-lg rounded-lg`}
+            } w-full max-w-xs lg:max-w-full h-auto shadow-lg rounded-lg h-60`}
           />
         </div>
 
@@ -38,7 +39,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className={`lg:w-2/3 w-full transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={` pl-28 lg:w-2/3 w-full transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
         <h1 className="text-4xl font-bold mb-4 text-gray-100 animate-slideInLeft text-left">About Me</h1>
         <p className="text-lg mb-8 text-left text-gray-200 leading-relaxed">
           I am a dedicated and hard worker passionate about technology and design. I continuously strive to enhance my skills and contribute effectively to every project I undertake.

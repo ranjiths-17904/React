@@ -3,7 +3,6 @@
 const Login = () => {
   return (
     <div className="h-screen w-screen flex flex-col justify-center items-center bg-pink-700  hover:bg-blue-600 " >
-      {/* <img src={image} className=" h-[100%] w-[100%] " ></img> */}
       <div className="h-5/6 w-[30%] flex flex-col justify-center items-center bg-white rounded-md drop-shadow-2xl">
       <h1 className='text-lg subpixel-antialiased font-sans font-semibold'>LOGIN</h1>
       <form className="w-[80%] h-[80%] flex flex-col justify-center items-center gap-4">

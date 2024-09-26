@@ -16,7 +16,7 @@ const Profile = () => {
         if (titleIndex < titles[currentTitleIndex].length && showingTitle) {
             const timer = setTimeout(() => {
                 setTitleIndex(prev => prev + 1);
-            }, 30); 
+            }, 130); 
             return () => clearTimeout(timer);
         } else if (titleIndex === titles[currentTitleIndex].length) {
             const hideTitleTimer = setTimeout(() => {
@@ -34,7 +34,7 @@ const Profile = () => {
     }, [titleIndex, showingTitle, currentTitleIndex, titles]);
 
     return (
-        <div className="h-full w-full flex flex-col lg:flex-row justify-center items-center p-4 lg:p-2 gap-28 pr-10">
+        <div className="h-full w-full flex flex-col lg:flex-row justify-center items-center p-4 lg:p-2 gap-20 pr-10">
          
             <div className="flex justify-center lg:justify-end w-full lg:w-auto ">
                

@@ -9,7 +9,7 @@ const Skills = () => {
     { name: "Tailwind CSS", level: "Beginner", percentage: "30%", icon: <FaCss3Alt className="text-green-500" />, color: "green" },
     { name: "Node.js", level: "Intermediate", percentage: "65%", icon: <FaNodeJs className="text-green-700" />, color: "darkgreen" },
     { name: "Java", level: "Intermediate", percentage: "75%", icon: <FaJava className="text-red-500" />, color: "red" },
-    { name: "UI/UX Design", level: "Expert", percentage: "100%", icon: <FaPaintBrush className="text-purple-500" />, color: "purple" },
+    { name: "UI/UX Design", level: "EAdvanced", percentage: "80%", icon: <FaPaintBrush className="text-purple-500" />, color: "purple" },
   ];
 
   return (
