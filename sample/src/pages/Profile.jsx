@@ -13,22 +13,25 @@ const Profile = () => {
     const [showingTitle, setShowingTitle] = useState(true);
 
     useEffect(() => {
-        if (titleIndex < titles[currentTitleIndex].length && showingTitle) {
-            const timer = setTimeout(() => {
+        // Typing animation logic
+        if (showingTitle && titleIndex < titles[currentTitleIndex].length) {
+            const typingTimer = setTimeout(() => {
                 setTitleIndex(prev => prev + 1);
-            }, 130); 
-            return () => clearTimeout(timer);
+            }, 100); // Typing speed
+            return () => clearTimeout(typingTimer);
         } else if (titleIndex === titles[currentTitleIndex].length) {
-            const hideTitleTimer = setTimeout(() => {
-                setShowingTitle(false);  
-            }, 100);  
-            return () => clearTimeout(hideTitleTimer);
+            // Pause after fully typing a title
+            const pauseTimer = setTimeout(() => {
+                setShowingTitle(false);
+            }, 1000); // Pause duration after full title
+            return () => clearTimeout(pauseTimer);
         } else if (!showingTitle) {
+            // Move to the next title
             const switchTitleTimer = setTimeout(() => {
-                setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
-                setTitleIndex(0); 
-                setShowingTitle(true);  
-            }, 150); 
+                setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length); // Cycle to the next title
+                setTitleIndex(0); // Reset the titleIndex for new title
+                setShowingTitle(true); // Start showing new title
+            }, 500); // Delay before switching to next title
             return () => clearTimeout(switchTitleTimer);
         }
     }, [titleIndex, showingTitle, currentTitleIndex, titles]);
@@ -37,11 +40,10 @@ const Profile = () => {
         <div className="h-full w-full flex flex-col lg:flex-row justify-center items-center p-4 lg:p-2 gap-20 pr-10">
          
             <div className="flex justify-center lg:justify-end w-full lg:w-auto ">
-               
                 <img 
                     src={Profilex} 
                     alt="profile" 
-                    className="p-2 lg:h-80 lg:w-80 lg:m-10 rounded-3xl shadow-2xl  object-cover" 
+                    className="p-2 lg:h-80 lg:w-80 lg:m-10 rounded-3xl shadow-2xl object-cover" 
                 />
             </div>
             <div className="text-center lg:text-left">

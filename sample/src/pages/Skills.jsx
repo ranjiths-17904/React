@@ -9,7 +9,7 @@ const Skills = () => {
     { name: "Tailwind CSS", level: "Beginner", percentage: "30%", icon: <FaCss3Alt className="text-green-500" />, color: "green" },
     { name: "Node.js", level: "Intermediate", percentage: "65%", icon: <FaNodeJs className="text-green-700" />, color: "darkgreen" },
     { name: "Java", level: "Intermediate", percentage: "75%", icon: <FaJava className="text-red-500" />, color: "red" },
-    { name: "UI/UX Design", level: "EAdvanced", percentage: "80%", icon: <FaPaintBrush className="text-purple-500" />, color: "purple" },
+    { name: "UI/UX Design", level: "Advanced", percentage: "80%", icon: <FaPaintBrush className="text-purple-500" />, color: "purple" },
   ];
 
   return (
@@ -21,7 +21,15 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 relative overflow-hidden"
+              className={`bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 relative overflow-hidden 
+                ${index === 0 ? 'animate-slide-in-left' : ''} 
+                ${index === 1 ? 'animate-delay-1' : ''} 
+                ${index === 2 ? 'animate-delay-2' : ''} 
+                ${index === 3 ? 'animate-delay-3' : ''} 
+                ${index === 4 ? 'animate-delay-4' : ''} 
+                ${index === 5 ? 'animate-delay-5' : ''}
+                ${index === 6 ? 'animate-delay-6' : ''}
+                ${index === 7 ? 'animate-delay-7' : ''}`}
             >
               {/* Skill Icon and Name */}
               <div className="flex items-center space-x-3 mb-4">
@@ -31,7 +39,6 @@ const Skills = () => {
 
               <p className="text-gray-600">{skill.level}</p>
 
-              {/* Progress Bar (fills the box according to percentage) */}
               <div className="w-full bg-gray-200 rounded-full mt-4 h-4 relative overflow-hidden">
                 <div
                   className="absolute top-0 left-0 h-full"
@@ -51,8 +58,6 @@ const Skills = () => {
         </div>
       </div>
     </div>
-    
-    
   );
 };
 

@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { FaGithub } from 'react-icons/fa'; // Import GitHub icon
 import '../assets/css/style.css';
 
 const projects = [
@@ -7,13 +9,15 @@ const projects = [
     description: 'This is the first project.',
     githubLink: 'https://github.com/yourusername/project1',
     image: 'https://via.placeholder.com/150',
+    category: 'Web Dev',
   },
   {
     id: 2,
-    title: 'Project Two',
+    title: 'Project Two', 
     description: 'This is the second project.',
     githubLink: 'https://github.com/yourusername/project2',
     image: 'https://via.placeholder.com/150',
+    category: 'UI/UX',
   },
   {
     id: 3,
@@ -21,6 +25,7 @@ const projects = [
     description: 'This is the third project.',
     githubLink: 'https://github.com/yourusername/project3',
     image: 'https://via.placeholder.com/150',
+    category: 'Vouchers',
   },
   {
     id: 4,
@@ -28,6 +33,7 @@ const projects = [
     description: 'This is the fourth project.',
     githubLink: 'https://github.com/yourusername/project4',
     image: 'https://via.placeholder.com/150',
+    category: 'Others',
   },
   {
     id: 5,
@@ -35,6 +41,7 @@ const projects = [
     description: 'This is the fifth project.',
     githubLink: 'https://github.com/yourusername/project5',
     image: 'https://via.placeholder.com/150',
+    category: 'Web Dev',
   },
   {
     id: 6,
@@ -42,38 +49,69 @@ const projects = [
     description: 'This is the sixth project.',
     githubLink: 'https://github.com/yourusername/project6',
     image: 'https://via.placeholder.com/150',
+    category: 'Others',
   },
 ];
 
+const categories = ['All', 'UI/UX', 'Web Dev', 'Vouchers', 'Others'];
+
 const Project = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  // Filter projects based on selected category
+  const filteredProjects =
+    selectedCategory === 'All'
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
-    <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
-      {projects.map((project) => (
-        <div
-          key={project.id}
-          className="relative w-64 h-96 bg-white shadow-lg p-6 rounded-lg overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl group"
-        >
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-32 object-cover mb-4"
-          />
-          <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
-          <div className="absolute bottom-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 flex flex-col items-center justify-center text-white text-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <p className="mb-4 px-4">{project.description}</p>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
+      <h1 className="text-4xl font-bold mb-8">My Projects</h1>
+
+     {/* Category Filter Buttons */}
+<div className="flex justify-center space-x-6 mb-10">
+  {categories.map((category) => (
+    <button
+      key={category}
+      onClick={() => setSelectedCategory(category)}
+      className="overflow-hidden relative w-24 p-1 h-9 bg-gray-500 text-white border-none rounded-xl text-xs font-bold cursor-pointer z-10 group"
+    >
+      {category}
+      <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-100 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-right"></span>
+      <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-300 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-right"></span>
+      <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-right"></span>
+      <span className="group-hover:opacity-95 group-hover:duration-1000 duration-200 opacity-0 absolute top-2 left-5 z-10 text-smx">Explore!!</span> {/* Reduced font size here */}
+    </button>
+  ))}
+</div>
+
+
+      {/* Project Grid */}
+      <div className="grid gap-12 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+        {filteredProjects.map((project) => (
+          <div
+            key={project.id}
+            className="relative w-64 h-80 bg-white shadow-lg p-6 rounded-lg overflow-hidden transition-transform transform hover:-translate-y-1 hover:shadow-indigo-300 group"
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-32 object-cover mb-4"
+            />
+            <h2 className="text-lg font-semibold mb-2">{project.title}</h2>
+            <p className="text-sm mb-4">{project.description}</p>
             <a
               href={project.githubLink}
+              className="flex items-center mt-2 text-white bg-black hover:bg-gray-800 rounded-md px-2 py-1"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-violet-500 underline"
             >
-              View on GitHub
+              <FaGithub className="mr-1" />
+              <span className="text-sm">GitHub</span>
             </a>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
     </div>
   );
 };
