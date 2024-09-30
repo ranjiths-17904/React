@@ -9,12 +9,13 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center px-4 font-poppins">
-      <div className={`container mx-auto p-6 md:flex md:justify-between md:items-start space-y-6 md:space-y-0 transition-opacity duration-700 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+    <div className="min-h-screen bg-gradient-to-r from-gray-50 to-blue-50 flex flex-col justify-center items-center px-4 font-poppins">
+        <h1 className="text-4xl font-bold mb-8 text-center">Contact Us</h1>
+      <div className={`container mx-auto p-6 flex flex-col md:flex-row justify-center items-center md:justify-between space-y-6 md:space-y-0 transition-opacity duration-700 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         
         {/* Contact Form */}
         <div className="bg-white p-8 rounded-lg shadow-lg w-full md:w-1/2 transition-transform duration-700 transform hover:scale-105">
-          <h2 className="text-4xl font-bold mb-6 text-gray-900">Get In Touch</h2>
+          <h2 className="text-4xl font-bold mb-6 text-gray-900 text-center md:text-left">Get In Touch</h2>
           <form className="space-y-5">
             <div>
               <label className="block text-sm font-semibold text-gray-600">Name</label>
@@ -49,10 +50,12 @@ const Contact = () => {
           </form>
         </div>
 
-        <div>
-          <img src={Contactimg} 
+        {/* Contact Image */}
+        <div className="w-full md:w-1/2 flex justify-center items-center">
+          <img 
+            src={Contactimg} 
             alt="Contact"
-            className="rounded-lg shadow-lg transition-transform duration-700 transform hover:scale-105"
+            className="rounded-lg shadow-lg max-w-full md:max-w-md transition-transform duration-700 transform hover:scale-105"
           />
         </div>
       </div>
@@ -61,4 +64,3 @@ const Contact = () => {
 };
 
 export default Contact;
-  

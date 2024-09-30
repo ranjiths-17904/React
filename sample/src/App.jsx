@@ -19,6 +19,8 @@ const App = () => {
     <>
     <BrowserRouter>
     <Navbar/>
+
+    
       <Routes>
         <Route path='/Profile' element={<Profile/>}></Route>
         <Route path='/About' element={<About/>}></Route>
@@ -27,7 +29,10 @@ const App = () => {
         <Route path='/Skills' element={<Skills/>}></Route>
 
       </Routes>
-    
+   
+    <About/>
+    <Project/>
+    <Contact/>
     </BrowserRouter>
     {/* <Skills/>
     <Project/> 

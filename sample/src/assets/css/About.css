@@ -1,54 +1,81 @@
+/* Fade In Animation */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSlow {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide In Animation */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slow spinning animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .animate-fadeIn {
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1.5s ease-in-out forwards;
 }
 
-@keyframes slideInLeft {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+.animate-fadeInSlow {
+  animation: fadeInSlow 2s ease-in-out forwards;
 }
 
-.animate-slideInLeft {
-  animation: slideInLeft 1s ease-in-out;
-}
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin: 20px;
-  max-width: 1200px;
+.animate-slideInRight {
+  animation: slideInRight 1.5s ease-out forwards;
 }
 
-.about-content {
-  flex-grow: 1;
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
 }
 
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+/* Zoom In Animation for Profile Image */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.about-content p {
-  line-height: 1.6;
-  margin-bottom: 10px;
+.animate-zoomIn {
+  animation: zoomIn 1.5s ease-out forwards;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .flex-col {
+    flex-direction: column;
+  }
 }
-
-li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-li i {
-  margin-right: 10px;
-}
-

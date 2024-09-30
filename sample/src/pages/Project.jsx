@@ -65,7 +65,7 @@ const Project = () => {
       : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-20">
       <h1 className="text-4xl font-bold mb-8">My Projects</h1>
 
      {/* Category Filter Buttons */}
