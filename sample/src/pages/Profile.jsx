@@ -10,31 +10,31 @@ const Profile = () => {
     const titles = ["Web Developer", "UI/UX Designer", "Software Engineer"];
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
     const [titleIndex, setTitleIndex] = useState(0);
-    const [showingTitle, setShowingTitle] = useState(true);
+    const [isShowingTitle, setIsShowingTitle] = useState(true);
 
     useEffect(() => {
-        // Typing animation logic
-        if (showingTitle && titleIndex < titles[currentTitleIndex].length) {
-            const typingTimer = setTimeout(() => {
-                setTitleIndex(prev => prev + 1);
+        let timer;
+        if (isShowingTitle && titleIndex < titles[currentTitleIndex].length) {
+            // Typing animation logic
+            timer = setTimeout(() => {
+                setTitleIndex((prev) => prev + 1);
             }, 100); // Typing speed
-            return () => clearTimeout(typingTimer);
         } else if (titleIndex === titles[currentTitleIndex].length) {
             // Pause after fully typing a title
-            const pauseTimer = setTimeout(() => {
-                setShowingTitle(false);
-            }, 1000); // Pause duration after full title
-            return () => clearTimeout(pauseTimer);
-        } else if (!showingTitle) {
-            // Move to the next title
-            const switchTitleTimer = setTimeout(() => {
+            timer = setTimeout(() => {
+                setIsShowingTitle(false);
+            }, 1000); // Pause duration after the full title
+        } else if (!isShowingTitle) {
+            // Switch to the next title
+            timer = setTimeout(() => {
                 setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length); // Cycle to the next title
-                setTitleIndex(0); // Reset the titleIndex for new title
-                setShowingTitle(true); // Start showing new title
-            }, 500); // Delay before switching to next title
-            return () => clearTimeout(switchTitleTimer);
+                setTitleIndex(0); // Reset titleIndex for the new title
+                setIsShowingTitle(true); // Start showing new title
+            }, 500); // Delay before switching to the next title
         }
-    }, [titleIndex, showingTitle, currentTitleIndex, titles]);
+
+        return () => clearTimeout(timer);
+    }, [titleIndex, isShowingTitle, currentTitleIndex, titles]);
 
     return (
         <div className="h-full w-full flex flex-col lg:flex-row justify-center items-center p-4 lg:p-2 gap-20 pr-10">
