@@ -10,31 +10,47 @@ const Profile = () => {
     const titles = ["Web Developer", "UI/UX Designer", "Software Engineer"];
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
     const [titleIndex, setTitleIndex] = useState(0);
-    const [isShowingTitle, setIsShowingTitle] = useState(true);
+    const [isDeleting, setIsDeleting] = useState(false); // Tracks whether we're typing or deleting
+    const [speed, setSpeed] = useState(100); // Speed of typing
+    const [pause, setPause] = useState(false); // Pause between typing/deleting
 
     useEffect(() => {
-        let timer;
-        if (isShowingTitle && titleIndex < titles[currentTitleIndex].length) {
-            // Typing animation logic
-            timer = setTimeout(() => {
-                setTitleIndex((prev) => prev + 1);
-            }, 100); // Typing speed
-        } else if (titleIndex === titles[currentTitleIndex].length) {
-            // Pause after fully typing a title
-            timer = setTimeout(() => {
-                setIsShowingTitle(false);
-            }, 1000); // Pause duration after the full title
-        } else if (!isShowingTitle) {
-            // Switch to the next title
-            timer = setTimeout(() => {
-                setCurrentTitleIndex((prevIndex) => (prevIndex + 1) % titles.length); // Cycle to the next title
-                setTitleIndex(0); // Reset titleIndex for the new title
-                setIsShowingTitle(true); // Start showing new title
-            }, 500); // Delay before switching to the next title
+        if (!pause) {
+            if (!isDeleting && titleIndex < titles[currentTitleIndex].length) {
+                // Typing characters
+                const typingTimer = setTimeout(() => {
+                    setTitleIndex(prev => prev + 1);
+                    setSpeed(150); // Adjust typing speed
+                }, speed);
+                return () => clearTimeout(typingTimer);
+            } else if (isDeleting && titleIndex > 0) {
+                // Deleting characters
+                const deletingTimer = setTimeout(() => {
+                    setTitleIndex(prev => prev - 1);
+                    setSpeed(50); // Adjust deleting speed
+                }, speed);
+                return () => clearTimeout(deletingTimer);
+            } else if (!isDeleting && titleIndex === titles[currentTitleIndex].length) {
+                // Pause after full title is typed
+                const fullTitlePause = setTimeout(() => {
+                    setPause(true);
+                    setIsDeleting(true);
+                }, 1000); // Pause before deleting
+                return () => clearTimeout(fullTitlePause);
+            } else if (isDeleting && titleIndex === 0) {
+                // Move to next title after deleting
+                setIsDeleting(false);
+                setCurrentTitleIndex(prev => (prev + 1) % titles.length); // Cycle to next title
+                setPause(true);
+            }
+        } else {
+            // Brief pause before typing/deleting
+            const pauseTimer = setTimeout(() => {
+                setPause(false);
+            }, 500);
+            return () => clearTimeout(pauseTimer);
         }
-
-        return () => clearTimeout(timer);
-    }, [titleIndex, isShowingTitle, currentTitleIndex, titles]);
+    }, [titleIndex, isDeleting, pause, currentTitleIndex, speed, titles]);
 
     return (
         <div className="h-full w-full flex flex-col lg:flex-row justify-center items-center p-4 lg:p-2 gap-20 pr-10">
