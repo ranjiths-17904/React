@@ -14,9 +14,8 @@ const About = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center p-8 bg-gradient-to-b from-purple-900 to-blue-600 rounded-lg shadow-xl w-full max-w-screen-lg mx-auto animate-fadeIn">
-      
-      {/* Left Section - Profile & Skills */}
+    <div className="flex flex-col lg:flex-row items-center p-8 bg-white shadow-xl rounded-lg w-full max-w-screen-lg mx-auto">
+      {/* Left Section - Profile & Resume Button */}
       <div className="lg:w-1/3 w-full flex flex-col items-center lg:items-start mb-6 lg:mb-0">
         <div
           className="relative mb-6"
@@ -28,21 +27,22 @@ const About = () => {
             alt="Profile"
             className={`transition-transform duration-500 ease-in-out transform ${
               hovered ? 'scale-110 translate-x-3' : 'scale-100'
-            } w-full max-w-xs lg:max-w-full h-auto shadow-lg rounded-lg h-60 animate-zoomIn`}
+            } w-full max-w-xs lg:max-w-full h-auto shadow-lg rounded-lg`}
           />
         </div>
 
-        <div className="flex justify-center space-x-4 mb-4 animate-fadeInSlow">
-          <FaReact className="text-4xl text-blue-400 hover:text-blue-500 transition-transform transform hover:scale-125 animate-spin-slow" />
+        {/* Icons - Skills */}
+        <div className="flex justify-center space-x-4 mb-4">
+          <FaReact className="text-4xl text-blue-400 hover:text-blue-500 transition-transform transform hover:scale-125" />
           <FaHtml5 className="text-4xl text-red-500 hover:text-red-600 transition-transform transform hover:scale-125" />
           <FaCss3Alt className="text-4xl text-blue-500 hover:text-blue-600 transition-transform transform hover:scale-125" />
           <FaJsSquare className="text-4xl text-yellow-500 hover:text-yellow-600 transition-transform transform hover:scale-125" />
         </div>
-        
+
         {/* Download Resume Button */}
         <button
           type="button"
-          className="relative flex justify-center gap-2 items-center mx-auto shadow-xl text-lg bg-white backdrop-blur-md font-semibold border border-gray-300 hover:border-emerald-500 transition-all duration-700 rounded-full px-5 py-2 overflow-hidden group hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500"
+          className="relative flex justify-center gap-2 items-center shadow-xl text-lg bg-white backdrop-blur-md font-semibold border border-gray-300 hover:border-emerald-500 transition-all duration-700 rounded-full px-5 py-2 overflow-hidden group hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500"
         >
           Download Resume
           <svg
@@ -64,35 +64,44 @@ const About = () => {
         </button>
       </div>
 
-      {/* Right Section - About Me */}
+      {/* Right Section - About Me, Schooling & Internships */}
       <div className={`lg:w-2/3 w-full transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'} animate-slideInRight`}>
-        <h1 className="text-4xl font-bold mb-4 text-gray-100 text-left">About Me</h1>
-        <p className="text-lg mb-8 text-left text-gray-200 leading-relaxed">
+        <h1 className="text-4xl font-bold mb-4 text-gray-800">About Me</h1>
+        <p className="text-lg mb-8 text-gray-700 leading-relaxed">
           I am a dedicated and hard worker passionate about technology and design. I continuously strive to enhance my skills and contribute effectively to every project I undertake.
         </p>
 
-        <h2 className="text-2xl font-semibold mb-4 text-gray-100 text-left">Schooling:</h2>
-        <ul className="list-disc list-inside mb-8 text-left animate-fadeInSlow">
-          <li className="flex items-center text-gray-200 mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-blue-500">
-            <FaSchool className="mr-2 text-lg" /> High School: M.N.C School 
-          </li>
-          <li className="flex items-center text-gray-200 mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-blue-500">
-            <FaSchool className="mr-2 text-lg" /> Bachelors Degree: SIET
-          </li>
-          <li className="flex items-center text-gray-200 mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-blue-500">
-            <FaSchool className="mr-2 text-lg" /> Current: CSE Student
-          </li>
-        </ul>
+        {/* Schooling and Internships in the same row */}
+        <div className="flex flex-wrap justify-between mb-8">
+          {/* Schooling Section */}
+          <div className="w-full lg:w-1/2 pr-4">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">Schooling:</h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li className="flex items-center mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-blue-500">
+                <FaSchool className="mr-2 text-lg" /> High School: M.N.C School
+              </li>
+              <li className="flex items-center mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-blue-500">
+                <FaSchool className="mr-2 text-lg" /> Bachelors Degree: SIET
+              </li>
+              <li className="flex items-center mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-blue-500">
+                <FaSchool className="mr-2 text-lg" /> Current: CSE Student
+              </li>
+            </ul>
+          </div>
 
-        <h2 className="text-2xl font-semibold mb-4 text-gray-100 text-left">Internships:</h2>
-        <ul className="list-disc list-inside text-left animate-fadeInSlow">
-          <li className="flex items-center text-gray-200 mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-green-500">
-            <FaUserTie className="mr-2 text-lg" /> UI/UX Intern: Shadow Fox
-          </li>
-          <li className="flex items-center text-gray-200 mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-green-500">
-            <FaUserTie className="mr-2 text-lg" /> UI/UX Intern: CodSoft
-          </li>
-        </ul>
+          {/* Internships Section */}
+          <div className="pr-16 pt-0">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">Internships:</h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li className="flex items-center mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-green-500">
+                <FaUserTie className="mr-2 text-lg" /> UI/UX Intern: Shadow Fox
+              </li>
+              <li className="flex items-center mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-green-500">
+                <FaUserTie className="mr-2 text-lg" /> UI/UX Intern: CodSoft
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
