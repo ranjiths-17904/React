@@ -68,7 +68,7 @@ const Profile = () => {
                 </h2>
 
                 <div className="text-xl lg:text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 mt-2 lg:mt-4">
-                    I am {titles[currentTitleIndex].slice(0, titleIndex)}
+                    I am a {titles[currentTitleIndex].slice(0, titleIndex)}
                 </div>
 
                 {/* Social Media Icons */}
