@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaSchool, FaUserTie, FaReact, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
-import '../assets/css/About.css'; // Updated CSS for better responsiveness and animations
+import '../assets/css/About.css'; 
 import aniprofile from '../assets/img/Profile.gif';
 
 const About = () => {
@@ -15,7 +15,6 @@ const About = () => {
 
   return (
     <div className="flex flex-col lg:flex-row items-center p-8 bg-white shadow-xl rounded-lg w-full max-w-screen-lg mx-auto">
-      {/* Left Section - Profile & Resume Button */}
       <div className="lg:w-1/3 w-full flex flex-col items-center lg:items-start mb-6 lg:mb-0">
         <div
           className="relative mb-6"
@@ -31,7 +30,6 @@ const About = () => {
           />
         </div>
 
-        {/* Icons - Skills */}
         <div className="flex justify-center space-x-4 mb-4">
           <FaReact className="text-4xl text-blue-400 hover:text-blue-500 transition-transform transform hover:scale-125" />
           <FaHtml5 className="text-4xl text-red-500 hover:text-red-600 transition-transform transform hover:scale-125" />
@@ -39,7 +37,6 @@ const About = () => {
           <FaJsSquare className="text-4xl text-yellow-500 hover:text-yellow-600 transition-transform transform hover:scale-125" />
         </div>
 
-        {/* Download Resume Button */}
         <button
           type="button"
           className="relative flex justify-center gap-2 items-center shadow-xl text-lg bg-white backdrop-blur-md font-semibold border border-gray-300 hover:border-emerald-500 transition-all duration-700 rounded-full px-5 py-2 overflow-hidden group hover:bg-gradient-to-r hover:from-purple-500 hover:to-blue-500"
