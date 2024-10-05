@@ -78,10 +78,10 @@ const Project = () => {
           className="overflow-hidden relative w-24 p-1 h-9 bg-gray-500 text-white border-none rounded-xl text-xs font-bold cursor-pointer z-10 group"
         >
           {category}
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-100 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-right"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-300 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-right"></span>
-          <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-right"></span>
-          <span className="group-hover:opacity-95 group-hover:duration-1000 duration-200 opacity-0 absolute top-2 left-5 z-10 text-smx">Explore!!</span> {/* Reduced font size here */}
+          <span className="flex absolute w-36 h-32 -top-8 -left-2 bg-pink-100 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-right"></span>
+          <span className="flex absolute w-36 h-32 -top-8 -left-2 bg-pink-300 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-right"></span>
+          <span className="flex absolute w-36 h-32 -top-8 -left-2 bg-pink-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-right"></span>
+          <span className="flex group-hover:opacity-95 group-hover:duration-1000 duration-200 opacity-0 absolute top-2 left-5 z-10 text-smx">Explore!!</span> {/* Reduced font size here */}
         </button>
         ))}
       </div>
