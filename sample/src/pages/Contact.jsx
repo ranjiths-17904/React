@@ -22,7 +22,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-// response
+    // response
     emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_PUBLIC_KEY')
       .then(() => {
         setFormStatus('Message sent successfully!');
@@ -84,14 +84,21 @@ const Contact = () => {
           </form>
           {formStatus && <p className="mt-4 text-green-700">{formStatus}</p>}
         </div>
-        <div className="w-full md:w-1/2 flex justify-center items-center pl-2">
-        <img 
-          src={Contactimg} 
-          alt="Contact"
-          className="flex flex-row rounded-lg shadow-lg w-80 h-60 max-w-full md:max-w-lg transition-transform duration-700 transform hover:scale-105 "
-        />
-      </div>
 
+        {/* Clickable Image for Location */}
+        <div className="w-full md:w-1/2 flex justify-center items-center pl-2">
+          <a
+            href="https://www.google.com/maps/place/Sulur,+Coimbatore,+Tamil+Nadu,+India/@11.0319885,77.1451386,12z"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img 
+              src={Contactimg} 
+              alt="Contact"
+              className="flex flex-row rounded-lg shadow-lg w-80 h-60 max-w-full md:max-w-lg transition-transform duration-700 transform hover:scale-105"
+            />
+          </a>
+        </div>
       </div>
     </div>
   );
