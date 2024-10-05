@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { FaSchool, FaUserTie, FaReact, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
 import '../assets/css/About.css'; 
 import aniprofile from '../assets/img/profile photo.jpg';
-// import { SiJava, SiMongodb } from 'react-icons/si';
+import { SiMongodb } from 'react-icons/si';
 
 const About = () => {
   const [hovered, setHovered] = useState(false);
@@ -15,7 +15,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center p-8 bg-white shadow-cyan-600x rounded-lg w-full max-w-screen-lg mx-auto">
+    <div className="flex flex-col lg:flex-row items-center p-8 bg-white shadow-cyan-600 rounded-lg w-full max-w-screen-lg mx-auto">
       <div className="lg:w-1/3 w-full flex flex-col items-center lg:items-start mb-8 lg:mb-0">
         <div
           className="relative mb-6"
@@ -32,12 +32,12 @@ const About = () => {
           <FaJsSquare className="flex absolute -right-10 top-24 mt-3 text-4xl text-yellow-500 hover:text-yellow-600 transition-transform transform hover:scale-110" />
           <FaReact className="flex absolute right-2 top-36 mt-3 text-4xl text-blue-400 hover:text-blue-500 transition-transform transform hover:scale-110" />
           <FaHtml5 className="flex absolute right-16 top-40 mt-3 text-4xl text-red-500 hover:text-red-600 transition-transform transform hover:scale-110" />
-          {/* <SiMongodb className="absolute right-16 top-40 mt-3 text-4xl text-red-500 hover:text-red-600 transition-transform transform hover:scale-110" /> */}
+          <SiMongodb className="absolute right-44 top-36 mt-3 text-4xl text-green-500 hover:text-green-600 transition-transform transform hover:scale-110" />
           <FaCss3Alt className="flex absolute right-32 top-40 mt-3 text-4xl text-blue-500 hover:text-blue-600 transition-transform transform hover:scale-110" />
           
         </div>
 
-        <div className="flex justify-center left-10 mb-14">
+        <div className="flex justify-center mb-14">
         </div>
 
         <button
