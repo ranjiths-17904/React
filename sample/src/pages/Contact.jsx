@@ -22,13 +22,14 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+// response
     emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_PUBLIC_KEY')
-      .then((response) => {
+      .then(() => {
         setFormStatus('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
       })
-      .catch((error) => {
+      // error
+      .catch(() => {
         setFormStatus('Failed to send message.');
       });
   };
