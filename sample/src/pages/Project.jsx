@@ -69,8 +69,8 @@ const Project = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 sm:p-10 md:p-16 lg:p-20">
       <h1 className="text-4xl font-bold mb-8">My Projects</h1>
 
-       {/* Category Filter Buttons */}
-      <div className="flex justify-center space-x-6 mb-10">
+      {/* Category Filter Buttons */}
+      <div className="flex flex-wrap justify-center space-x-6 mb-10">
         {categories.map((category) => (
           <button
             key={category}
@@ -78,6 +78,7 @@ const Project = () => {
             className="overflow-hidden relative w-24 p-1 h-9 bg-gray-500 text-white border-none rounded-xl text-xs font-bold cursor-pointer z-10 group"
           >
             {category}
+            
             <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-100 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-right"></span>
             <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-300 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-right"></span>
             <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-right"></span>
@@ -91,7 +92,7 @@ const Project = () => {
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="relative w-64 h-80 bg-white shadow-lg p-6 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform hover:shadow-2xl group"
+            className="relative w-full sm:w-64 h-80 bg-white shadow-lg p-6 rounded-lg overflow-hidden transform transition-transform hover:-translate-y-2 hover:shadow-2xl group animate-slide-in-left"
           >
             <img
               src={project.image}
