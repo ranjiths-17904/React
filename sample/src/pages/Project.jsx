@@ -67,10 +67,10 @@ const Project = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 sm:p-10 md:p-16 lg:p-20">
-      <h1 className="text-4xl font-bold mb-8">My Projects</h1>
+      <h1 className="text-4xl font-bold mb-10 -mt-10">My Projects</h1>
 
       {/* Category Filter Buttons */}
-      <div className="flex flex-wrap justify-center space-x-4 mb-10">
+      <div className="flex flex-wrap justify-center space-x-10 mb-10">
         {categories.map((category) => (
           <button
           key={category}
