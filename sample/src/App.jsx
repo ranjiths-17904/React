@@ -8,6 +8,7 @@ import Profile from './pages/Profile';
 import Project from './pages/Project'
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Skills from './pages/Skills';
+// import Footer from './Components/Footer';
 
 
 
@@ -19,6 +20,7 @@ const App = () => {
     <>
     <BrowserRouter>
     <Navbar/> 
+    {/* <Footer/> */}
       <Routes>
         <Route path='/Profile' element={<Profile/>}></Route>
         <Route path='/About' element={<About/>}></Route>
@@ -27,7 +29,6 @@ const App = () => {
         <Route path='/Skills' element={<Skills/>}></Route>
 
       </Routes>
-    
     </BrowserRouter>
     {/* <Skills/>
     <Project/> 
@@ -40,3 +41,20 @@ const App = () => {
 }
 
 export default App;
+
+
+// import Navbar from './Components/Nav';
+// import LoginForm from './Components/Loginn';
+
+// function App() {
+//     return (
+//         <div className="App">
+//             <Navbar />
+//             <div className="login-container">
+//                 <LoginForm />
+//             </div>
+//         </div>
+//     );
+// }
+
+// export default App;

@@ -5,7 +5,7 @@ const Loader = () => {
     const timer = setTimeout(() => {
       // This is just a placeholder. You can modify it later to handle actual routing.
       window.location.href = "/portfolio"; // Update with your actual portfolio URL
-    }, 3000); // Adjust the time as needed
+    }, 3000);
 
     return () => clearTimeout(timer); // Clear timer on cleanup
   }, []);

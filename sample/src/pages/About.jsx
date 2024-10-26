@@ -15,8 +15,8 @@ const About = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center p-8 bg-white shadow-cyan-600 rounded-lg w-full max-w-screen-lg mx-auto">
-      <div className="lg:w-1/3 w-full flex flex-col items-center lg:items-start mb-8 lg:mb-0">
+    <div className="flex flex-col lg:flex-row items-center p-10 bg-white shadow-cyan-600 rounded-lg w-full max-w-screen-lg mx-auto">
+      <div className="lg:w-1/3 w-full flex flex-col items-center lg:items-start mb-8 lg:mb-10">
         <div
           className="relative mb-6"
           onMouseEnter={() => setHovered(true)}
