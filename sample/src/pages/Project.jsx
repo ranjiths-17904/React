@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { FaGithub } from 'react-icons/fa'; // Import GitHub icon
 import { SiFigma, SiCanva } from 'react-icons/si'; // Import Figma and Canva icons
 import '../assets/css/style.css';
+import FigmaImage from '../assets/img/Figma 3.png';
+import FigmaImage1 from '../assets/img/Figma 1.png';
+
 
 const projects = [
   {
@@ -17,7 +20,7 @@ const projects = [
     title: 'Project Two',
     description: 'This is the second project.',
     githubLink: 'https://github.com/yourusername/project2',
-    image: 'https://via.placeholder.com/150',
+    image: FigmaImage,
     category: 'UI/UX',
   },
   {
@@ -49,8 +52,8 @@ const projects = [
     title: 'Project Six',
     description: 'This is the sixth project.',
     githubLink: 'https://github.com/yourusername/project6',
-    image: 'https://via.placeholder.com/150',
-    category: 'Others',
+    image: FigmaImage1,
+    category: 'UI/UX',
   },
 ];
 
