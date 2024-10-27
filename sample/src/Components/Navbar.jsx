@@ -74,10 +74,11 @@ const Navbar = () => {
 
       {/* Conditional Rendering of Thank You Card */}
       {showCard && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <Card />
-        </div>
-      )}
+  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <Card />
+  </div>
+)}
+
     </nav>
   );
 };
