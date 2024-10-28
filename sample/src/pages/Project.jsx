@@ -3,16 +3,17 @@ import { FaGithub } from 'react-icons/fa'; // Import GitHub icon
 import { SiFigma, SiCanva } from 'react-icons/si'; // Import Figma and Canva icons
 import '../assets/css/style.css';
 import FigmaImage from '../assets/img/Figma 3.png';
-import FigmaImage1 from '../assets/img/Figma 1.png';
+import FigmaImage1 from '../assets/img/Port.png';
+import WebImage from '../assets/img/Health-Blog.png'
 
 
 const projects = [
   {
     id: 1,
-    title: 'Project One',
-    description: 'This is the first project.',
+    title: 'MediMerge Market',
+    description: 'Online Pharmacy Store',
     githubLink: 'https://github.com/yourusername/project1',
-    image: 'https://via.placeholder.com/150',
+    image: 'WebImage',
     category: 'Web Dev',
   },
   {
@@ -44,16 +45,50 @@ const projects = [
     title: 'Project Five',
     description: 'This is the fifth project.',
     githubLink: 'https://github.com/yourusername/project5',
-    image: 'https://via.placeholder.com/150',
+    image: WebImage,
     category: 'Web Dev',
   },
   {
     id: 6,
-    title: 'Project Six',
-    description: 'This is the sixth project.',
+    title: 'Protfolio',
+    description: 'My Personal Portfolio',
     githubLink: 'https://github.com/yourusername/project6',
     image: FigmaImage1,
     category: 'UI/UX',
+  },
+  {
+    id: 7,
+    title: 'Protfolio',
+    description: 'My Personal Portfolio',
+    githubLink: 'https://github.com/yourusername/project6',
+    image: FigmaImage1,
+    category: 'UI/UX',
+  },
+  {
+    id: 8,
+    title: 'Project Five',
+    description: 'This is the fifth project.',
+    githubLink: 'https://github.com/yourusername/project5',
+    image: 'https://via.placeholder.com/150',
+    category: 'Web Dev',
+    
+  },
+  {
+    id: 9,
+    title: 'Project Five',
+    description: 'This is the fifth project.',
+    githubLink: 'https://github.com/yourusername/project5',
+    image: 'https://via.placeholder.com/150',
+    category: 'Web Dev',
+    
+  },
+  {
+    id: 10,
+    title: 'Project Four',
+    description: 'This is the fourth project.',
+    githubLink: 'https://github.com/yourusername/project4',
+    image: 'https://via.placeholder.com/150',
+    category: 'Others',
   },
 ];
 
@@ -61,8 +96,6 @@ const categories = ['All', 'UI/UX', 'Web Dev', 'Vouchers', 'Others'];
 
 const Project = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
-
-  // Filter projects based on selected category
   const filteredProjects =
     selectedCategory === 'All'
       ? projects
@@ -104,7 +137,6 @@ const Project = () => {
             <h2 className="text-lg font-semibold mb-2">{project.title}</h2>
             <p className="text-sm mb-4">{project.description}</p>
 
-            {/* Conditionally Render Buttons Based on Project Category */}
             {project.category === 'Web Dev' && (
               <a
                 href={project.githubLink}
