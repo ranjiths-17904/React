@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { FaGithub } from 'react-icons/fa'; // Import GitHub icon
-import { SiFigma, SiCanva } from 'react-icons/si'; // Import Figma and Canva icons
+import { FaGithub, FaLink } from 'react-icons/fa'; // Add FaLink for link icon
+import { SiFigma, SiCanva } from 'react-icons/si';
 import '../assets/css/style.css';
 import FigmaImage from '../assets/img/Figma 3.png';
 import FigmaImage1 from '../assets/img/Port.png';
-import WebImage from '../assets/img/Health-Blog.png'
-
+import WebImage from '../assets/img/Health-Blog.png';
 
 const projects = [
   {
@@ -105,36 +104,48 @@ const Project = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 sm:p-10 md:p-16 lg:p-20">
       <h1 className="text-4xl font-bold mb-10 -mt-10">My Projects</h1>
 
-      {/* Category Filter Buttons */}
-      <div className="flex flex-wrap justify-center space-x-10 mb-10">
-        {categories.map((category) => (
-          <button
-          key={category}
-          onClick={() => setSelectedCategory(category)}
-          className="overflow-hidden relative w-24 p-1 h-9 bg-gray-500 text-white border-none rounded-xl text-xs font-bold cursor-pointer z-10 group"
-        >
-          {category}
-          <span className="flex absolute w-36 h-32 -top-8 -left-2 bg-pink-100 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-right"></span>
-          <span className="flex absolute w-36 h-32 -top-8 -left-2 bg-pink-300 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-right"></span>
-          <span className="flex absolute w-36 h-32 -top-8 -left-2 bg-pink-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-right"></span>
-          <span className="flex group-hover:opacity-95 group-hover:duration-1000 duration-200 opacity-0 absolute top-2 left-5 z-10 text-smx">Explore!!</span> {/* Reduced font size here */}
-        </button>
-        ))}
-      </div>
-
-      {/* Project Grid */}
+      <div className="flex flex-wrap justify-center gap-4 mb-10">
+  {categories.map((category) => (
+    <button
+      key={category}
+      onClick={() => setSelectedCategory(category)}
+      className="relative flex items-center justify-center w-24 h-8 px-4 py-2 bg-blue-500 text-white rounded-xl text-xs font-bold cursor-pointer overflow-hidden group transition-all duration-300 "
+    >
+      <span className="z-20 transition-opacity duration-300 group-hover:opacity-0">{category}</span>
+      <span className="absolute inset-0 flex items-center justify-center bg-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+        <span className="text-white font-bold text-sm">Explore</span>
+      </span>
+      <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-200 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-right"></span>
+      <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-right"></span>
+      <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-right"></span>
+    </button>
+  ))}
+</div>
       <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="relative w-full sm:w-64 h-80 bg-white shadow-lg p-6 rounded-lg overflow-hidden transform transition-transform hover:-translate-y-2 hover:shadow-2xl group animate-slide-in-left"
+            className="project-card relative w-full sm:w-64 h-80 bg-white shadow-lg p-6 rounded-lg overflow-hidden transform transition-transform hover:-translate-y-2 hover:shadow-2xl group animate-slide-in-left"
           >
             <img
               src={project.image}
               alt={project.title}
               className="w-full h-32 object-cover mb-4"
             />
-            <h2 className="text-lg font-semibold mb-2">{project.title}</h2>
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-semibold mb-1">
+                {project.title}
+              </h2>
+              
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 text-gray-800 hover:text-blue-500"
+              >
+                <FaLink /> {/* Link icon for placeholder links */}
+              </a>
+            </div>
             <p className="text-sm mb-4">{project.description}</p>
 
             {project.category === 'Web Dev' && (
@@ -170,7 +181,6 @@ const Project = () => {
                 <span className="text-sm">Canva</span>
               </a>
             )}
-
             {project.category === 'Vouchers' && (
               <a
                 href="https://www.canva.com"

@@ -1,0 +1,18 @@
+@media (max-width: 640px) {
+ 
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  
+    
+    .project-card {
+      width: 100%; 
+      margin: 0 auto;
+    }
+  
+    .category-button {
+      width: auto;
+      margin-bottom: 8px;
+    }
+  }
+  

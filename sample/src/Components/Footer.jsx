@@ -4,7 +4,6 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-8 mt-10 w-full animate-slide-up">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-        {/* Contact Info Section */}
         <div className="text-center md:text-left">
           <h2 className="text-2xl font-semibold mb-4 animate-fade-in">Contact Me</h2>
           <ul>
@@ -23,7 +22,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Social Icons Section */}
         <div className="flex justify-center md:justify-end space-x-6 animate-fade-in">
           <a href="https://github.com/ranjiths-17904" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-gray-400 hover:scale-110 transition-transform duration-300">
             <FaGithub />
@@ -33,8 +31,6 @@ const Footer = () => {
           </a>
         </div>
       </div>
-
-      {/* Footer Bottom */}
       <div className="text-center mt-8 text-sm text-gray-500 animate-fade-in">
         <p>© {new Date().getFullYear()} Ranjith S. All rights reserved.</p>
       </div>

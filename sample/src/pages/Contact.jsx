@@ -10,6 +10,7 @@ const Contact = () => {
     message: ''
   });
   const [formStatus, setFormStatus] = useState('');
+  const [isError, setIsError] = useState(false); 
 
   useEffect(() => {
     setIsVisible(true);
@@ -22,15 +23,15 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // response
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_PUBLIC_KEY')
+    emailjs.send('service_egopgnp', 'template_p8y9qy7', formData, 'HpLX2ePIpzpIn_1N1')
       .then(() => {
         setFormStatus('Message sent successfully!');
+        setIsError(false);
         setFormData({ name: '', email: '', message: '' });
       })
-      // error
       .catch(() => {
         setFormStatus('Failed to send message.');
+        setIsError(true);
       });
   };
 
@@ -82,10 +83,13 @@ const Contact = () => {
               Send Message
             </button>
           </form>
-          {formStatus && <p className="mt-4 text-green-700">{formStatus}</p>}
+          {formStatus && (
+            <p className={`mt-4 ${isError ? 'text-red-800' : 'text-green-700'}`}>
+              {formStatus}
+            </p>
+          )}
         </div>
 
-        {/* Clickable Image for Location */}
         <div className="w-full md:w-1/2 flex justify-center items-center pl-2">
           <a
             href="https://www.google.com/maps/place/Sulur,+Coimbatore,+Tamil+Nadu,+India/@11.0319885,77.1451386,12z"

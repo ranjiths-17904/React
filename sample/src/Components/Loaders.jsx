@@ -3,11 +3,11 @@ import { useEffect } from "react";
 const Loader = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      // This is just a placeholder. You can modify it later to handle actual routing.
-      window.location.href = "/portfolio"; // Update with your actual portfolio URL
+     
+      window.location.href = "/sample"; 
     }, 3000);
 
-    return () => clearTimeout(timer); // Clear timer on cleanup
+    return () => clearTimeout(timer); 
   }, []);
 
   return (

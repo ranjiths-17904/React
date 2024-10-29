@@ -20,9 +20,9 @@ body {
   .group:hover .group-hover\:translate-y-2 {
     transform: translateY(-0.5rem);
   }
-  /* Add this to your Loader styles to center it */
+ 
 .loader {
-  position: fixed; /* Make it cover the entire screen */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
@@ -30,6 +30,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.9); /* Optional: background to cover content */
-  z-index: 9999; /* Ensure it appears above other elements */
+  background: rgba(255, 255, 255, 0.9); 
+  z-index: 9999;
 }
