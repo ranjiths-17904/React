@@ -5,6 +5,7 @@ import '../assets/css/style.css';
 import FigmaImage from '../assets/img/Figma 3.png';
 import FigmaImage1 from '../assets/img/Port.png';
 import WebImage from '../assets/img/Health-Blog.png';
+import WebPort from '../assets/img/Old Web Portfolio.png'
 
 const projects = [
   {
@@ -17,8 +18,8 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Project Two',
-    description: 'This is the second project.',
+    title: 'Avengers',
+    description: 'Animation Video of Avengers',
     githubLink: 'https://github.com/yourusername/project2',
     image: FigmaImage,
     category: 'UI/UX',
@@ -65,30 +66,31 @@ const projects = [
   },
   {
     id: 8,
-    title: 'Project Five',
-    description: 'This is the fifth project.',
-    githubLink: 'https://github.com/yourusername/project5',
-    image: 'https://via.placeholder.com/150',
-    category: 'Web Dev',
-    
-  },
-  {
-    id: 9,
-    title: 'Project Five',
-    description: 'This is the fifth project.',
-    githubLink: 'https://github.com/yourusername/project5',
-    image: 'https://via.placeholder.com/150',
-    category: 'Web Dev',
-    
-  },
-  {
-    id: 10,
     title: 'Project Four',
     description: 'This is the fourth project.',
     githubLink: 'https://github.com/yourusername/project4',
     image: 'https://via.placeholder.com/150',
     category: 'Others',
   },
+  {
+    id: 9,
+    title: 'Portfolio',
+    description: 'My First Portfolio in JS',
+    githubLink: 'https://github.com/yourusername/project5',
+    image: WebPort,
+    category: 'Web Dev',
+    
+  },
+  {
+    id: 10,
+    title: 'Project Five',
+    description: 'This is the fifth project.',
+    githubLink: 'https://github.com/yourusername/project5',
+    image: 'https://via.placeholder.com/150',
+    category: 'Web Dev',
+    
+  },
+ 
 ];
 
 const categories = ['All', 'UI/UX', 'Web Dev', 'Vouchers', 'Others'];
