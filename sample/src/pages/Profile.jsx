@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Profilex from '../assets/img/orig.webp';
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import '../assets/css/animation.scss'; 
 
 const handleSocialClick = (platform) => {
     console.log(`Navigating to ${platform}...`);
@@ -10,41 +11,36 @@ const Profile = () => {
     const titles = ["Web Developer", "UI/UX Designer", "Software Engineer"];
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
     const [titleIndex, setTitleIndex] = useState(0);
-    const [isDeleting, setIsDeleting] = useState(false); // Tracks whether we're typing or deleting
-    const [speed, setSpeed] = useState(100); // Speed of typing
-    const [pause, setPause] = useState(false); // Pause between typing/deleting
+    const [isDeleting, setIsDeleting] = useState(false); 
+    const [speed, setSpeed] = useState(100); 
+    const [pause, setPause] = useState(false);
 
     useEffect(() => {
         if (!pause) {
             if (!isDeleting && titleIndex < titles[currentTitleIndex].length) {
-                // Typing characters
                 const typingTimer = setTimeout(() => {
                     setTitleIndex(prev => prev + 1);
-                    setSpeed(150); // Adjust typing speed
+                    setSpeed(150); 
                 }, speed);
                 return () => clearTimeout(typingTimer);
             } else if (isDeleting && titleIndex > 0) {
-                // Deleting characters
                 const deletingTimer = setTimeout(() => {
                     setTitleIndex(prev => prev - 1);
-                    setSpeed(50); // Adjust deleting speed
+                    setSpeed(50); 
                 }, speed);
                 return () => clearTimeout(deletingTimer);
             } else if (!isDeleting && titleIndex === titles[currentTitleIndex].length) {
-                // Pause after full title is typed
                 const fullTitlePause = setTimeout(() => {
                     setPause(true);
                     setIsDeleting(true);
-                }, 1000); // Pause before deleting
+                }, 1000);
                 return () => clearTimeout(fullTitlePause);
             } else if (isDeleting && titleIndex === 0) {
-                // Move to next title after deleting
                 setIsDeleting(false);
-                setCurrentTitleIndex(prev => (prev + 1) % titles.length); // Cycle to next title
+                setCurrentTitleIndex(prev => (prev + 1) % titles.length);
                 setPause(true);
             }
         } else {
-            // Brief pause before typing/deleting
             const pauseTimer = setTimeout(() => {
                 setPause(false);
             }, 500);
@@ -53,8 +49,14 @@ const Profile = () => {
     }, [titleIndex, isDeleting, pause, currentTitleIndex, speed, titles]);
 
     return (
-        <div className="h-full w-full flex flex-col lg:flex-row justify-center items-center p-4 lg:p-2 gap-20 pr-10">
-         
+        <div className="h-full w-full flex flex-col lg:flex-row justify-center items-center p-4 lg:p-2 gap-20 pr-10 relative">
+            {/* Starry Background */}
+            <div className="stars">
+                {Array.from({ length: 50 }).map((_, i) => (
+                    <div key={i} className="star"></div>
+                ))}
+            </div>
+
             <div className="flex justify-center lg:justify-end w-full lg:w-auto ">
                 <img 
                     src={Profilex} 

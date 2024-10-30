@@ -6,6 +6,7 @@ import FigmaImage from '../assets/img/Figma 3.png';
 import FigmaImage1 from '../assets/img/Port.png';
 import WebImage from '../assets/img/Health-Blog.png';
 import WebPort from '../assets/img/Old Web Portfolio.png'
+import MediMarket from '../assets/img/Medi Market.png'
 
 const projects = [
   {
@@ -13,7 +14,7 @@ const projects = [
     title: 'MediMerge Market',
     description: 'Online Pharmacy Store',
     githubLink: 'https://github.com/yourusername/project1',
-    image: 'WebImage',
+    image:  MediMarket,
     category: 'Web Dev',
   },
   {
@@ -81,15 +82,6 @@ const projects = [
     category: 'Web Dev',
     
   },
-  {
-    id: 10,
-    title: 'Project Five',
-    description: 'This is the fifth project.',
-    githubLink: 'https://github.com/yourusername/project5',
-    image: 'https://via.placeholder.com/150',
-    category: 'Web Dev',
-    
-  },
  
 ];
 
@@ -106,12 +98,12 @@ const Project = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 sm:p-10 md:p-16 lg:p-20">
       <h1 className="text-4xl font-bold mb-10 -mt-10">My Projects</h1>
 
-      <div className="flex flex-wrap justify-center gap-4 mb-10">
+      <div className="flex flex-wrap justify-center gap-6 mb-10">
   {categories.map((category) => (
     <button
       key={category}
       onClick={() => setSelectedCategory(category)}
-      className="relative flex items-center justify-center w-24 h-8 px-4 py-2 bg-blue-500 text-white rounded-xl text-xs font-bold cursor-pointer overflow-hidden group transition-all duration-300 "
+      className="relative flex items-center justify-center w-24 h-8 px-4 py-2 bg-gradient-to-r from-sky-700 to-fuchsia-700 text-white rounded-xl text-xs font-bold cursor-pointer overflow-hidden group transition-all duration-300 "
     >
       <span className="z-20 transition-opacity duration-300 group-hover:opacity-0">{category}</span>
       <span className="absolute inset-0 flex items-center justify-center bg-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
@@ -123,7 +115,7 @@ const Project = () => {
     </button>
   ))}
 </div>
-      <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+      <div className="grid gap-16 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
         {filteredProjects.map((project) => (
           <div
             key={project.id}

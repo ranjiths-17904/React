@@ -31,7 +31,7 @@ const Skills = () => {
                 ${index === 6 ? 'animate-delay-6' : ''}
                 ${index === 7 ? 'animate-delay-7' : ''}`}
             >
-              {/* Skill Icon and Name */}
+              
               <div className="flex items-center space-x-3 mb-4">
                 <div className="text-4xl">{skill.icon}</div>
                 <h3 className="text-2xl font-bold text-gray-800">{skill.name}</h3>
@@ -43,7 +43,7 @@ const Skills = () => {
                 <div
                   className="absolute top-0 left-0 h-full"
                   style={{
-                    width: `${skill.percentage}`, // Fill according to percentage
+                    width: `${skill.percentage}`, 
                     backgroundColor: skill.color,
                     transition: "width 1s ease-in-out",
                   }}

@@ -1,43 +1,33 @@
-
-const Profile = () => {
-  return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100 animate-slide-in-left">
-      <h1 className="text-4xl font-extrabold">Profile Section</h1>
-    </div>
-  );
-};
-
-const Skills = () => {
-  return (
-    <div className="min-h-screen flex justify-center items-center bg-white animate-slide-in-left">
-      <h1 className="text-4xl font-extrabold">Skills Section</h1>
-    </div>
-  );
-};
-
-const Projects = () => {
-  return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100 animate-slide-in-left">
-      <h1 className="text-4xl font-extrabold">Projects Section</h1>
-    </div>
-  );
-};
-
-const Contact = () => {
-  return (
-    <div className="min-h-screen flex justify-center items-center bg-white animate-slide-in-left">
-      <h1 className="text-4xl font-extrabold">Contact Section</h1>
-    </div>
-  );
-};
+import Profile from "./Profile";
+import Skills from './Skills';
+import Projects from "./Project";
+import Contact from './Contact';
+// import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
+import About from './About';
 
 const HomePage = () => {
   return (
     <div>
-      <Profile />
-      <Skills />
-      <Projects />
-      <Contact />
+      {/* <Navbar /> Uncomment this if Navbar should be visible */}
+      
+      <section id="profile">
+        <Profile />
+      </section>
+      <section id="about">
+      <About />
+    </section>
+      <section id="skills">
+        <Skills />
+      </section>
+      <section id="project">
+        <Projects />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
+      
+      <Footer />
     </div>
   );
 };
