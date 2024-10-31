@@ -3,7 +3,7 @@ import { FaSchool, FaUserTie, FaReact, FaHtml5, FaCss3Alt, FaJsSquare } from 're
 import '../assets/css/About.css'; 
 import aniprofile from '../assets/img/profile photo.jpg';
 import { SiMongodb } from 'react-icons/si';
-import pdf from '../assets/img/RESUME .pdf';
+import pdf from '../assets/pdf/RESUME .pdf';
 
 const About = () => {
   const [hovered, setHovered] = useState(false);
@@ -16,7 +16,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center p-10 bg-white shadow-cyan-600 rounded-lg w-full max-w-screen-lg mx-auto">
+    <div className="flex flex-col lg:flex-row items-center p-10 bg-gray-300 shadow-cyan-600 rounded-lg w-full h-full mx-auto">
       <div className="lg:w-1/3 w-full flex flex-col items-center lg:items-start mb-8 lg:mb-10">
         <div
           className="relative mb-6"
@@ -37,13 +37,13 @@ const About = () => {
           <FaCss3Alt className="flex absolute right-32 top-40 mt-3 text-4xl text-blue-500 hover:text-blue-600 transition-transform transform hover:scale-110" />
         </div>
 
-        <div className="flex justify-center mb-14 ml-5">
+        <div className="flex mb-14">
         </div>
 
         <a
           href={pdf}
           download="Ranjith_Resume.pdf"
-          className="flex justify-center gap-2 items-center mx-auto shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-emerald-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-1 overflow-hidden border-2 rounded-full group pl-4"
+          className="flex justify-center gap-2  items-center mx-auto shadow-xl text-lg bg-gray-50 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-emerald-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-1 overflow-hidden border-2 rounded-full group pl-4"
         >
           Download Resume
           <svg

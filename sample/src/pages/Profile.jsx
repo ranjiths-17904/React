@@ -49,8 +49,7 @@ const Profile = () => {
     }, [titleIndex, isDeleting, pause, currentTitleIndex, speed, titles]);
 
     return (
-        <div className="h-full w-full flex flex-col lg:flex-row justify-center items-center p-4 lg:p-2 gap-20 pr-10 relative">
-            {/* Starry Background */}
+        <div className=" flex flex-col lg:flex-row justify-center items-center p-4 lg:p-2 gap-20 pr-10 relative">
             <div className="stars">
                 {Array.from({ length: 50 }).map((_, i) => (
                     <div key={i} className="star"></div>
