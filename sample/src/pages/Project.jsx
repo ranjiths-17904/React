@@ -133,7 +133,7 @@ const Project = () => {
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="project-card relative w-full sm:w-64 h-80 bg-yellow-50 shadow-lg p-6 rounded-lg overflow-hidden transform transition-transform hover:-translate-y-2 hover:shadow-blue-300 group animate-slide-in-left"
+            className="project-card relative w-full sm:w-64 h-80 bg-gray-50 shadow-lg p-6 rounded-lg overflow-hidden transform transition-transform hover:-translate-y-2 hover:shadow-blue-300 group animate-slide-in-left"
           >
             <img
               src={project.image}
