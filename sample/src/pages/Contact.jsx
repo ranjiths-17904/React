@@ -36,7 +36,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-100 to-blue-50 flex flex-col justify-center items-center px-8 py-10 font-poppins">
+    <div className="min-h-screen bg-gradient-to-r w-[100%] from-gray-100 to-blue-50 flex flex-col justify-center items-center px-8 py-10 font-poppins">
       <h1 className="text-4xl font-bold mb-8 text-center">Let's Talk</h1>
       <div className={`container mx-auto p-6 flex flex-col md:flex-row justify-center items-center md:justify-between space-y-6 md:space-y-0 transition-opacity duration-700 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         
