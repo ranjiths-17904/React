@@ -11,6 +11,8 @@ import ScoreCard from '../assets/img/Figma Scorecard.jpeg';
 import Magnazine from '../assets/img/Maganize img1.jpeg';
 import Menu from '../assets/img/Restaurant Menu1.jpeg';
 import Canva1 from '../assets/img/2.png';
+import FigVid from '../assets/video/Avengers.mp4';
+import FigVid2 from '../assets/video/Restarunt Menu Vid.mp4';
 
 
 const projects = [
@@ -18,7 +20,7 @@ const projects = [
     id: 1,
     title: 'MediMerge Market',
     description: 'Online Pharmacy Store',
-    githubLink: 'https://github.com/yourusername/project1',
+    githubLink: 'ranjiths-17904/MediMerge-Market',
     image: MediMarket,
     category: 'Web Dev',
     link: 'https://yourlink.com/project1',
@@ -48,15 +50,16 @@ const projects = [
     githubLink: 'https://www.figma.com/design/kodzYIdDYNN0nBJewExyzM/CodSoft?node-id=227-15&t=0o7EcYxNz20MHfcK-1',
     image: Menu,
     category: 'UI/UX',
-    link: 'https://yourlink.com/project4', 
+    link: FigVid2, 
   },
   {
     id: 5,
-    title: 'Project Five',
-    description: 'This is the fifth project.',
-    githubLink: 'https://github.com/yourusername/project5',
+    title: 'Fitness Club',
+    description: 'Fitness and Health Blog',
+    githubLink: 'https://github.com/DevaHarsar/HEALTH_BLOG',
     image: WebImage,
     category: 'Web Dev',
+    link: 'https://health-blog-beta.vercel.app/',
   },
   {
     id: 6,
@@ -88,10 +91,10 @@ const projects = [
     id: 9,
     title: 'Portfolio',
     description: 'My First Portfolio in JS',
-    githubLink: 'https://github.com/yourusername/project5',
+    githubLink: 'https://github.com/ranjiths-17904/Portfolio',
     image: WebPort,
     category: 'Web Dev',
-    link: 'https://yourlink.com/project9', 
+    link: 'https://ranjiths-17904.github.io/Portfolio/', 
   },
  
 ];
@@ -130,7 +133,7 @@ const Project = () => {
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="project-card relative w-full sm:w-64 h-80 bg-white shadow-lg p-6 rounded-lg overflow-hidden transform transition-transform hover:-translate-y-2 hover:shadow-blue-300 group animate-slide-in-left"
+            className="project-card relative w-full sm:w-64 h-80 bg-yellow-50 shadow-lg p-6 rounded-lg overflow-hidden transform transition-transform hover:-translate-y-2 hover:shadow-blue-300 group animate-slide-in-left"
           >
             <img
               src={project.image}
@@ -142,12 +145,12 @@ const Project = () => {
                 {project.title}
               </h2>
               <a
-                href={project.link} // Link to project
+                href={project.link} 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ml-2 text-gray-800 hover:text-blue-500"
               >
-                <FaLink /> {/* Common link icon for all projects */}
+                <FaLink />
               </a>
             </div>
             <p className="text-sm mb-4">{project.description}</p>

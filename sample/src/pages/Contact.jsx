@@ -90,7 +90,7 @@ const Contact = () => {
           )}
         </div>
 
-        <div className="w-full md:w-1/2 flex justify-center items-center pl-2">
+        <div className="max-w-full md:w-1/2 flex justify-center items-center pl-2">
           <a
             href="https://www.google.com/maps/place/Sulur,+Coimbatore,+Tamil+Nadu,+India/@11.0319885,77.1451386,12z"
             target="_blank"
