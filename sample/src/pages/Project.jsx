@@ -11,8 +11,11 @@ import ScoreCard from '../assets/img/Figma Scorecard.jpeg';
 import Magnazine from '../assets/img/Maganize img1.jpeg';
 import Menu from '../assets/img/Restaurant Menu1.jpeg';
 import Canva1 from '../assets/img/2.png';
+import CanVid from '../assets/video/TAJ MAHAL.mp4';
 import FigVid from '../assets/video/Avengers.mp4';
 import FigVid2 from '../assets/video/Restarunt Menu Vid.mp4';
+import FigPdf from '../assets/pdf/ScoreCard.pdf';
+import CanvaPdf from '../assets/pdf/Copy of INCEPTRON MAGANIZE - 4 (1).pdf';
 
 
 const projects = [
@@ -32,7 +35,7 @@ const projects = [
     githubLink: 'https://www.figma.com/design/TA1H9REphA0bCigzJ3pJEO/AVENGERS?node-id=0-1&t=6Iou5KYgMy9VrtpP-1',
     image: FigmaImage,
     category: 'UI/UX',
-    link: 'https://yourlink.com/project2', 
+    link: FigVid, 
   },
   {
     id: 3,
@@ -41,7 +44,7 @@ const projects = [
     githubLink: 'https://github.com/yourusername/project3',
     image: Canva1,
     category: 'Vouchers',
-    link: 'https://yourlink.com/project3', 
+    link: CanVid, 
   },
   {
     id: 4,
@@ -77,7 +80,7 @@ const projects = [
     githubLink: 'https://www.figma.com/design/yWkcLzJsGsW5KvJr6LS1Jb/Teddy?node-id=14-7&t=0o7EcYxNz20MHfcK-1',
     image: ScoreCard,
     category: 'UI/UX',
-    link: 'https://yourlink.com/project7', 
+    link: FigPdf, 
   },
   {
     id: 8,
