@@ -88,7 +88,7 @@ const projects = [
     description: 'CSE-Dept 3 Months Journey',
     image: Magnazine,
     category: 'Others',
-    link: 'https://yourlink.com/project8', 
+    link: CanvaPdf, 
   },
   {
     id: 9,
@@ -151,7 +151,7 @@ const Project = () => {
                 href={project.link} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-2 text-gray-800 hover:text-blue-500"
+                className="ml-2 text-gray-800 hover:text-blue-600"
               >
                 <FaLink />
               </a>
@@ -172,7 +172,7 @@ const Project = () => {
             {project.category === 'UI/UX' && (
               <a
                 href="https://www.figma.com"
-                className="flex items-center mt-2 text-white bg-pink-600 hover:bg-pink-700 rounded-md px-2 py-1"
+                className="flex items-center mt-2 text-white bg-pink-600 hover:bg-pink-800 rounded-md px-2 py-1"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -180,10 +180,10 @@ const Project = () => {
                 <span className="text-sm">Figma</span>
               </a>
             )}
-            {project.category === 'Others' && ( // Add Canva button
+            {project.category === 'Others' && ( 
               <a
                 href="https://www.canva.com"
-                className="flex items-center mt-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md px-2 py-1"
+                className="flex items-center mt-2 text-white bg-blue-600 hover:bg-blue-800 rounded-md px-2 py-1"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -191,10 +191,10 @@ const Project = () => {
                 <span className="text-sm">Canva</span>
               </a>
             )}
-              {project.category === 'Vouchers' && ( // Add Canva button
+              {project.category === 'Vouchers' && ( 
                 <a
                   href="https://www.canva.com"
-                  className="flex items-center mt-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md px-2 py-1"
+                  className="flex items-center mt-2 text-white bg-blue-600 hover:bg-blue-800 rounded-md px-2 py-1"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
