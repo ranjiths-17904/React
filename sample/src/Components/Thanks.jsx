@@ -1,6 +1,6 @@
 const Card = () => {
   return (
-    <div className="card flex items-center justify-center mr-16">
+    <div className="card flex items-center justify-center mr-6">
       <div className="relative bg-black w-[300px] sm:w-[350px] group transition-all duration-700 aspect-video flex items-center justify-center">
         <div className="transition-all flex flex-col items-center py-5 justify-start duration-300 group-hover:duration-1000 bg-white w-full h-full absolute group-hover:-translate-y-16">
           <p className="text-xl sm:text-2xl font-semibold text-gray-500 font-serif">
