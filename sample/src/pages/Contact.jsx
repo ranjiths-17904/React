@@ -36,7 +36,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r w-[100%] from-gray-100 to-blue-50 flex flex-col justify-center items-center px-8 py-10 font-poppins">
+    <div className="min-h-screen bg-gradient-to-r w-[100%] from-gray-100 to-blue-50 flex flex-col justify-center items-center px-0 py-8 font-poppins">
       <h1 className="text-4xl font-bold mb-8 text-center">Let's Talk</h1>
       <div className={`container mx-auto p-6 flex flex-col md:flex-row justify-center items-center md:justify-between space-y-6 md:space-y-0 transition-opacity duration-700 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         
@@ -99,7 +99,7 @@ const Contact = () => {
             <img 
               src={Contactimg} 
               alt="Contact"
-              className="flex flex-row rounded-lg shadow-lg w-96 h-72 max-w-full md:max-w-lg transition-transform duration-700 transform hover:scale-105"
+              className="flex flex-row rounded-lg shadow-lg w-screen h-60 max-w-full md:max-w-lg transition-transform duration-700 transform hover:scale-105"
             />
           </a>
         </div>
