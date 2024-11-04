@@ -26,7 +26,7 @@ const ScrollToTopButton = () => {
     return (
         <button
             onClick={scrollToTop}
-            className={`fixed bottom-6 right-1 w-6 h-6 flex items-center justify-center text-slate-50 text-base bg-gradient-to-r from-rose-800 via-indigo-800 to-yellow-600 rounded-full shadow-xl transition-transform transform hover:scale-110 hover:shadow-amber-400 ${
+            className={`fixed bottom-6 right-4 w-10 h-10 flex items-center justify-center text-slate-50 text-base bg-gradient-to-r from-rose-800 via-indigo-800 to-yellow-600 rounded-full shadow-xl transition-transform transform hover:scale-110 hover:shadow-amber-400 ${
                 isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
             } animate-bounce-once`}
             style={{
