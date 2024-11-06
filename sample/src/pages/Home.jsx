@@ -1,5 +1,5 @@
 // HomePage.js
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"; 
 import Profile from "./Profile";
 import Skills from './Skills';
 import Projects from "./Project";

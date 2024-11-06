@@ -92,14 +92,14 @@ const Contact = () => {
 
         <div className="max-w-full md:w-1/2 flex justify-center items-center pl-2">
           <a
-            href="https://www.google.com/maps/place/Sulur,+Coimbatore,+Tamil+Nadu,+India/@11.0319885,77.1451386,12z"
+            href="https://www.google.com/maps/place/Kasigoundanpudur,+Tamil+Nadu+641402/@11.0041314,77.1370942,16z/data=!3m1!4b1!4m6!3m5!1s0x3ba8545e91862eb5:0x3ad74e4c49f5b1!8m2!3d11.0031775!4d77.1434748!16s%2Fg%2F1q62dm5pb?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img 
               src={Contactimg} 
               alt="Contact"
-              className="flex flex-row rounded-lg shadow-lg w-screen h-60 max-w-full md:max-w-lg transition-transform duration-700 transform hover:scale-105"
+              className="flex flex-row rounded-lg shadow-lg max-w-fit h-72 max-w-full md:max-w-lg transition-transform duration-700 transform hover:scale-105"
             />
           </a>
         </div>
