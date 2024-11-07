@@ -19,14 +19,15 @@ import CanvaPdf from '../assets/pdf/Copy of INCEPTRON MAGANIZE - 4 (1).pdf';
 
 
 const projects = [
+  
   {
     id: 1,
-    title: 'MediMerge Market',
-    description: 'Online Pharmacy Store',
-    githubLink: 'ranjiths-17904/MediMerge-Market',
-    image: MediMarket,
+    title: 'Portfolio',
+    description: 'My First Portfolio in JS',
+    githubLink: 'https://github.com/ranjiths-17904/Portfolio',
+    image: WebPort,
     category: 'Web Dev',
-    link: 'https://yourlink.com/project1',
+    link: 'https://ranjiths-17904.github.io/Portfolio/', 
   },
   {
     id: 2,
@@ -92,12 +93,12 @@ const projects = [
   },
   {
     id: 9,
-    title: 'Portfolio',
-    description: 'My First Portfolio in JS',
-    githubLink: 'https://github.com/ranjiths-17904/Portfolio',
-    image: WebPort,
+    title: 'MediMerge Market',
+    description: 'Online Pharmacy Store',
+    githubLink: 'ranjiths-17904/MediMerge-Market',
+    image: MediMarket,
     category: 'Web Dev',
-    link: 'https://ranjiths-17904.github.io/Portfolio/', 
+    link: 'https://yourlink.com/project1',
   },
  
 ];
@@ -112,7 +113,7 @@ const Project = () => {
       : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-300 p-6 sm:p-10 md:p-16 lg:p-16">
+    <div className="min-h-screen w-[100%] flex flex-col items-center justify-center bg-gray-300 p-6  md:p-14 lg:p-14">
       <h1 className="text-4xl font-bold mb-10 -mt-2">My Projects</h1>
 
       <div className="flex flex-wrap justify-center gap-6 mb-10">
