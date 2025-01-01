@@ -1,0 +1,36 @@
+@keyframes slide-row-1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-row-2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-row-1 {
+  display: flex;
+  animation: slide-row-1 20s linear infinite;
+}
+
+.animate-slide-row-2 {
+  display: flex;
+  animation: slide-row-2 20s linear infinite;
+}
+
+.pt-8 {
+  padding-top: 2rem; /* Adjust as our needed */
+}
+
+.animate-slide-row-1:hover,
+.animate-slide-row-2:hover {
+  animation-play-state: running; /* If hover the slider didn't stop */
+}
