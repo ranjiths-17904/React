@@ -6,7 +6,7 @@ const App = () => {
     <div
       className="bg-gray-50 min-h-screen flex flex-col justify-between overflow-hidden"
       style={{
-        backgroundImage: `url(${bg})`, // Use template literals to dynamically set the image
+        backgroundImage: `url(${bg})`, 
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
