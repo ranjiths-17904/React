@@ -32,7 +32,6 @@ const ContactForm = () => {
 
   return (
     <div className="min-h-screen bg-[#111315] text-white flex flex-col md:flex-row items-center justify-center px-8 md:px-10 lg:px-10 py-10 space-y-8 md:space-y-0">
-      {/* Left Side - Image and Social Icons */}
       <div className="flex flex-col items-center justify-center w-full md:w-2/5 lg:w-2/3 mb-6 md:mb-0 p-1 border-brown-500 rounded-lg">
         <img
           src={img}
@@ -113,7 +112,7 @@ const ContactForm = () => {
                 color: "white",
                 borderRadius: "6px",
                 border: errors.phone ? "1px solid #f87171" : "1px solid #4b5563",
-                padding: "8px",
+                padding: "20px",
               }}
               buttonStyle={{
                 backgroundColor: "#1a1a1a",
