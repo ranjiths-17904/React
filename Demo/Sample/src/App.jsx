@@ -27,14 +27,16 @@ import React from 'react';
 // import About from './Component/About';
 // import SignUp from './Component/signUp';
 // import Home from './Component/Home1';
-import Book from "./Component/BookingCart";
+// import Book from "./Component/BookingCart";
+import Contact from "./Component/Contact";
 
 const App = () => {
   return (
   // <About/>
   // <Login/>
   // <Home/>
-  <Book />
+  <Contact />
+  // <Book />
   );
 };
 
