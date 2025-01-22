@@ -80,54 +80,58 @@ const CommunityPage = () => {
           <div className="flex justify-center mb-8">
             <img src="/path/to/logo.png" alt="Logo" className="w-16 h-16 rounded-full" />
           </div>
-          <div className="flex justify-center items-start relative">
-            <div className="border-l-4 border-purple-500 h-full absolute left-1/2 transform -translate-x-1/2"></div>
-            <div className="flex flex-col items-center w-1/2">
-              <div className="mb-6">
-                <div className="bg-gray-800 rounded-lg p-4 shadow-lg flex items-center">
-                  <div className="flex-1 text-left">
+          <div className="relative flex items-center justify-center">
+            <div className="absolute h-full w-0.5 bg-purple-500"></div>
+            <div className="space-y-12">
+              <div className="flex items-center justify-between">
+                <div className="w-1/2 text-right pr-8">
+                  <div className="bg-gray-800 rounded-lg p-4 shadow-lg inline-block">
                     <h3 className="text-xl font-semibold">Bharath Kumar</h3>
                     <p className="text-sm text-gray-400">CEO & Founder</p>
                   </div>
                 </div>
+                <div className="w-1/2"></div>
               </div>
-              <div className="mb-6">
-                <div className="bg-gray-800 rounded-lg p-4 shadow-lg flex items-center">
-                  <div className="flex-1 text-left">
+              <div className="flex items-center justify-between">
+                <div className="w-1/2"></div>
+                <div className="w-1/2 pl-8">
+                  <div className="bg-gray-800 rounded-lg p-4 shadow-lg inline-block">
                     <h3 className="text-xl font-semibold">Deva Harshar</h3>
                     <p className="text-sm text-gray-400">COO</p>
                   </div>
                 </div>
               </div>
-              <div className="mb-6">
-                <div className="bg-gray-800 rounded-lg p-4 shadow-lg flex items-center">
-                  <div className="flex-1 text-left">
+              <div className="flex items-center justify-between">
+                <div className="w-1/2 text-right pr-8">
+                  <div className="bg-gray-800 rounded-lg p-4 shadow-lg inline-block">
                     <h3 className="text-xl font-semibold">Dharani Daran</h3>
                     <p className="text-sm text-gray-400">PR-Team Lead</p>
                   </div>
                 </div>
+                <div className="w-1/2"></div>
               </div>
-            </div>
-            <div className="flex flex-col items-center w-1/2">
-              <div className="mb-6">
-                <div className="bg-gray-800 rounded-lg p-4 shadow-lg flex items-center">
-                  <div className="flex-1 text-left">
+              <div className="flex items-center justify-between">
+                <div className="w-1/2"></div>
+                <div className="w-1/2 pl-8">
+                  <div className="bg-gray-800 rounded-lg p-4 shadow-lg inline-block">
                     <h3 className="text-xl font-semibold">Bharath Sivanesh</h3>
                     <p className="text-sm text-gray-400">CTO</p>
                   </div>
                 </div>
               </div>
-              <div className="mb-6">
-                <div className="bg-gray-800 rounded-lg p-4 shadow-lg flex items-center">
-                  <div className="flex-1 text-left">
+              <div className="flex items-center justify-between">
+                <div className="w-1/2 text-right pr-8">
+                  <div className="bg-gray-800 rounded-lg p-4 shadow-lg inline-block">
                     <h3 className="text-xl font-semibold">Soorya Akileshwaran</h3>
                     <p className="text-sm text-gray-400">Backend Lead</p>
                   </div>
                 </div>
+                <div className="w-1/2"></div>
               </div>
-              <div className="mb-6">
-                <div className="bg-gray-800 rounded-lg p-4 shadow-lg flex items-center">
-                  <div className="flex-1 text-left">
+              <div className="flex items-center justify-between">
+                <div className="w-1/2"></div>
+                <div className="w-1/2 pl-8">
+                  <div className="bg-gray-800 rounded-lg p-4 shadow-lg inline-block">
                     <h3 className="text-xl font-semibold">Sahana</h3>
                     <p className="text-sm text-gray-400">PR-Team Lead</p>
                   </div>
