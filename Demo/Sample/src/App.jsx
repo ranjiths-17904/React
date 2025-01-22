@@ -28,14 +28,17 @@ import React from 'react';
 // import SignUp from './Component/signUp';
 // import Home from './Component/Home1';
 // import Book from "./Component/BookingCart";
-import Contact from "./Component/Contact";
+// import Contact from "./Component/Contact";
+
+import Community from "./Component/CommunityPage";
 
 const App = () => {
   return (
   // <About/>
   // <Login/>
   // <Home/>
-  <Contact />
+  // <Contact />
+  <Community/>
   // <Book />
   );
 };
