@@ -76,67 +76,38 @@ const CommunityPage = () => {
 
         {/* Meet Our Members Section */}
         <div className="mt-16">
-          <h2 className="text-3xl font-bold mb-8">Meet Our Members</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Meet Our Members</h2>
           <div className="flex justify-center mb-8">
-            <img src="/path/to/logo.png" alt="Logo" className="w-16 h-16 rounded-full" />
+            <div className="w-20 h-20 rounded-full bg-gray-700 flex items-center justify-center">
+              <img src="/path/to/logo.png" alt="Logo" className="w-16 h-16 rounded-full" />
+            </div>
           </div>
-          <div className="relative flex items-center justify-center">
+          <div className="relative flex flex-col items-center">
             <div className="absolute h-full w-0.5 bg-purple-500"></div>
-            <div className="space-y-12">
-              <div className="flex items-center justify-between">
-                <div className="w-1/2 text-right pr-8">
-                  <div className="bg-gray-800 rounded-lg p-4 shadow-lg inline-block">
-                    <h3 className="text-xl font-semibold">Bharath Kumar</h3>
-                    <p className="text-sm text-gray-400">CEO & Founder</p>
+            <div className="space-y-12 w-full max-w-4xl">
+              {[
+                { name: "Bharath Kumar", role: "CEO & Founder", side: "left" },
+                { name: "Deva Harshar", role: "COO", side: "right" },
+                { name: "Dharani Daran", role: "PR-Team Lead", side: "left" },
+                { name: "Bharath Sivanesh", role: "CTO", side: "right" },
+                { name: "Soorya Akileshwaran", role: "Backend Lead", side: "left" },
+                { name: "Sahana", role: "PR-Team Lead", side: "right" }
+              ].map((member, index) => (
+                <div key={index} className={`flex ${member.side === "left" ? "justify-between" : "justify-between flex-row-reverse"} items-center`}>
+                  <div className="w-1/2 px-4">
+                    <div className="bg-gray-800 rounded-lg p-4 shadow-lg flex items-center">
+                      <div className="w-16 h-16 rounded-full bg-gray-700 overflow-hidden mr-4">
+                        <img src="/path/to/member-image.png" alt={member.name} className="w-full h-full object-cover" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold">{member.name}</h3>
+                        <p className="text-sm text-gray-400">{member.role}</p>
+                      </div>
+                    </div>
                   </div>
+                  <div className="w-1/2"></div>
                 </div>
-                <div className="w-1/2"></div>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="w-1/2"></div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-gray-800 rounded-lg p-4 shadow-lg inline-block">
-                    <h3 className="text-xl font-semibold">Deva Harshar</h3>
-                    <p className="text-sm text-gray-400">COO</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="w-1/2 text-right pr-8">
-                  <div className="bg-gray-800 rounded-lg p-4 shadow-lg inline-block">
-                    <h3 className="text-xl font-semibold">Dharani Daran</h3>
-                    <p className="text-sm text-gray-400">PR-Team Lead</p>
-                  </div>
-                </div>
-                <div className="w-1/2"></div>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="w-1/2"></div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-gray-800 rounded-lg p-4 shadow-lg inline-block">
-                    <h3 className="text-xl font-semibold">Bharath Sivanesh</h3>
-                    <p className="text-sm text-gray-400">CTO</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="w-1/2 text-right pr-8">
-                  <div className="bg-gray-800 rounded-lg p-4 shadow-lg inline-block">
-                    <h3 className="text-xl font-semibold">Soorya Akileshwaran</h3>
-                    <p className="text-sm text-gray-400">Backend Lead</p>
-                  </div>
-                </div>
-                <div className="w-1/2"></div>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="w-1/2"></div>
-                <div className="w-1/2 pl-8">
-                  <div className="bg-gray-800 rounded-lg p-4 shadow-lg inline-block">
-                    <h3 className="text-xl font-semibold">Sahana</h3>
-                    <p className="text-sm text-gray-400">PR-Team Lead</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
