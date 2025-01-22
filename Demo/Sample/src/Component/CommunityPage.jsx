@@ -1,6 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const CommunityPage = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const images = [
+    '../assets/Million Minds Img/Student1.jpg',
+    '../assets/Million Minds Img/Student3.jpg',
+    '/path/to/image3.png',
+    '/path/to/image4.png',
+    '/path/to/image5.png',
+    '/path/to/image6.png',
+    '/path/to/image7.png',
+    '/path/to/image8.png'
+  ];
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
   return (
     <div className="bg-gray-900 text-white font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
@@ -15,6 +35,7 @@ const CommunityPage = () => {
             Join Us
           </button>
         </div>
+
         <div className="flex justify-center gap-8 mb-16">
           <div className="relative text-center w-32 h-32">
             <svg className="absolute inset-0 w-full h-full" viewBox="0 0 51 49" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,6 +65,7 @@ const CommunityPage = () => {
             </div>
           </div>
         </div>
+
         <h2 className="text-2xl font-semibold mb-4">Our Current Works</h2>
         <div className="overflow-hidden shadow-lg rounded-lg bg-gray-800">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4">
@@ -99,13 +121,62 @@ const CommunityPage = () => {
                       <div className="w-16 h-16 rounded-full bg-gray-700 overflow-hidden mr-4">
                         <img src="/path/to/member-image.png" alt={member.name} className="w-full h-full object-cover" />
                       </div>
-                      <div>
-                        <h3 className="text-xl font-semibold">{member.name}</h3>
-                        <p className="text-sm text-gray-400">{member.role}</p>
+                      <div className="flex items-center">
+                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
+                          <ellipse cx="6.5" cy="6" rx="6.5" ry="6" fill="#0D99FF" />
+                        </svg>
+                        <div>
+                          <h3 className="text-xl font-semibold">{member.name}</h3>
+                          <p className="text-sm text-gray-400">{member.role}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div className="w-1/2"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center mt-8">
+          <p className="text-blue-700 text-lg font-semibold">Motrent</p>
+        </div>
+
+        {/* Life at Motrent Section */}
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold mb-8 text-center"># Life At Motrent</h2>
+          <div className="relative w-full max-w-4xl mx-auto">
+            <div className="flex justify-center items-center mb-4">
+              <button
+                className="text-white bg-purple-500 hover:bg-purple-600 px-3 py-1 rounded-full"
+                onClick={handlePrev}
+              >
+                &lt;
+              </button>
+              <div className="w-96 h-56 mx-4 overflow-hidden rounded-lg">
+                <img
+                  src={images[currentIndex]}
+                  alt={`Slide ${currentIndex + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <button
+                className="text-white bg-purple-500 hover:bg-purple-600 px-3 py-1 rounded-full"
+                onClick={handleNext}
+              >
+                &gt;
+              </button>
+            </div>
+            <div className="flex justify-center gap-2">
+              {images.map((image, index) => (
+                <div key={index} className="w-20 h-16 overflow-hidden rounded-lg border-2 border-transparent">
+                  <img
+                    src={image}
+                    alt={`Thumbnail ${index + 1}`}
+                    className={`w-full h-full object-cover cursor-pointer ${index === currentIndex ? 'border-purple-500' : ''}`}
+                    onClick={() => setCurrentIndex(index)}
+                  />
                 </div>
               ))}
             </div>
