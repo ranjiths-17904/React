@@ -1,12 +1,12 @@
 
 import React, { useState } from 'react';
-import img1 from '../assets/Million Minds Img/Student1.jpg';
+import img1 from '../assets/Million Minds Img/Student4.jpg';
 import img2 from '../assets/Million Minds Img/Student2.jpg';
 import img3 from '../assets/Million Minds Img/Student3.jpg';
 import img4 from '../assets/Million Minds Img/Student4.jpg';
 import img5 from '../assets/Million Minds Img/Student2.jpg';
 import img6 from '../assets/Million Minds Img/Student3.jpg';
-import img7 from '../assets/Million Minds Img/Student1.jpg';
+import img7 from '../assets/Million Minds Img/Student3.jpg';
 import img8 from '../assets/Million Minds Img/Student4.jpg';
 
 const CommunityPage = () => {
@@ -45,15 +45,15 @@ const CommunityPage = () => {
     }
   };
 
-  const ProgressBar = () => (
-    <svg width="53" height="3" viewBox="0 0 53 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="53" height="3" rx="1.5" fill="#9747FF"/>
-      <rect width="53" height="3" rx="1.5" fill="#9747FF"/>
-      <rect width="53" height="3" rx="1.5" fill="#9747FF"/>
-      <rect width="53" height="3" rx="1.5" fill="#9747FF"/>
-      <rect width="53" height="3" rx="1.5" fill="#9747FF"/>
-    </svg>
-  );
+    const ProgressBar = () => (
+      <svg width="300" height="10" viewBox="0 0 300 10" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="60" height="4" rx="4" fill="#9747FF" />
+        <rect x="70" y="0" width="60" height="4" rx="4" fill="#9747FF" />
+        <rect x="140" y="0" width="40" height="4" rx="4" fill="#9747FF" />
+
+      </svg>
+    );
+
 
   return (
     <div className="bg-[#030303] text-white font-sans">
@@ -101,154 +101,156 @@ const CommunityPage = () => {
         </div>
 
         <h2 className="text-2xl font-semibold mb-4 items-start flex p-2">Our Current Works</h2>
-        <div className="overflow-hidden shadow-lg rounded-lg bg-[#1F1F1F]">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-10">
-            <div className="">
-              <h3 className="text-lg font-semibold mb-2 text-purple-500 flex justify-between items-center">New Works <span className="text-purple-500 text-2xl font-bold">+</span></h3>
-              <ul>
-                <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex items-center">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="6" cy="6" r="6" fill="#250DFF" />
-                  </svg>
-                  <div className="ml-2">
-                    Project Name
-                    <div className="text-sm text-gray-500">Project description in ...</div>
-                  </div>
-                </li>
-                <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex items-center">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="6" cy="6" r="6" fill="#250DFF" />
-                  </svg>
-                  <div className="ml-2">
-                    Project Name
-                    <div className="text-sm text-gray-500">Project description in ...</div>
-                  </div>
-                </li>
-                <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex items-center">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="6" cy="6" r="6" fill="#250DFF" />
-                  </svg>
-                  <div className="ml-2">
-                    Project Name
-                    <div className="text-sm text-gray-500">Project description in ...</div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="">
-              <h3 className="text-lg font-semibold mb-2 text-purple-500 flex justify-between items-center">In Progress <span className="text-purple-500 text-2xl font-bold">+</span></h3>
-              <ul>
-                <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex items-center">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="6" cy="6" r="6" fill="#250DFF" />
-                  </svg>
-                  <div className="ml-2">
-                    Project Name
-                    <div className="text-sm text-gray-500">Project description in ...</div>
-                  </div>
-                </li>
-                <ProgressBar />
-                <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex items-center">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="6" cy="6" r="6" fill="#250DFF" />
-                  </svg>
-                  <div className="ml-2">
-                    Project Name
-                    <div className="text-sm text-gray-500">Project description in ...</div>
-                  </div>
-                </li>
-                <ProgressBar />
-                <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex items-center">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="6" cy="6" r="6" fill="#250DFF" />
-                  </svg>
-                  <div className="ml-2">
-                    Project Name
-                    <div className="text-sm text-gray-500">Project description in ...</div>
-                  </div>
-                </li>
-                <ProgressBar />
-              </ul>
-            </div>
-            <div className="">
-              <h3 className="text-lg font-semibold mb-2 text-purple-500 flex justify-between items-center">Our Releases <span className="text-purple-500 text-2xl font-bold">+</span></h3>
-              <ul>
-                <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex justify-between items-center">
-                  <div>
-                    Project Name
-                    <div className="text-sm text-gray-500">Project description in ...</div>
-                  </div>
-                  <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.90775 13.6687L9.19567 8.81248C9.38494 8.63901 9.5351 8.43297 9.63755 8.20615C9.74001 7.97932 9.79274 7.73617 9.79274 7.4906C9.79274 7.24504 9.74001 7.00188 9.63755 6.77506C9.5351 6.54823 9.38494 6.34219 9.19567 6.16873L3.90775 1.31248C2.6215 0.149976 0.416504 0.974977 0.416504 2.64373V12.3375C0.416504 14.025 2.6215 14.85 3.90775 13.6687Z" fill="#9747FF"/>
-                  </svg>
-                </li>
-                <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex justify-between items-center">
-                  <div>
-                    Project Name
-                    <div className="text-sm text-gray-500">Project description in ...</div>
-                  </div>
-                  <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.90775 13.6687L9.19567 8.81248C9.38494 8.63901 9.5351 8.43297 9.63755 8.20615C9.74001 7.97932 9.79274 7.73617 9.79274 7.4906C9.79274 7.24504 9.74001 7.00188 9.63755 6.77506C9.5351 6.54823 9.38494 6.34219 9.19567 6.16873L3.90775 1.31248C2.6215 0.149976 0.416504 0.974977 0.416504 2.64373V12.3375C0.416504 14.025 2.6215 14.85 3.90775 13.6687Z" fill="#9747FF"/>
-                  </svg>
-                </li>
-                <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex justify-between items-center">
-                  <div>
-                    Project Name
-                    <div className="text-sm text-gray-500">Project description in ...</div>
-                  </div>
-                  <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.90775 13.6687L9.19567 8.81248C9.38494 8.63901 9.5351 8.43297 9.63755 8.20615C9.74001 7.97932 9.79274 7.73617 9.79274 7.4906C9.79274 7.24504 9.74001 7.00188 9.63755 6.77506C9.5351 6.54823 9.38494 6.34219 9.19567 6.16873L3.90775 1.31248C2.6215 0.149976 0.416504 0.974977 0.416504 2.64373V12.3375C0.416504 14.025 2.6215 14.85 3.90775 13.6687Z" fill="#9747FF"/>
-                  </svg>
-                </li>
-              </ul>
-            </div>
+<div className="overflow-hidden shadow-lg rounded-md bg-[#1F1F1F] mx-4 sm:mx-8">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
+    <div className="">
+      <h3 className="text-lg font-semibold mb-2 text-purple-500 flex justify-between items-center">New Works <span className="text-purple-500 text-2xl font-bold">+</span></h3>
+      <ul>
+        <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex items-center">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#250DFF" />
+          </svg>
+          <div className="ml-6 text-base font-medium">
+            Project Name
+            <div className="text-sm text-gray-500 -mr-12">Project description in ...</div>
           </div>
-        </div>
+        </li>
+        <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex items-center">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#250DFF" />
+          </svg>
+          <div className="ml-6 text-base font-medium">
+            Project Name
+            <div className="text-sm text-gray-500 -mr-12">Project description in ...</div>
+          </div>
+        </li>
+        <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex items-center">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#250DFF" />
+          </svg>
+          <div className="ml-6 text-base font-medium">
+            Project Name
+            <div className="text-sm text-gray-500 -mr-12">Project description in ...</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div className="">
+      <h3 className="text-lg font-semibold mb-2 text-purple-500 flex justify-between items-center">In Progress <span className="text-purple-500 text-2xl font-bold">+</span></h3>
+      <ul>
+        <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex items-center">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#250DFF" />
+          </svg>
+          <div className="ml-6 text-base font-medium">
+            Project Name
+            <div className="text-sm text-gray-500 -mr-12">Project description in ...</div>
+          </div>
+        </li>
+        <ProgressBar />
+        <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex items-center">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#250DFF" />
+          </svg>
+          <div className="ml-6 text-base font-medium">
+            Project Name
+            <div className="text-sm text-gray-500 -mr-12">Project description in ...</div>
+          </div>
+        </li>
+        <ProgressBar />
+        <li className="bg-[#141313] p-3  rounded text-blue-400 flex items-center">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#250DFF" />
+          </svg>
+          <div className="ml-6 text-base font-medium">
+            Project Name
+            <div className="text-sm text-gray-500 -mr-12">Project description in ...</div>
+          </div>
+        </li>
+        <ProgressBar />
+      </ul>
+    </div>
+    <div className="">
+      <h3 className="text-lg font-semibold mb-2 text-purple-500 flex justify-between items-center">Our Releases <span className="text-purple-500 text-2xl font-bold">+</span></h3>
+      <ul>
+        <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex justify-between items-center">
+          <div>
+            Project Name
+            <div className="text-sm text-gray-500">Project description in ...</div>
+          </div>
+          <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.90775 13.6687L9.19567 8.81248C9.38494 8.63901 9.5351 8.43297 9.63755 8.20615C9.74001 7.97932 9.79274 7.73617 9.79274 7.4906C9.79274 7.24504 9.74001 7.00188 9.63755 6.77506C9.5351 6.54823 9.38494 6.34219 9.19567 6.16873L3.90775 1.31248C2.6215 0.149976 0.416504 0.974977 0.416504 2.64373V12.3375C0.416504 14.025 2.6215 14.85 3.90775 13.6687Z" fill="#9747FF"/>
+          </svg>
+        </li>
+        <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex justify-between items-center">
+          <div>
+            Project Name
+            <div className="text-sm text-gray-500">Project description in ...</div>
+          </div>
+          <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.90775 13.6687L9.19567 8.81248C9.38494 8.63901 9.5351 8.43297 9.63755 8.20615C9.74001 7.97932 9.79274 7.73617 9.79274 7.4906C9.79274 7.24504 9.74001 7.00188 9.63755 6.77506C9.5351 6.54823 9.38494 6.34219 9.19567 6.16873L3.90775 1.31248C2.6215 0.149976 0.416504 0.974977 0.416504 2.64373V12.3375C0.416504 14.025 2.6215 14.85 3.90775 13.6687Z" fill="#9747FF"/>
+          </svg>
+        </li>
+        <li className="bg-[#141313] p-3 mb-2 rounded text-blue-400 flex justify-between items-center">
+          <div>
+            Project Name
+            <div className="text-sm text-gray-500">Project description in ...</div>
+          </div>
+          <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.90775 13.6687L9.19567 8.81248C9.38494 8.63901 9.5351 8.43297 9.63755 8.20615C9.74001 7.97932 9.79274 7.73617 9.79274 7.4906C9.79274 7.24504 9.74001 7.00188 9.63755 6.77506C9.5351 6.54823 9.38494 6.34219 9.19567 6.16873L3.90775 1.31248C2.6215 0.149976 0.416504 0.974977 0.416504 2.64373V12.3375C0.416504 14.025 2.6215 14.85 3.90775 13.6687Z" fill="#9747FF"/>
+          </svg>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-        <div className="mt-16">
-          <h2 className="text-4xl font-bold mb-8 text-center">Meet Our Members</h2>
-          <div className="text-center mt-8">
-            <p className="text-blue-700 text-4xl font-bold">Motrent</p>
-          </div>
-          <div className="flex justify-center mb-8">
-            <div className="w-20 h-20 rounded-full bg-gray-700 flex items-center justify-center">
-              <img src="/api/placeholder/80/80" alt="Logo" className="w-16 h-16 rounded-full" />
-            </div>
-          </div>
-          <div className="relative flex flex-col items-center">
-            <div className="absolute h-full w-0.5 bg-purple-500"></div>
-            <div className="space-y-12 w-full max-w-4xl">
-              {[
-                { name: "Bharath Kumar", role: "CEO & Founder", side: "left" },
-                { name: "Deva Harshar", role: "COO", side: "right" },
-                { name: "Dharani Daran", role: "PR-Team Lead", side: "left" },
-                { name: "Bharath Sivanesh", role: "CTO", side: "right" },
-                { name: "Soorya Akileshwaran", role: "Backend Lead", side: "left" },
-                { name: "Sahana", role: "PR-Team Lead", side: "right" }
-              ].map((member, index) => (
-                <div key={index} className={`flex ${member.side === "left" ? "justify-between" : "justify-between flex-row-reverse"} items-center`}>
-                  <div className="w-1/2 px-4">
-                    <div className="bg-[#292929] rounded-lg p-4 shadow-lg flex items-center">
-                      <div className="w-16 h-16 rounded-full bg-gray-700 overflow-hidden mr-4">
-                        <img src="/api/placeholder/64/64" alt={member.name} className="w-full h-full object-cover" />
-                      </div>
-                      <div className="flex items-center">
-                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-auto">
-                          <ellipse cx="6.5" cy="6" rx="6.5" ry="6" fill="#0D99FF" />
-                        </svg>
-                        <div>
-                          <h3 className="text-xl font-semibold">{member.name}</h3>
-                          <p className="text-sm text-gray-300 pb-3 pt-1">{member.role}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-1/2"></div>
+
+<div className="mt-28">
+  <h2 className="text-3xl font-bold mb-6 text-center">Meet Our Members</h2>
+  <div className="text-center mt-1">
+    <p className="text-blue-700 text-3xl font-semibold mb-10">Motrent</p>
+  </div>
+  <div className="flex justify-center mb-8">
+    <div className="w-20 h-20 rounded-full bg-gray-700 flex items-center justify-center">
+      <img src="/api/placeholder/80/80" alt="Logo" className="w-16 h-16 rounded-full" />
+    </div>
+  </div>
+  <div className="relative flex flex-col items-center">
+    <div className="absolute h-full w-0.5 bg-purple-800"></div>
+    <div className="space-y-10 w-full max-w-4xl">
+      {[
+        { name: "Bharath Kumar", role: "CEO & Founder", side: "left" },
+        { name: "Deva Harshar", role: "COO", side: "right" },
+        { name: "Dharani Daran", role: "PR-Team Lead", side: "left" },
+        { name: "Bharath Sivanesh", role: "CTO", side: "right" },
+        { name: "Soorya Akileshwaran", role: "Backend Lead", side: "left" },
+        { name: "Sahana", role: "PR-Lead", side: "right" },
+      ].map((member, index) => (
+        <div key={index} className={`flex ${member.side === "left" ? "justify-between" : "justify-between flex-row-reverse"} items-center`}>
+          <div className="w-1/2 px-10">
+            <div className="bg-[#202020] rounded-lg p-4 shadow-lg flex items-start">
+              <div className="w-16 h-16 rounded-full bg-gray-700 overflow-hidden mr-6">
+                <img src={img1} alt={member.name} className="w-full h-full object-cover" />
+              </div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">{member.name}</h3>
+                <div className="flex items-center mt-1">
+                  <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="6.5" cy="6" rx="6.5" ry="6" fill="#0D99FF" />
+                  </svg>
+                  <p className="text-sm text-gray-300 ml-2">{member.role}</p>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
+          <div className="w-1/2"></div> 
         </div>
+      ))}
+    </div>
+  </div>
+</div>
+
 
         <div className="mt-16">
           <h2 className="text-4xl font-bold mb-8 text-center"># Life At Motrent</h2>
