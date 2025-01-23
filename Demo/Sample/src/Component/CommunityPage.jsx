@@ -1,18 +1,26 @@
 
 import React, { useState } from 'react';
+import img1 from '../assets/Million Minds Img/Student1.jpg';
+import img2 from '../assets/Million Minds Img/Student2.jpg';
+import img3 from '../assets/Million Minds Img/Student3.jpg';
+import img4 from '../assets/Million Minds Img/Student4.jpg';
+import img5 from '../assets/Million Minds Img/Student2.jpg';
+import img6 from '../assets/Million Minds Img/Student3.jpg';
+import img7 from '../assets/Million Minds Img/Student1.jpg';
+import img8 from '../assets/Million Minds Img/Student4.jpg';
 
 const CommunityPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [thumbnailStart, setThumbnailStart] = useState(0);
   const images = [
-    '../assets/Million Minds Img/Student1.jpg',
-    '../assets/Million Minds Img/Student2.jpg',
-    '../assets/Million Minds Img/Student3.jpg',
-    '../assets/Million Minds Img/Student4.jpg',
-    '../assets/Million Minds Img/Student3.jpg',
-    '../assets/Million Minds Img/Student1.jpg',
-    '../assets/Million Minds Img/Student4.jpg',
-    '../assets/Million Minds Img/Student2.jpg',
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
   ];
 
   const THUMBNAILS_VISIBLE = 4;
@@ -243,8 +251,8 @@ const CommunityPage = () => {
         </div>
 
         <div className="mt-16">
-          <h2 className="text-3xl font-bold mb-8 text-center"># Life At Motrent</h2>
-          <div className="relative w-full max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-8 text-center"># Life At Motrent</h2>
+          <div className="relative w-full max-w-5xl mx-auto">
             <div className="flex justify-center items-center mb-4">
               <button
                 className="text-white bg-purple-500 hover:bg-purple-600 px-3 py-1 rounded-full"
@@ -252,7 +260,7 @@ const CommunityPage = () => {
               >
                 &lt;
               </button>
-              <div className="w-96 h-56 mx-4 overflow-hidden rounded-lg">
+              <div className="w-full max-w-2xl h-[400px] mx-4 overflow-hidden rounded-lg">
                 <img
                   src={images[currentIndex]}
                   alt={`Slide ${currentIndex + 1}`}
@@ -266,16 +274,19 @@ const CommunityPage = () => {
                 &gt;
               </button>
             </div>
-            <div className="flex justify-center gap-2">
+            <div className="flex justify-center gap-4 flex-wrap">
               {images.slice(thumbnailStart, Math.min(thumbnailStart + THUMBNAILS_VISIBLE, images.length)).map((image, index) => (
-                <div key={index} className="w-20 h-16 overflow-hidden rounded-lg border-2 border-transparent">
+                <div
+                  key={index}
+                  className={`w-24 h-20 overflow-hidden rounded-lg border-2 cursor-pointer transition-all duration-300 ${
+                    thumbnailStart + index === currentIndex ? 'border-purple-500 scale-105' : 'border-transparent'
+                  }`}
+                  onClick={() => setCurrentIndex(thumbnailStart + index)}
+                >
                   <img
                     src={image}
                     alt={`Thumbnail ${index + thumbnailStart + 1}`}
-                    className={`w-full h-full object-cover cursor-pointer ${
-                      thumbnailStart + index === currentIndex ? 'border-purple-500' : ''
-                    }`}
-                    onClick={() => setCurrentIndex(thumbnailStart + index)}
+                    className="w-full h-full object-cover"
                   />
                 </div>
               ))}
