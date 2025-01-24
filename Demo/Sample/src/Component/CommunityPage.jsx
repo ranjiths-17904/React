@@ -56,6 +56,9 @@ const CommunityPage = () => {
 
 
   return (
+
+    // Community page to Join with us
+
     <div className="bg-[#030303] text-white font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
         <h1 className="text-4xl font-bold mb-6">Community</h1>
@@ -70,35 +73,52 @@ const CommunityPage = () => {
           </button>
         </div>
 
-        <div className="flex justify-center gap-32 mb-16">
-          <div className="relative text-center w-32 h-32">
-            <svg className="absolute inset-0 w-full h-full" viewBox="2 0 60 90 " fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="15.5" cy="15.5" rx="15.5" ry="15.5" fill="#250DFF" />
-            </svg>
-            <div className="relative z-10">
-              <div className="text-3xl font-bold">12K+</div>
-              <div className="text-3xl text-gray-200 font-semibold mt-10 pr-10">Clients</div>
-            </div>
-          </div>
-          <div className="relative text-center w-32 h-32">
-            <svg className="absolute inset-0 w-full h-full" viewBox="2 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="14" cy="14" rx="14" ry="14" fill="#C918C6" />
-            </svg>
-            <div className="relative z-10">
-              <div className="text-3xl font-bold">50+</div>
-              <div className="text-3xl text-gray-200 font-semibold mt-10 pr-10">Freelancers</div>
-            </div>
-          </div>
-          <div className="relative text-center w-32 h-32">
-            <svg className="absolute inset-0 w-full h-full" viewBox="2 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="14" cy="14" rx="14" ry="14" fill="#0D99FF" />
-            </svg>
-            <div className="relative z-10">
-              <div className="text-3xl font-bold">60+</div>
-              <div className="text-3xl text-gray-200 font-semibold mt-10">Projects</div>
-            </div>
+        <div className="flex flex-wrap justify-center gap-20 mb-16">
+        <div className="relative text-center w-32 h-32 ml">
+          <svg
+            className="absolute inset-0 w-full h-full"
+            viewBox="2 0 60 90"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <ellipse cx="15.5" cy="15.5" rx="15.5" ry="15.5" fill="#250DFF" />
+          </svg>
+          <div className="relative z-10">
+            <div className="text-3xl font-bold">12K+</div>
+            <div className="text-3xl text-gray-200 font-semibold mt-10 pr-10">Clients</div>
           </div>
         </div>
+        <div className="relative text-center w-32 h-32">
+          <svg
+            className="absolute inset-0 w-full h-full"
+            viewBox="2 0 60 90"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <ellipse cx="14" cy="14" rx="14" ry="14" fill="#C918C6" />
+          </svg>
+          <div className="relative z-10">
+            <div className="text-3xl font-bold">50+</div>
+            <div className="text-3xl text-gray-200 font-semibold mt-10 pr-10">Freelancers</div>
+          </div>
+        </div>
+        <div className="relative text-center w-32 h-32 ">
+          <svg
+            className="absolute inset-0 w-full h-full"
+            viewBox="2 0 60 90"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <ellipse cx="14" cy="14" rx="14" ry="14" fill="#0D99FF" />
+          </svg>
+          <div className="relative z-10 ">
+            <div className="text-3xl font-bold">60+</div>
+            <div className="text-3xl text-gray-200 font-semibold mt-10">Projects</div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Our Current work Section */}
 
         <h2 className="text-2xl font-semibold mb-4 items-start flex p-2">Our Current Works</h2>
 <div className="overflow-hidden shadow-lg rounded-md bg-[#1F1F1F] mx-4 sm:mx-8">
@@ -208,59 +228,75 @@ const CommunityPage = () => {
   </div>
 </div>
 
+        {/* Team Leader Section */}
 
-<div className="mt-28">
-  <h2 className="text-3xl font-bold mb-6 text-center">Meet Our Members</h2>
-  <div className="text-center mt-1">
-    <p className="text-blue-700 text-3xl font-semibold mb-10">Motrent</p>
-  </div>
-  <div className="flex justify-center mb-8">
-    <div className="w-20 h-20 rounded-full bg-gray-700 flex items-center justify-center">
-      <img src="/api/placeholder/80/80" alt="Logo" className="w-16 h-16 rounded-full" />
-    </div>
-  </div>
-  <div className="relative flex flex-col items-center">
-    <div className="absolute h-full w-0.5 bg-purple-800"></div>
-    <div className="space-y-10 w-full max-w-4xl">
-      {[
-        { name: "Bharath Kumar", role: "CEO & Founder", side: "left" },
-        { name: "Deva Harshar", role: "COO", side: "right" },
-        { name: "Dharani Daran", role: "PR-Team Lead", side: "left" },
-        { name: "Bharath Sivanesh", role: "CTO", side: "right" },
-        { name: "Soorya Akileshwaran", role: "Backend Lead", side: "left" },
-        { name: "Sahana", role: "PR-Lead", side: "right" },
-      ].map((member, index) => (
-        <div key={index} className={`flex ${member.side === "left" ? "justify-between" : "justify-between flex-row-reverse"} items-center`}>
-          <div className="w-1/2 px-10">
-            <div className="bg-[#202020] rounded-lg p-4 shadow-lg flex items-start">
-              <div className="w-16 h-16 rounded-full bg-gray-700 overflow-hidden mr-6">
-                <img src={img1} alt={member.name} className="w-full h-full object-cover" />
-              </div>
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">{member.name}</h3>
-                <div className="flex items-center mt-1">
-                  <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="6.5" cy="6" rx="6.5" ry="6" fill="#0D99FF" />
-                  </svg>
-                  <p className="text-sm text-gray-300 ml-2">{member.role}</p>
-                </div>
-              </div>
+        <div className="mt-28">
+          <h2 className="text-3xl font-bold mb-6 text-center">Meet Our Members</h2>
+          <div className="text-center mt-1">
+            <p className="text-blue-700 text-3xl font-semibold mb-10">Motrent</p>
+          </div>
+          <div className="flex justify-center mb-8">
+            <div className="w-20 h-20 rounded-full bg-gray-700 flex items-center justify-center">
+              <img src="/api/placeholder/80/80" alt="Logo" className="w-16 h-16 rounded-full" />
             </div>
           </div>
-          <div className="w-1/2"></div> 
+          <div className="relative flex flex-col items-center">
+            
+            <div className="absolute h-full w-0.5 bg-purple-800 z-0"></div>
+            <div className="space-y-10 w-full max-w-4xl relative z-10">
+              {[
+                { name: "Bharath Kumar", role: "CEO & Founder", side: "left" },
+                { name: "Deva Harshar", role: "COO", side: "right" },
+                { name: "Dharani Daran", role: "PR-Team Lead", side: "left" },
+                { name: "Bharath Sivanesh", role: "CTO", side: "right" },
+                { name: "Soorya Akileshwaran", role: "Backend Lead", side: "left" },
+                { name: "Sahana", role: "PR-Lead", side: "right" },
+              ].map((member, index) => (
+                <div
+                  key={index}
+                  className={`flex flex-col md:flex-row ${
+                    member.side === "left" ? "md:justify-between" : "md:justify-between md:flex-row-reverse"
+                  } items-center`}
+                >
+                  <div className="w-full md:w-1/2 px-4 md:px-10 mb-6 md:mb-0">
+                    <div className="bg-[#202020] rounded-lg p-4 shadow-lg flex flex-col md:flex-row items-center md:items-start">
+                      {/* Member Image */}
+                      <div className="w-16 h-16 rounded-full bg-gray-700 overflow-hidden mb-4 md:mb-0 md:mr-6">
+                        <img src={img1} alt={member.name} className="w-full h-full object-cover" />
+                      </div>
+                      {/* Member Info */}
+                      <div className="text-center md:text-left">
+                        <h3 className="text-xl font-semibold">{member.name}</h3>
+                        <div className="flex items-center justify-center md:justify-start mt-1">
+                          <svg
+                            width="13"
+                            height="12"
+                            viewBox="0 0 13 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <ellipse cx="6.5" cy="6" rx="6.5" ry="6" fill="#0D99FF" />
+                          </svg>
+                          <p className="text-sm text-gray-300 ml-2">{member.role}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="hidden md:block md:w-1/2"></div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
 
+        {/* Life At Motrent Section */}
 
         <div className="mt-24">
           <h2 className="text-4xl font-bold mb-8 text-center"># Life At Motrent</h2>
           <div className="relative w-full max-w-5xl mx-auto">
             <div className="flex justify-center items-center mb-4">
               <button
-                className="text-white bg-purple-500 hover:bg-purple-600 px-3 py-1 rounded-full"
+                className="text-black bg-purple-900 hover:bg-purple-600 px-2 py-1 rounded-full"
                 onClick={handlePrev}
               >
                 &lt;
@@ -273,13 +309,13 @@ const CommunityPage = () => {
                 />
               </div>
               <button
-                className="text-white bg-purple-500 hover:bg-purple-600 px-3 py-1 rounded-full"
+                className="text-black bg-purple-900 hover:bg-purple-600 px-2 py-1 rounded-full"
                 onClick={handleNext}
               >
                 &gt;
               </button>
             </div>
-            <div className="flex justify-center gap-4 flex-wrap">
+            <div className="flex justify-center gap-8 flex-wrap mt-10">
               {images.slice(thumbnailStart, Math.min(thumbnailStart + THUMBNAILS_VISIBLE, images.length)).map((image, index) => (
                 <div
                   key={index}
