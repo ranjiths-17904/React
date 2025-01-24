@@ -1,73 +1,80 @@
 import React, { useState } from 'react';
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
+const CommunityPage = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [thumbnailStart, setThumbnailStart] = useState(0); // Controls the start of visible thumbnails
+  const images = [
+    '/path/to/image1.png',
+    '/path/to/image2.png',
+    '/path/to/image3.png',
+    '/path/to/image4.png',
+    '/path/to/image5.png',
+    '/path/to/image6.png',
+    '/path/to/image7.png',
+    '/path/to/image8.png'
+  ];
+  
+  const THUMBNAILS_VISIBLE = 4; // Show 4 thumbnails at a time
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-
-    if (!email || !password) {
-      setError('Please fill out all fields.');
-      return;
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    if (currentIndex >= thumbnailStart + THUMBNAILS_VISIBLE - 1) {
+      setThumbnailStart((prevStart) => (prevStart + 1) % images.length);
     }
+  };
 
-    console.log('Login Details:', email, password);
-    setError('');
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    if (currentIndex <= thumbnailStart) {
+      setThumbnailStart((prevStart) => (prevStart - 1 + images.length) % images.length);
+    }
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-white text-gray-900">
-      {/* Form Section */}
-      <div className="w-full max-w-md p-8 rounded-2xl shadow-xl bg-gradient-to-r from-[#ffffff] to-[#f7f7ff] border-2 border-gray-300 relative">
-        {/* Silver Border */}
-        <div className="absolute inset-0 -z-10 rounded-2xl border-[6px] border-gray-300"></div>
-
-        <h1 className="text-4xl font-extrabold text-[#9747FF] text-center mb-6">Login</h1>
-
-        {error && (
-          <div className="w-full bg-red-500 text-white text-center p-3 rounded-lg mb-4">
-            {error}
+    <div className="bg-gray-900 text-white font-sans">
+      {/* Life at Motrent Section */}
+      <div className="mt-16">
+        <h2 className="text-3xl font-bold mb-8 text-center"># Life At Motrent</h2>
+        <div className="relative w-full max-w-4xl mx-auto">
+          <div className="flex justify-center items-center mb-4">
+            <button
+              className="text-white bg-purple-500 hover:bg-purple-600 px-3 py-1 rounded-full"
+              onClick={handlePrev}
+            >
+              &lt;
+            </button>
+            <div className="w-96 h-56 mx-4 overflow-hidden rounded-lg">
+              <img
+                src={images[currentIndex]}
+                alt={Slide ${currentIndex + 1}}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <button
+              className="text-white bg-purple-500 hover:bg-purple-600 px-3 py-1 rounded-full"
+              onClick={handleNext}
+            >
+              &gt;
+            </button>
           </div>
-        )}
-
-        <form className="space-y-5 w-full" onSubmit={handleLogin}>
-          <div>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-4 border-2 border-[#9747FF] rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#9747FF] focus:border-transparent"
-            />
+          <div className="flex justify-center gap-2">
+            {images.slice(thumbnailStart, thumbnailStart + THUMBNAILS_VISIBLE).map((image, index) => (
+              <div key={index} className="w-20 h-16 overflow-hidden rounded-lg border-2 border-transparent">
+                <img
+                  src={image}
+                  alt={Thumbnail ${index + thumbnailStart + 1}}
+                  className={`w-full h-full object-cover cursor-pointer ${
+                    thumbnailStart + index === currentIndex ? 'border-purple-500' : ''
+                  }`}
+                  onClick={() => setCurrentIndex(thumbnailStart + index)}
+                />
+              </div>
+            ))}
           </div>
-          <div>
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-4 border-2 border-[#9747FF] rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#9747FF] focus:border-transparent"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full py-3 bg-[#9747FF] text-white font-bold rounded-lg hover:bg-[#7c37d1] transition-all"
-          >
-            Login
-          </button>
-        </form>
-
-        <p className="text-gray-600 mt-6 text-center">
-          Don't have an account?{' '}
-          <a href="/signup" className="text-[#9747FF] hover:underline font-medium">
-            Sign Up
-          </a>
-        </p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default CommunityPage;
