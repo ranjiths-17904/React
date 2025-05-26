@@ -8,7 +8,7 @@ import cert2 from '../assets/img/Certificates/MongoDB - Unstop.jpg';
 import cert3 from '../assets/img/Certificates/Java Course Completion in netiveva.jpg';
 // import cert4 from '../assets/img/Certificates/CodeChefBadge (3).png';
 import cert5 from '../assets/img/Certificates/Udamey Git Certificate.jpg';
-import cert6 from '../assets/img/Certificates/CodeChefBadge (3).png';
+import cert6 from '../assets/img/Certificates/sql_intermediate certificate - Hr.jpg';
 
 // Certificate data
 const certificates = [
@@ -25,7 +25,7 @@ const certificates = [
     description: 'Learned how to create professional resumes for tech jobs.',
   },
   {
-    title: 'Java Programming Certificate',
+    title: 'Java Programming',
     source: 'Nativeva',
     image: cert3,
     description: 'Completed Java Programming course in native language.',
@@ -37,17 +37,18 @@ const certificates = [
   //   description: 'Covered HTML, CSS, JavaScript foundations.',
   // },
   {
-    title: 'DSA Crash Course',
-    source: 'Scaler',
+    title: 'Git - Beginners',
+    source: 'Udamey',
     image: cert5,
-    description: 'Completed intensive training in Data Structures & Algorithms.',
+    description: 'Completed foundational training in Git version control system.',
   },
   {
-    title: 'React Essentials',
-    source: 'Udemy',
-    image: cert6,
-    description: 'Learned core React concepts including hooks, context API, and component patterns.',
-  },
+  title: 'SQL (Intermediate)',
+  source: 'HackerRank',
+  image: cert6,
+  description: 'Completed SQL Intermediate course and certification test on HackerRank.',
+  }
+
   
 ];
 
@@ -161,7 +162,7 @@ const StyledWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2px;
+    padding: 3px;
     border-radius: 24px;
     overflow: hidden;
     line-height: 1.6;
@@ -172,11 +173,11 @@ const StyledWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 1px;
     padding: 24px;
     border-radius: 22px;
     color: #000;
-    background: #fff;
+    background: #E5E4E2;
     transition: all 0.48s ease;
   }
 
@@ -189,10 +190,11 @@ const StyledWrapper = styled.div`
 
   .heading {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .para {
+    font-weight: 600;
     font-size: 14px;
     opacity: 0.8;
   }
@@ -233,7 +235,7 @@ const StyledWrapper = styled.div`
 
 // Highlight Carousel
 const HighlightWrapper = styled.div`
-  width: 100%;
+  width: 90%;
   height: 300px;
   perspective: 1200px;
   display: flex;
