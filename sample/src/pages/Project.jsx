@@ -107,18 +107,23 @@ const categories = ['All', 'UI/UX', 'Web Dev', 'Vouchers', 'Others'];
 
 const Project = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
+
   const filteredProjects =
     selectedCategory === 'All'
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <div className="min-h-screen w-[100%] flex flex-col items-center justify-center bg-gray-300 p-6  md:p-14 lg:p-14">
-      <h1 className="text-4xl font-bold mb-10 -mt-2">My Projects</h1>
+    <section className="min-h-screen w-full bg-gradient-to-tr from-gray-300 via-gray-100 to-gray-300 p-8 md:p-14 flex flex-col items-center">
+      <h1 className="text-5xl font-extrabold mb-12 text-gray-900 drop-shadow-md tracking-tight">
+        My Projects
+      </h1>
 
-      <div className="flex flex-wrap justify-center gap-6 mb-10">
-        {categories.map((category) => (
-          <button
+      {/* Category Filters */}
+      <div className="flex flex-wrap justify-center gap-5 mb-16">
+        {categories.map((category) => {
+          return (
+           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
             className="relative flex items-center justify-center w-24 h-8 px-4 py-4 bg-gradient-to-r from-sky-700 to-fuchsia-700 text-white rounded-xl text-xs font-bold cursor-pointer overflow-hidden group transition-all duration-300"
@@ -131,82 +136,95 @@ const Project = () => {
             <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-right"></span>
             <span className="absolute w-36 h-32 -top-8 -left-2 bg-pink-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-right"></span>
           </button>
-        ))}
+          );
+        })}
       </div>
-      <div className="grid gap-16 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+
+      {/* Projects Grid */}
+      <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full max-w-7xl">
         {filteredProjects.map((project) => (
-          <div
+          <article
             key={project.id}
-            className="project-card relative w-full sm:w-64 h-80 bg-gray-50 shadow-lg p-6 rounded-lg overflow-hidden transform transition-transform hover:-translate-y-2 hover:shadow-blue-300 group animate-slide-in-left"
+            className="relative flex flex-col bg-white rounded-xl shadow-lg hover:shadow-2xl hover:scale-[1.03] transition-transform duration-300 cursor-pointer overflow-hidden group"
           >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-32 object-cover mb-4"
-            />
-            <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold mb-1">
+            {/* Image Section */}
+            <div className="relative w-full h-48 overflow-hidden rounded-t-xl">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+              />
+              {/* Overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+            </div>
+
+            {/* Content */}
+            <div className="p-6 flex flex-col flex-grow">
+              <h2 className="text-xl font-bold text-gray-900 mb-2 tracking-wide truncate" title={project.title}>
                 {project.title}
               </h2>
-              <a
-                href={project.link} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-2 text-gray-800 hover:text-blue-600"
-              >
-                <FaLink />
-              </a>
-            </div>
-            <p className="text-sm mb-4">{project.description}</p>
 
-            {project.category === 'Web Dev' && (
-              <a
-                href={project.githubLink}
-                className="flex items-center mt-2 text-white bg-black hover:bg-gray-800 rounded-md px-2 py-1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub className="mr-1" />
-                <span className="text-sm">GitHub</span>
-              </a>
-            )}
-            {project.category === 'UI/UX' && (
-              <a
-                href="https://www.figma.com"
-                className="flex items-center mt-2 text-white bg-pink-600 hover:bg-pink-800 rounded-md px-2 py-1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SiFigma className="mr-1" />
-                <span className="text-sm">Figma</span>
-              </a>
-            )}
-            {project.category === 'Others' && ( 
-              <a
-                href="https://www.canva.com"
-                className="flex items-center mt-2 text-white bg-blue-600 hover:bg-blue-800 rounded-md px-2 py-1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SiCanva className="mr-1" />
-                <span className="text-sm">Canva</span>
-              </a>
-            )}
-              {project.category === 'Vouchers' && ( 
+              <p className="text-gray-700 flex-grow">{project.description}</p>
+
+              {/* Links and Icons */}
+              <div className="mt-4 flex items-center justify-between space-x-3">
                 <a
-                  href="https://www.canva.com"
-                  className="flex items-center mt-2 text-white bg-blue-600 hover:bg-blue-800 rounded-md px-2 py-1"
+                  href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="inline-flex items-center text-pink-600 hover:text-pink-800 font-semibold text-sm transition-colors"
+                  aria-label={`Visit ${project.title} project link`}
                 >
-                  <SiCanva className="mr-1" />
-                  <span className="text-sm">Canva</span>
+                  <FaLink className="mr-2" size={18} />
+                  Visit
                 </a>
-            )}
-          </div>
+
+                {/* Conditional GitHub or Figma/Canva Buttons */}
+                {project.category === 'Web Dev' && project.githubLink && (
+                  <a
+                    href={project.githubLink.startsWith('http') ? project.githubLink : `https://${project.githubLink}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center bg-gray-900 text-white px-3 py-1 rounded-md text-sm hover:bg-gray-800 shadow-md transition-colors"
+                    aria-label={`GitHub repository for ${project.title}`}
+                  >
+                    <FaGithub className="mr-1" />
+                    GitHub
+                  </a>
+                )}
+
+                {project.category === 'UI/UX' && (
+                  <a
+                    href="https://www.figma.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center bg-pink-600 text-white px-3 py-1 rounded-md text-sm hover:bg-pink-700 shadow-md transition-colors"
+                    aria-label={`Figma design for ${project.title}`}
+                  >
+                    <SiFigma className="mr-1" />
+                    Figma
+                  </a>
+                )}
+
+                {(project.category === 'Others' || project.category === 'Vouchers') && (
+                  <a
+                    href="https://www.canva.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center bg-blue-600 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-700 shadow-md transition-colors"
+                    aria-label={`Canva design for ${project.title}`}
+                  >
+                    <SiCanva className="mr-1" />
+                    Canva
+                  </a>
+                )}
+              </div>
+            </div>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

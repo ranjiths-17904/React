@@ -4,13 +4,10 @@ import Contactimg from '../assets/img/Contact.gif';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [formStatus, setFormStatus] = useState('');
-  const [isError, setIsError] = useState(false); 
+  const [isError, setIsError] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -18,11 +15,20 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { name, email, message } = formData;
+
+    if (!name || !email || !message) {
+      setFormStatus('Please fill in all fields.');
+      setIsError(true);
+      return;
+    }
+
+    setIsSending(true);
     emailjs.send('service_egopgnp', 'template_p8y9qy7', formData, 'HpLX2ePIpzpIn_1N1')
       .then(() => {
         setFormStatus('Message sent successfully!');
@@ -30,76 +36,86 @@ const Contact = () => {
         setFormData({ name: '', email: '', message: '' });
       })
       .catch(() => {
-        setFormStatus('Failed to send message.');
+        setFormStatus('Failed to send message. Try again later.');
         setIsError(true);
+      })
+      .finally(() => {
+        setIsSending(false);
       });
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r w-[100%] from-gray-100 to-blue-50 flex flex-col justify-center items-center px-0 py-8 font-poppins">
-      <h1 className="text-4xl font-bold mb-8 text-center">Let's Talk</h1>
-      <div className={`container mx-auto p-6 flex flex-col md:flex-row justify-center items-center md:justify-between space-y-6 md:space-y-0 transition-opacity duration-700 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-        
-        <div className="bg-white p-8 rounded-lg shadow-xl w-full md:w-1/2 transition-transform duration-700 transform hover:scale-105">
-          <h2 className="text-4xl font-bold mb-6 text-yellow-800 text-center md:text-left">Get In Touch</h2>
-          <form className="space-y-5" onSubmit={handleSubmit}>
+    <div className="min-h-screen w-full bg-gradient-to-r from-gray-100 to-blue-50 flex flex-col justify-center items-center px-4 py-10 font-poppins">
+      <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">Let's Talk</h1>
+      
+      <div className={`container mx-auto flex flex-col md:flex-row justify-center items-center gap-10 transition-opacity duration-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+
+        {/* Form Section */}
+        <div className="bg-white p-8 rounded-xl shadow-xl w-full md:w-1/2 transition-transform duration-500 hover:scale-105">
+          <h2 className="text-3xl font-bold mb-6 text-purple-800">Get In Touch</h2>
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm font-semibold text-gray-600 ">Name</label>
+              <label htmlFor="name" className="block text-sm font-semibold text-gray-700">Name</label>
               <input
+                id="name"
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                 placeholder="Your name"
+                className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-600">Email</label>
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-700">Email</label>
               <input
+                id="email"
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                 placeholder="Your email"
+                className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-600">Message</label>
+              <label htmlFor="message" className="block text-sm font-semibold text-gray-700">Message</label>
               <textarea
+                id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
                 rows="4"
                 placeholder="Your message"
+                className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white py-2 px-4 rounded-md hover:from-purple-600 hover:to-blue-600 transition-all duration-300 ease-in-out"
+              disabled={isSending}
+              className={`w-full py-2 px-4 rounded-md text-white transition-all duration-300 ease-in-out ${isSending ? 'bg-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600'}`}
             >
-              Send Message
+              {isSending ? 'Sending...' : 'Send Message'}
             </button>
           </form>
           {formStatus && (
-            <p className={`mt-4 ${isError ? 'text-red-800' : 'text-green-700'}`}>
+            <p className={`mt-4 text-sm font-semibold ${isError ? 'text-red-600' : 'text-green-600'}`}>
               {formStatus}
             </p>
           )}
         </div>
 
-        <div className="max-w-full md:w-1/2 flex justify-center items-center pl-2">
+        {/* Image/Map Section */}
+        <div className="md:w-1/2 flex justify-center items-center">
           <a
-            href="https://www.google.com/maps/place/Kasigoundanpudur,+Tamil+Nadu+641402/@11.0041314,77.1370942,16z/data=!3m1!4b1!4m6!3m5!1s0x3ba8545e91862eb5:0x3ad74e4c49f5b1!8m2!3d11.0031775!4d77.1434748!16s%2Fg%2F1q62dm5pb?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"
+            href="https://www.google.com/maps/place/Kasigoundanpudur,+Tamil+Nadu+641402/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img 
-              src={Contactimg} 
-              alt="Contact"
-              className="flex flex-row rounded-lg shadow-lg max-w-fit h-72 max-w-full md:max-w-lg transition-transform duration-700 transform hover:scale-105"
+              src={Contactimg}
+              alt="Location Map"
+              className="rounded-lg shadow-md h-72 w-full max-w-md object-cover transition-transform duration-500 hover:scale-105"
             />
           </a>
         </div>

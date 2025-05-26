@@ -1,4 +1,10 @@
 html {
     scroll-behavior: smooth;
   }
-  
+  .nav-link {
+  @apply text-white font-medium font-serif p-2 px-4 rounded-md transition-transform transform hover:scale-110 hover:bg-blue-900 hover:bg-opacity-50;
+}
+
+.nav-link-mobile {
+  @apply text-white font-medium p-2 rounded-md transition-transform hover:scale-105 hover:bg-blue-900 hover:bg-opacity-30;
+}

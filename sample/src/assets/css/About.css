@@ -1,3 +1,5 @@
+/* === Keyframe Animations === */
+
 /* Fade In Animation */
 @keyframes fadeIn {
   from {
@@ -7,7 +9,22 @@
     opacity: 1;
   }
 }
+.about-section {
+  background-color: white;
+}
 
+.about-hover {
+  background: linear-gradient(to right, #f472b6, #fb7185, #f97316); /* Pink-Red-Orange gradient */
+  color: white;
+  box-shadow: 0 4px 20px rgba(255, 105, 180, 0.4); /* soft glow effect */
+}
+
+.about-hover span {
+  color: #d1fae5; /* green-100 for hover span */
+}
+
+
+/* Fade In with Slide (Slow) */
 @keyframes fadeInSlow {
   from {
     opacity: 0;
@@ -19,7 +36,7 @@
   }
 }
 
-/* Slide In Animation */
+/* Slide In from Right */
 @keyframes slideInRight {
   from {
     transform: translateX(100%);
@@ -31,7 +48,19 @@
   }
 }
 
-/* Slow spinning animation */
+/* Zoom In for Profile Image */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Slow spin */
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -41,6 +70,7 @@
   }
 }
 
+/* === Animation Classes === */
 .animate-fadeIn {
   animation: fadeIn 1.5s ease-in-out forwards;
 }
@@ -53,29 +83,161 @@
   animation: slideInRight 1.5s ease-out forwards;
 }
 
-.animate-spin-slow {
-  animation: spin-slow 10s linear infinite;
-}
-
-/* Zoom In Animation for Profile Image */
-@keyframes zoomIn {
-  from {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 .animate-zoomIn {
   animation: zoomIn 1.5s ease-out forwards;
 }
 
-/* Responsive adjustments */
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+/* === About Section Styles === */
+.about-container {
+  background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
+}
+
+/* Profile Wrapper Styling */
+.profile-wrapper {
+  transition: transform 0.4s ease;
+}
+
+.profile-wrapper:hover {
+  transform: scale(1.02);
+}
+
+/* Profile Image */
+.profile-image {
+  animation: zoomIn 1.5s ease-out forwards;
+}
+
+/* Education & Internship Sections */
+.education-section,
+.internship-section
+{
+background-color: rgba(255, 255, 255, 0.85);
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+transition: background-color 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
+} 
+
+/* Hover effect for Education */
+.education-hover {
+background: linear-gradient(135deg, #6ee7b7, #3b82f6);
+color: white !important;
+box-shadow: 0 10px 30px rgba(59, 130, 246, 0.5);
+transform: scale(1.05);
+}
+
+/* Hover effect for Internship */
+.internship-hover {
+background: linear-gradient(135deg, #fbbf24, #ef4444);
+color: white !important;
+box-shadow: 0 10px 30px rgba(239, 68, 68, 0.5);
+transform: scale(1.05);
+}
+
+/* Change text color inside hovered sections */
+.education-hover h2,
+.education-hover span,
+.education-hover li,
+.internship-hover h2,
+.internship-hover span,
+.internship-hover li {
+color: white !important;
+}
+
+/* Icon color override on hover */
+.education-hover svg {
+color: white !important;
+}
+
+.internship-hover svg {
+color: white !important;
+}
+
+/* Responsive tweaks */
 @media (max-width: 1024px) {
-  .flex-col {
-    flex-direction: column;
+.about-container {
+padding: 1.5rem;
+}
+}
+/* === About Me Card === */
+.about-me-card {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-me-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* === Profile Section Styling === */
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Profile Image Animation */
+.profile-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Glowing Border Animation */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0px rgba(59, 130, 246, 0.5);
   }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* Skill icons spacing */
+.skill-icons {
+  margin-top: 0.5rem;
+  gap: 0.7rem;
+}
+.education-hover {
+  background-color: #f0f9ff;
+}
+
+.internship-hover {
+  background-color: #fefce8;
+}
+
+
+/* Button styling improvement */
+.download-btn {
+  margin-top: 1rem;
+  background-color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }

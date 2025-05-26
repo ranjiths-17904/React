@@ -1,11 +1,12 @@
 // HomePage.js
-import { useState, useEffect } from "react"; 
+// import { useState, useEffect } from "react"; 
 import Profile from "./Profile";
 import Skills from './Skills';
 import Projects from "./Project";
 import Contact from './Contact';
 import Footer from '../Components/Footer';
 import About from './About';
+import Achievements from "./Achievement";
 // import Loader from '../Components/Loaders';
 
 const HomePage = () => {
@@ -42,6 +43,9 @@ const HomePage = () => {
       <section id="project">
         <Projects />
       </section>
+      <section id="achievements">
+        <Achievements />
+        </section>
       <section id="contact">
         <Contact />
       </section>

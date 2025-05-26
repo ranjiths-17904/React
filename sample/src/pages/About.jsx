@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { FaSchool, FaUserTie, FaReact, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
-import '../assets/css/About.css'; 
-import aniprofile from '../assets/img/profile photo.jpg';
+import { FaSchool, FaUserTie, FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaGraduationCap, FaLaptopCode } from 'react-icons/fa';
 import { SiMongodb } from 'react-icons/si';
+import '../assets/css/About.css';
+import aniprofile from '../assets/img/profile photo.jpg';
 import pdf from '../assets/pdf/RESUME .pdf';
 
 const About = () => {
-  const [hovered, setHovered] = useState(false);
+  const [hoverSection, setHoverSection] = useState(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -16,37 +16,44 @@ const About = () => {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center p-10 bg-gray-300 shadow-cyan-600 rounded-lg w-full h-full mx-auto">
-      <div className="lg:w-1/3 w-full flex flex-col items-center lg:items-start mb-8 lg:mb-10">
-        <div
-          className="relative mb-6"
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-        >
+    <div className="about-container flex flex-col lg:flex-row items-center p-10 w-full h-full mx-auto rounded-xl shadow-2xl">
+
+      {/* Profile & Skills Section */}
+      <div className="lg:w-1/3 w-full flex flex-col items-center mb-10 relative">
+
+        {/* Top Decoration */}
+        <div className="absolute -top-8 text-gray-500 text-sm italic animate-pulse">Aspiring Web Developer</div>
+
+        {/* Profile Image */}
+        <div className="profile-wrapper relative mb-8">
+          <div className="absolute inset-0 rounded-full border-4 border-green-300 animate-ping"></div>
           <img
             src={aniprofile}
             alt="Profile"
-            className={`transition-transform duration-500 ease-in-out transform ${
-              hovered ? 'scale-105' : 'scale-100'
-            } w-38 h-36 lg:w-30 lg:h-30 shadow-xl rounded-full object-cover`}
+            className="profile-image w-38 h-36 lg:w-30 lg:h-30 shadow-xl rounded-full object-cover z-10 relative"
           />
-          <FaJsSquare className="flex absolute -right-10 top-24 mt-3 text-4xl text-yellow-500 hover:text-yellow-600 transition-transform transform hover:scale-110" />
-          <FaReact className="flex absolute right-2 top-36 mt-3 text-4xl text-blue-400 hover:text-blue-500 transition-transform transform hover:scale-110" />
-          <FaHtml5 className="flex absolute right-16 top-40 mt-3 text-4xl text-red-500 hover:text-red-600 transition-transform transform hover:scale-110" />
-          <SiMongodb className="absolute right-44 top-36 mt-3 text-4xl text-green-500 hover:text-green-600 transition-transform transform hover:scale-110" />
-          <FaCss3Alt className="flex absolute right-32 top-40 mt-3 text-4xl text-blue-500 hover:text-blue-600 transition-transform transform hover:scale-110" />
         </div>
 
-        <div className="flex mb-14">
+        {/* Skills Icons */}
+        <div className="flex justify-center items-center flex-wrap gap-4 mt-4">
+          <SiMongodb className="text-3xl text-green-500 hover:text-green-600 transition-transform transform hover:scale-110" />
+          <FaCss3Alt className="text-3xl text-blue-500 hover:text-blue-600 transition-transform transform hover:scale-110" />
+          <FaHtml5 className="text-3xl text-red-500 hover:text-red-600 transition-transform transform hover:scale-110" />
+          <FaReact className="text-3xl text-blue-400 hover:text-blue-500 transition-transform transform hover:scale-110" />
+          <FaJsSquare className="text-3xl text-yellow-500 hover:text-yellow-600 transition-transform transform hover:scale-110" />
         </div>
 
+        {/* Bottom Tag */}
+        <div className="text-xs text-gray-400 mt-2 italic">Tech Explorer | Lifelong Learner</div>
+
+        {/* Resume Download */}
         <a
           href={pdf}
           download="Ranjith_Resume.pdf"
-          className="flex justify-center gap-2 items-center mx-auto shadow-xl text-lg bg-gray-100 backdrop-blur-md lg:font-semibold isolation-auto border-gray-50 before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-emerald-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-1 overflow-hidden border-2 rounded-full group pl-4"
+          className="flex justify-center gap-2 items-center mt-4 shadow-xl text-lg bg-gray-100 font-semibold relative z-10 px-4 py-1 border-2 rounded-full group overflow-hidden before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-purple-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 group pl-4"
         >
           Download Resume
-          <svg
+           <svg
             className="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
             viewBox="0 0 16 19"
           >
@@ -58,37 +65,79 @@ const About = () => {
         </a>
       </div>
 
-      <div className={`lg:w-2/3 w-full transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'} animate-slideInRight`}>
-        <h1 className="text-4xl font-bold mb-4 ml-6 text-gray-800">About Me</h1>
-        <p className="text-lg mb-10 ml-6 text-gray-700 leading-relaxed">
-          I am a dedicated and hard worker passionate about technology and design. I continuously strive to enhance my skills and contribute effectively to every project I undertake.
-        </p>
+     {/* Main Info Section */}
+{/* Main Info Section */}
+<div className={`lg:w-2/3 w-full transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'} animate-slideInRight`}>
 
-        <div className="flex flex-wrap justify-between mb-8 ml-4">
-          <div className="w-full lg:w-1/2 pr-4">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-800">Schooling:</h2>
-            <ul className="list-disc list-inside text-gray-700">
-              <li className="flex items-center mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-blue-500">
-                <FaSchool className="mr-2 text-lg" /> High School: M.N.C School
+  {/* About Me Card */}
+    <div 
+      className={`about-section p-5 rounded-xl transition-colors duration-500 cursor-pointer ${hoverSection === 'about' ? 'about-hover' : ''}`}
+      onMouseEnter={() => setHoverSection('about')}
+      onMouseLeave={() => setHoverSection(null)}
+    >
+      <h1 className="text-4xl font-bold mb-4 text-gray-800">About Me</h1>
+      <p className="text-lg leading-relaxed text-gray-700">
+        Hello! I'm <span className="font-semibold text-green-600">Ranjith</span>, a passionate Computer Science Engineering student who thrives on solving real-world problems with creative digital solutions.
+        My strengths lie in building responsive web applications, refining user interfaces, and developing logical back-end structures. I'm constantly evolving by working on projects, taking internships, and enhancing my design thinking using tools like Figma.
+      </p>
+    </div>
+
+
+  <div className="mb-2 pt-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+
+          {/* Education */}
+          <div
+            className={`education-section p-5 rounded-xl transition-colors duration-500 cursor-pointer ${hoverSection === 'education' ? 'education-hover' : ''}`}
+              onMouseEnter={() => setHoverSection('education')}
+              onMouseLeave={() => setHoverSection(null)}
+          >
+            <h2 className="text-2xl font-semibold text-gray-800 mb-3">📘 Education</h2>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start">
+                <FaSchool className="text-xl mt-1 mr-2 text-blue-500" />
+                <div>
+                  <span className="font-semibold">High School - M.N.C School</span><br />
+                  <span>10th Grade: <span className="text-green-600 font-medium">91%</span></span>
+                </div>
               </li>
-              <li className="flex items-center mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-blue-500">
-                <FaSchool className="mr-2 text-lg" /> Bachelors Degree: SIET
+              <li className="flex items-start">
+                <FaSchool className="text-xl mt-1 mr-2 text-blue-500" />
+                <div>
+                  <span className="font-semibold">Higher Secondary - M.N.C School</span><br />
+                  <span>12th Grade: <span className="text-green-600 font-medium">87%</span></span>
+                </div>
               </li>
-              <li className="flex items-center mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-blue-500">
-                <FaSchool className="mr-2 text-lg" /> Current: CSE Student
+              <li className="flex items-start">
+                <FaGraduationCap className="text-xl mt-1 mr-2 text-indigo-500" />
+                <div>
+                  <span className="font-semibold">B.E. Computer Science - SIET College</span><br />
+                  <span>Current CGPA: <span className="text-green-600 font-medium">8.5</span></span><br />
+                  <span className="text-sm text-gray-600">Actively involved in inter-college fests, software events, and technical clubs.</span>
+                </div>
               </li>
             </ul>
           </div>
 
-          {/* Internships Section */}
-          <div className="pr-8 pt-2">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-800">Internships:</h2>
-            <ul className="list-disc list-inside text-gray-700">
-              <li className="flex items-center mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-green-500">
-                <FaUserTie className="mr-2 text-lg" /> UI/UX Intern: Shadow Fox
+          {/* Internships */}
+          <div
+            className={`internship-section p-5 rounded-xl transition-colors duration-500 cursor-pointer ${hoverSection === 'internship' ? 'internship-hover' : ''}`}
+            onMouseEnter={() => setHoverSection('internship')}
+            onMouseLeave={() => setHoverSection(null)}
+          >
+            <h2 className="text-2xl font-semibold text-gray-800 mb-3">💼 Internships</h2>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-center">
+                <FaUserTie className="text-xl mr-2 text-purple-500" />
+                <span><strong>UI/UX Intern</strong> at Shadow Fox (Remote)</span>
               </li>
-              <li className="flex items-center mb-2 transition-transform duration-500 hover:translate-x-2 hover:text-green-500">
-                <FaUserTie className="mr-2 text-lg" /> UI/UX Intern: CodSoft
+              <li className="flex items-center">
+                <FaUserTie className="text-xl mr-2 text-purple-500" />
+                <span><strong>UI/UX Intern</strong> at CodSoft (Live Projects)</span>
+              </li>
+              <li className="flex items-center">
+                <FaLaptopCode className="text-xl mr-2 text-teal-500" />
+                <span><strong>Web Developer Trainee</strong> - Self Projects & College Hackathons</span>
               </li>
             </ul>
           </div>
