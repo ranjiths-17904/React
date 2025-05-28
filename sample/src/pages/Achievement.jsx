@@ -80,8 +80,8 @@
     const [selectedCert, setSelectedCert] = useState(null);
 
     return (
-      <div className="bg-gradient-to-br from-[#f8fafc] to-[#e2e8f0] min-h-screen py-16 px-4 sm:px-10 font-sans">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-16 tracking-tight">
+      <div className="bg-gradient-to-br from-[#f8fafc] to-[#e2e8f0] min-h-screen py-6 px-4 sm:px-10 font-sans">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-12 tracking-tight">
            Achievements & Certifications
         </h1>
 
@@ -116,9 +116,8 @@
         )}
 
         {/* Highlight Carousel */}
-        <div className="mt-20">
-          <h2 className="text-4xl font-bold text-gray-800 text-center flex items-center justify-center gap-3 mb-28">
-            
+        <div className="mt-12">
+          <h2 className="text-4xl font-bold text-gray-800 text-center flex items-center justify-center mb-12">
               Notable Highlights
           </h2>
           <HighlightWrapper>

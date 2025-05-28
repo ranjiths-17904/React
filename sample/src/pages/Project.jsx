@@ -114,7 +114,7 @@ const Project = () => {
       : projects.filter((project) => project.category === selectedCategory);
 
   return (
-    <section className="min-h-screen w-full bg-gradient-to-tr from-gray-300 via-gray-100 to-gray-300 p-8 md:p-14 flex flex-col items-center">
+    <section className="min-h-screen w-full bg-gradient-to-tr from-gray-400 via-gray-200 to-gray-500 p-8 md:p-14 flex flex-col items-center">
       <h1 className="text-4xl font-extrabold mb-12 text-gray-900 drop-shadow-md tracking-tight">
         My Projects
       </h1>
