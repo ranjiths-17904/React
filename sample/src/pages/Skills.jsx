@@ -15,7 +15,7 @@
     return (
       <div className="min-h-screen bg-gradient-to-bl from-gray-100 via-gray-200 to-gray-300 flex flex-col justify-center items-center">
         <div className="container mx-auto p-5 space-y-12">
-          <h1 className="text-5xl font-extrabold text-gray-800 text-center">My Skills</h1>
+          <h1 className="text-4xl font-extrabold text-gray-800 text-center">My Skills</h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {skills.map((skill, index) => (

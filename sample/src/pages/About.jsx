@@ -16,13 +16,13 @@ const About = () => {
   }, []);
 
   return (
-    <div className="about-container flex flex-col lg:flex-row items-center p-10 w-full h-full mx-auto rounded-xl shadow-2xl">
+    <div className="about-container flex flex-col lg:flex-row items-center  p-10 w-full h-full mx-auto rounded-xl shadow-2xl">
 
       {/* Profile & Skills Section */}
       <div className="lg:w-1/3 w-full flex flex-col items-center mb-10 relative">
 
         {/* Top Decoration */}
-        <div className="absolute -top-8 text-gray-500 text-sm italic animate-pulse">Aspiring Web Developer</div>
+        <div className="absolute -top-3 text-gray-500 text-sm italic animate-pulse">Aspiring Web Developer</div>
 
         {/* Profile Image */}
         <div className="profile-wrapper relative mb-8">
@@ -75,7 +75,7 @@ const About = () => {
       onMouseEnter={() => setHoverSection('about')}
       onMouseLeave={() => setHoverSection(null)}
     >
-      <h1 className="text-4xl font-bold mb-4 text-gray-800">About Me</h1>
+      <h1 className="text-3xl font-bold mb-4 text-gray-800">About Me</h1>
       <p className="text-lg leading-relaxed text-gray-700">
         Hello! I'm <span className="font-semibold text-green-600">Ranjith</span>, a passionate Computer Science Engineering student who thrives on solving real-world problems with creative digital solutions.
         My strengths lie in building responsive web applications, refining user interfaces, and developing logical back-end structures. I'm constantly evolving by working on projects, taking internships, and enhancing my design thinking using tools like Figma.
