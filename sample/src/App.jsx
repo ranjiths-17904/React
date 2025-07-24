@@ -4,7 +4,7 @@ import './assets/css/style.css';
 import Navbar from './Components/Navbar';
 import Home from './pages/Home';
 import Scroll from './Components/Scrollup';
-import Loader from './Components/Loaders'; // ✅ Import your animated loader
+import Loader from './Components/Loaders'; 
 // import Achievement from './pages/Achievement';
 
 const App = () => {
