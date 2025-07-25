@@ -234,7 +234,7 @@
 
   // Highlight Carousel
   const HighlightWrapper = styled.div`
-  width: 100%;
+  width: 98%;
   max-width: 100%;
   overflow-x: hidden;
   padding: 0 1rem;
@@ -246,7 +246,7 @@
     width: 220px;
     height: 220px;
     transform-style: preserve-3d;
-    animation: spin 20s linear infinite;
+    animation: spin 16s linear infinite;
   }
 
   .card {
