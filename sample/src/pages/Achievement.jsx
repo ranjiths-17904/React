@@ -116,7 +116,7 @@
         )}
 
         {/* Highlight Carousel */}
-        <div className="mt-12">
+        {/* <div className="mt-12">
           <h2 className="text-4xl font-bold text-gray-800 text-center flex items-center justify-center mb-12">
               Notable Highlights
           </h2>
@@ -136,8 +136,8 @@
               ))}
             </div>
           </HighlightWrapper>
-        </div>
-      </div>
+        </div> */}
+      </div> 
     );
   };
 
