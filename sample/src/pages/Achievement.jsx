@@ -233,17 +233,18 @@
   `;
 
   // Highlight Carousel
- const HighlightWrapper = styled.div`
+  const HighlightWrapper = styled.div`
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0 1rem;
   display: flex;
   justify-content: center;
-  perspective: 9800px;
-  padding: 0 1rem;
 
   .carousel {
     position: relative;
-    width: 280px;
-    height: 280px;
+    width: 220px;
+    height: 220px;
     transform-style: preserve-3d;
     animation: spin 20s linear infinite;
   }
@@ -252,7 +253,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    transform: rotateY(calc(72deg * var(--i))) translateZ(420px);
+    transform: rotateY(calc(72deg * var(--i))) translateZ(300px);
     border-radius: 1.5rem;
     padding: 1rem;
     color: #fff;
@@ -263,37 +264,30 @@
     justify-content: center;
     text-align: center;
     background-size: 200% 200%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    border: 4px solid gold;
-    transition: transform 0.4s ease;
-  }
-
-  .card:hover {
-    transform: scale(1.05) rotateY(calc(72deg * var(--i))) translateZ(420px);
-    box-shadow: 0 0 20px gold, 0 0 10px #fff inset;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   }
 
   @keyframes spin {
-    0% {
+    from {
       transform: rotateY(0deg);
     }
-    100% {
+    to {
       transform: rotateY(360deg);
     }
   }
 
   @media (max-width: 640px) {
     .carousel {
-      width: 200px;
-      height: 200px;
+      width: 180px;
+      height: 180px;
     }
 
     .card {
-      transform: rotateY(calc(72deg * var(--i))) translateZ(300px);
       font-size: 0.875rem;
+      transform: rotateY(calc(72deg * var(--i))) translateZ(200px);
     }
   }
 `;
 
 
-  export default Achievements;
+  export default Achievements;  
