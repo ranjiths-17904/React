@@ -4,18 +4,15 @@ import './assets/css/style.css';
 import Navbar from './Components/Navbar';
 import Home from './pages/Home';
 import Scroll from './Components/Scrollup';
-import Loader from './Components/Loaders'; 
-// import Achievement from './pages/Achievement';
+import Loader from './Components/Loaders';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Delay of 3.5 seconds
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 3500);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -24,11 +21,11 @@ const App = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <>
+        <div className="bg-gray-100 max-h-screen"> {/* GLOBAL BACKGROUND */}
           <Navbar />
           <Home />
           <Scroll />
-        </>
+        </div>
       )}
     </>
   );

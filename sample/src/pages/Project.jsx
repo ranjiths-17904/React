@@ -16,6 +16,9 @@ import FigVid from '../assets/video/Avengers.mp4';
 import FigVid2 from '../assets/video/Restarunt Menu Vid.mp4';
 import FigPdf from '../assets/pdf/ScoreCard.pdf';
 import CanvaPdf from '../assets/pdf/Copy of INCEPTRON MAGANIZE - 4 (1).pdf';
+import FixMyBike from '../assets/img/FixMyBike.png';
+import EduTrack from '../assets/img/EduTrack.png';
+
 
 
 const projects = [
@@ -76,12 +79,12 @@ const projects = [
   },
   {
     id: 7,
-    title: 'Score Card',
-    description: 'Jio cinema Home Clone',
-    githubLink: 'https://www.figma.com/design/yWkcLzJsGsW5KvJr6LS1Jb/Teddy?node-id=14-7&t=0o7EcYxNz20MHfcK-1',
-    image: ScoreCard,
-    category: 'UI/UX',
-    link: FigPdf, 
+    title: 'FixMyBike',
+    description: 'Online Bike Service Booking Application',
+    githubLink: 'ranjiths-17904/FixMyBike-Bike_Service',
+    image: FixMyBike,
+    category: 'Web Dev',
+    link: 'fixmybike.netlify.app',
   },
   {
     id: 8,
@@ -99,6 +102,26 @@ const projects = [
     image: MediMarket,
     category: 'Web Dev',
     link: 'https://yourlink.com/project1',
+  },
+  
+  {
+    id: 10,
+    title: 'EduTrack',
+    description: 'Online Education Tracking System',
+    githubLink: 'ranjiths-17904/EduTrack-SmartCalculator',
+    image: EduTrack,
+    category: 'Web Dev',
+    link: 'https://yourlink.com/project1',
+  },
+
+  {
+    id: 11,
+    title: 'Score Card',
+    description: 'Jio cinema Home Clone',
+    githubLink: 'https://www.figma.com/design/yWkcLzJsGsW5KvJr6LS1Jb/Teddy?node-id=14-7&t=0o7EcYxNz20MHfcK-1',
+    image: ScoreCard,
+    category: 'UI/UX',
+    link: FigPdf, 
   },
  
 ];
