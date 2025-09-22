@@ -3,7 +3,7 @@ import { FaSchool, FaUserTie, FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaGraduat
 import { SiMongodb, SiTailwindcss, SiFigma } from 'react-icons/si';
 import '../assets/css/About.css';
 import aniprofile from '../assets/img/profile photo.jpg';
-import pdf from '../assets/pdf/RESUME .pdf';
+import pdf from '../assets/pdf/4 PAGE RESUME (4).pdf';
 
 const About = () => {
   const [hoverSection, setHoverSection] = useState(null);
@@ -88,7 +88,7 @@ const About = () => {
                     alt="R-Forge - Space Developer"
                     className="w-56 h-32 rounded-full ml-12 object-cover border-4 border-cosmic-blue/50 shadow-cosmic-lg group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-cosmic-green rounded-full flex items-center justify-center">
+                  <div className="absolute -bottom-2 -right-2 w-6 h-6 -mb-3 bg-cosmic-green rounded-full flex items-center justify-center">
                     <FaStar className="text-white text-sm" />
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Profilex from '../assets/img/orig.webp';
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaRocket, FaCode, FaPaintBrush } from 'react-icons/fa';
-import { SiReact, SiJavascript, SiHtml5, SiCss3 } from 'react-icons/si';
+import { SiReact, SiJavascript} from 'react-icons/si';
 import '../assets/css/animation.scss';
 import Pattern from '../Components/Pattern'; 
 
@@ -56,7 +56,7 @@ const Profile = () => {
             <Pattern />
             
             {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden z-10 mb-10">
+            <div className="absolute inset-0 overflow-hidden z-10 ">
                 {/* Cosmic Rings */}
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 border border-cosmic-blue/20 rounded-full animate-spin" style={{animationDuration: '20s'}} />
                 <div className="absolute bottom-1/4 right-1/4 w-64 h-64 border border-cosmic-purple/20 rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}} />
@@ -91,7 +91,7 @@ const Profile = () => {
             </div>
 
             {/* Content Section */}
-            <div className="relative z-20 text-center lg:text-left max-w-2xl">
+            <div className="relative z-20 text-center lg:text-left max-w-2xl mb-10 mt-12 lg:mt-8">
                 {/* Welcome Text */}
                 <div className="mb-6">
                     <h1 className="text-4xl lg:text-7xl font-orbitron font-black mb-4">

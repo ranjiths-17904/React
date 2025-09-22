@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaGithub, FaLink, FaRocket, FaCode, FaStar, FaEye, FaExternalLinkAlt } from 'react-icons/fa'; 
+import { FaGithub, FaRocket, FaStar, FaEye, FaExternalLinkAlt } from 'react-icons/fa'; 
 import { SiFigma, SiCanva, SiReact, SiJavascript, SiHtml5, SiCss3 } from 'react-icons/si';
 import '../assets/css/style.css';
 import FigmaImage from '../assets/img/Figma 3.png';
@@ -187,16 +187,6 @@ const Project = () => {
     }
   };
 
-  const getStatusTextColor = (status) => {
-    switch (status) {
-      case 'Live': return 'text-green-400';
-      case 'Completed': return 'text-blue-400';
-      case 'In Development': return 'text-orange-400';
-      case 'Published': return 'text-purple-400';
-      case 'Launched': return 'text-cosmic-blue';
-      default: return 'text-gray-400';
-    }
-  };
 
   return (
     <div className="min-h-screen relative py-20 px-4 lg:px-8 overflow-hidden">
@@ -296,7 +286,6 @@ const Project = () => {
               {featuredProjects.slice(0, 4).map((project, index) => {
                 const isVisible = visibleProjects.includes(index);
                 const isHovered = hoveredProject === index;
-                const Icon = project.technologies[0];
                 
                 return (
                   <div
