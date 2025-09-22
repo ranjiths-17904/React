@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @mixin sp-layout {
   @media screen and (max-width: 750px) {
     @content;
@@ -5,8 +7,8 @@
 }
 
 @function random_range($min, $max) {
-  $rand: random();
-  $random_range: $min + floor($rand * (($max - $min) + 1));
+  $rand: math.random();
+  $random_range: $min + math.floor($rand * (($max - $min) + 1));
   @return $random_range;
 }
 
@@ -76,10 +78,10 @@
 
   @for $i from 1 through $star-count {
     &:nth-child(#{$i}) {
-      --star-tail-length: #{random_range(500em, 800em) / 100}; 
-      --top-offset: #{random_range(0vh, 12000vh) / 100}; // Higher range for spacing
-      --fall-duration: #{random_range(7000, 13000s) / 1000}; // Varied durations for smooth effects
-      --fall-delay: #{random_range(0, 12000s) / 1000};
+      --star-tail-length: #{math.div(random_range(500em, 800em), 100)}; 
+      --top-offset: #{math.div(random_range(0vh, 12000vh), 100)}; // Higher range for spacing
+      --fall-duration: #{math.div(random_range(7000, 13000s), 1000)}; // Varied durations for smooth effects
+      --fall-delay: #{math.div(random_range(0, 12000s), 1000)};
     }
   }
 
@@ -130,5 +132,74 @@
 @keyframes blink {
   50% {
     opacity: 0.6;
+  }
+}
+
+/* Performance Optimizations */
+.space-card,
+.star,
+.animate-float,
+.animate-spin,
+.animate-pulse {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Reduce animation complexity on mobile */
+@media (max-width: 768px) {
+  .star {
+    animation: none;
+    opacity: 0.3;
+  }
+  
+  .animate-float {
+    animation-duration: 12s;
+  }
+  
+  .animate-spin {
+    animation-duration: 40s;
+  }
+}
+
+/* Optimize for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .star,
+  .animate-float,
+  .animate-spin,
+  .animate-pulse,
+  .animate-cosmic-rotate {
+    animation: none;
+  }
+  
+  .star {
+    opacity: 0.5;
+  }
+}
+
+/* Hardware acceleration for smooth animations */
+.space-card:hover,
+.group:hover .group-hover\:scale-110,
+.group:hover .group-hover\:translate-y-2 {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimize background animations */
+body::before {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Reduce particle count on mobile */
+@media (max-width: 768px) {
+  .star:nth-child(n+25) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .star:nth-child(n+15) {
+    display: none;
   }
 }

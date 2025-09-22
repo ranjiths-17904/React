@@ -1,12 +1,23 @@
-import { useState } from 'react';
-import { CircleUserRound, Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { CircleUserRound, Menu, X, Rocket, Home, User, Code, Briefcase, MessageCircle } from 'lucide-react';
 import Card from './Thanks';
 import '../assets/css/Nav.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showCard, setShowCard] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false); // Theme toggle
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('profile');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -19,69 +30,132 @@ const Navbar = () => {
     }, 5000);
   };
 
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
+  const handleNavClick = (section) => {
+    setActiveSection(section);
+    setIsOpen(false);
   };
+
+  const navItems = [
+    { id: 'profile', label: 'Home', icon: Home },
+    { id: 'about', label: 'About', icon: User },
+    { id: 'skills', label: 'Skills', icon: Code },
+    { id: 'project', label: 'Projects', icon: Briefcase },
+    { id: 'contact', label: 'Contact', icon: MessageCircle },
+  ];
 
   return (
     <nav
-      className={`relative w-full px-9 py-2 mb-7 shadow-lg rounded-xl z-10 transition-all duration-500 ${
-        isDarkMode
-          ? 'bg-gradient-to-l from-purple-800 via-pink-700 to-red-700 text-gray-300 '
-          : 'bg-gradient-to-r from-purple-800 via-pink-700 to-red-700 text-gray-300'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled 
+          ? 'bg-space-secondary/90 backdrop-blur-md shadow-cosmic-lg' 
+          : 'bg-transparent'
       }`}
     >
-      <div className={`flex justify-between items-center ${showCard ? 'blur-sm' : ''}`}>
-        <div
-          className="font-extrabold text-2xl font-serif cursor-pointer"
-          onClick={toggleTheme}
-        >
-          My Portfolio
-        </div>
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className={`flex justify-between items-center ${showCard ? 'blur-sm' : ''}`}>
+          {/* Logo */}
+          <div className="flex items-center space-x-3 group cursor-pointer">
+            <div className="relative">
+              <Rocket className="text-cosmic-blue text-2xl group-hover:animate-bounce transition-all duration-300" />
+              <div className="absolute inset-0 text-cosmic-blue text-2xl animate-ping opacity-20" />
+            </div>
+            <span className="font-orbitron font-black text-2xl cosmic-text">
+              R-Forge
+            </span>
+          </div>
 
-        <div className="hidden md:flex md:space-x-8">
-          <a href="#profile" className="nav-link">Home</a>
-          <a href="#about" className="nav-link">About</a>
-          <a href="#skills" className="nav-link">Skills</a>
-          <a href="#project" className="nav-link">Project</a>
-          <a href="#contact" className="nav-link">Contact</a>
-          <div className="ml-6">
-            <CircleUserRound
-              onClick={handleUserIconClick}
-              className="text-white w-7 h-9 cursor-pointer hover:text-yellow-400 transition-colors"
-            />
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-2">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`group relative flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 ${
+                    activeSection === item.id
+                      ? 'bg-cosmic-blue/20 text-cosmic-blue border border-cosmic-blue/30'
+                      : 'text-gray-300 hover:text-white hover:bg-space-accent/50'
+                  }`}
+                >
+                  <Icon className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="font-space font-medium">{item.label}</span>
+                  {activeSection === item.id && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-cosmic-blue/10 to-cosmic-purple/10 rounded-full animate-pulse" />
+                  )}
+                </a>
+              );
+            })}
+            
+            <div className="ml-6">
+              <button
+                onClick={handleUserIconClick}
+                className="group relative p-2 rounded-full bg-gradient-to-r from-cosmic-purple to-cosmic-blue hover:from-cosmic-blue hover:to-cosmic-purple transition-all duration-300 hover:scale-110 hover:shadow-cosmic-lg"
+              >
+                <CircleUserRound className="text-white w-6 h-6 group-hover:animate-bounce" />
+                <div className="absolute inset-0 bg-gradient-to-r from-cosmic-blue to-cosmic-purple rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <button
+              onClick={toggleMenu}
+              className="relative p-2 rounded-full bg-space-accent/50 hover:bg-space-accent transition-all duration-300"
+            >
+              {isOpen ? (
+                <X className="text-white w-6 h-6" />
+              ) : (
+                <Menu className="text-white w-6 h-6" />
+              )}
+            </button>
           </div>
         </div>
 
-        <div className="md:hidden" onClick={toggleMenu}>
-          {isOpen ? (
-            <X className="text-white w-6 h-6" />
-          ) : (
-            <Menu className="text-white w-6 h-6" />
-          )}
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden ${isOpen ? 'block' : 'hidden'} max-h-[calc(100vh-4rem)] overflow-y-auto`}
-      >
-        <div className="grid grid-cols-1 gap-4 mt-4">
-          <a href="#profile" className="nav-link-mobile">Home</a>
-          <a href="#about" className="nav-link-mobile">About</a>
-          <a href="#skills" className="nav-link-mobile">Skills</a>
-          <a href="#project" className="nav-link-mobile">Project</a>
-          <a href="#contact" className="nav-link-mobile">Contact</a>
-          <CircleUserRound
-            onClick={handleUserIconClick}
-            className="text-white cursor-pointer hover:text-yellow-400 transition-colors"
-          />
+        {/* Mobile Menu */}
+        <div
+          className={`lg:hidden transition-all duration-300 overflow-hidden ${
+            isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
+          <div className="py-4 space-y-2">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
+                    activeSection === item.id
+                      ? 'bg-cosmic-blue/20 text-cosmic-blue border border-cosmic-blue/30'
+                      : 'text-gray-300 hover:text-white hover:bg-space-accent/50'
+                  }`}
+                >
+                  <Icon className="w-5 h-5" />
+                  <span className="font-space font-medium">{item.label}</span>
+                </a>
+              );
+            })}
+            
+            <div className="pt-4 border-t border-space-accent">
+              <button
+                onClick={handleUserIconClick}
+                className="flex items-center space-x-3 px-4 py-3 w-full text-left text-gray-300 hover:text-white hover:bg-space-accent/50 rounded-lg transition-all duration-300"
+              >
+                <CircleUserRound className="w-5 h-5" />
+                <span className="font-space font-medium">Profile</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Conditional Rendering of Thank You Card */}
       {showCard && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 pl-4">
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50 p-4">
           <Card />
         </div>
       )}

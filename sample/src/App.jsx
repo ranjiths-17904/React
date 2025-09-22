@@ -21,7 +21,14 @@ const App = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="bg-gray-100 max-h-screen"> {/* GLOBAL BACKGROUND */}
+        <div className="bg-galaxy min-h-screen relative"> {/* SPACE-THEMED BACKGROUND */}
+          {/* Shooting Stars Animation */}
+          <div className="shooting-star"></div>
+          <div className="shooting-star shooting-star-2"></div>
+          <div className="shooting-star shooting-star-3"></div>
+          <div className="shooting-star shooting-star-4"></div>
+          <div className="shooting-star shooting-star-5"></div>
+          
           <Navbar />
           <Home />
           <Scroll />

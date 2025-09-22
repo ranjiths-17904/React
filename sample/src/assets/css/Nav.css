@@ -1,10 +1,97 @@
 html {
-    scroll-behavior: smooth;
-  }
-  .nav-link {
-  @apply text-white font-medium font-serif p-2 px-4 rounded-md transition-transform transform hover:scale-110 hover:bg-blue-900 hover:bg-opacity-50;
+  scroll-behavior: smooth;
 }
 
-.nav-link-mobile {
-  @apply text-white font-medium p-2 rounded-md transition-transform hover:scale-105 hover:bg-blue-900 hover:bg-opacity-30;
+/* Smooth scrolling for all browsers */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for navigation */
+.nav-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.nav-scroll::-webkit-scrollbar-track {
+  background: rgba(26, 26, 46, 0.3);
+  border-radius: 10px;
+}
+
+.nav-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #6c5ce7, #74b9ff);
+  border-radius: 10px;
+}
+
+.nav-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #74b9ff, #6c5ce7);
+}
+
+/* Navigation animations */
+@keyframes navSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-item {
+  animation: navSlideIn 0.3s ease-out;
+}
+
+/* Active navigation indicator */
+.nav-active {
+  position: relative;
+}
+
+.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, #6c5ce7, #74b9ff);
+  border-radius: 1px;
+  animation: navIndicator 0.3s ease-out;
+}
+
+@keyframes navIndicator {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 80%;
+    opacity: 1;
+  }
+}
+
+/* Mobile menu backdrop */
+.mobile-menu-backdrop {
+  backdrop-filter: blur(10px);
+  background: rgba(26, 26, 46, 0.8);
+}
+
+/* Navigation glow effect */
+.nav-glow:hover {
+  box-shadow: 0 0 20px rgba(116, 185, 255, 0.3);
+}
+
+/* Responsive navigation */
+@media (max-width: 1024px) {
+  .nav-item {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-item {
+    padding: 1rem;
+    margin: 0.25rem 0;
+  }
 }

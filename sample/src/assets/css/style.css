@@ -1,26 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*
-{
-    margin: 1px;
-    padding: 2px;
+/* CSS Variables for Space Theme */
+:root {
+  --space-primary: #0a0a0f;
+  --space-secondary: #1a1a2e;
+  --space-accent: #16213e;
+  --cosmic-purple: #6c5ce7;
+  --cosmic-blue: #74b9ff;
+  --cosmic-pink: #fd79a8;
+  --cosmic-green: #00b894;
+  --cosmic-orange: #fdcb6e;
+  --neon-cyan: #00cec9;
+  --neon-purple: #a29bfe;
+  --star-glow: rgba(255, 255, 255, 0.8);
+  --nebula-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --cosmic-gradient: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+  --galaxy-gradient: linear-gradient(180deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-   
-    font-family: 'Inter', sans-serif;
-    background-color: #f3f4f6;
-  }
-  
-  .group:hover .group-hover\:opacity-100 {
-    opacity: 1;
-  }
-  
-  .group:hover .group-hover\:translate-y-2 {
-    transform: translateY(-0.5rem);
-  }
- 
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--galaxy-gradient);
+  color: #ffffff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Animated Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: sparkle 20s linear infinite;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+@keyframes sparkle {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-100px); }
+}
+
+/* Cosmic Text Effects */
+.cosmic-text {
+  background: linear-gradient(45deg, var(--cosmic-purple), var(--cosmic-blue), var(--cosmic-pink));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: cosmic-shift 3s ease-in-out infinite;
+}
+
+@keyframes cosmic-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Glowing Effects */
+.glow-effect {
+  box-shadow: 0 0 20px rgba(116, 185, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.glow-effect:hover {
+  box-shadow: 0 0 30px rgba(116, 185, 255, 0.6), 0 0 60px rgba(116, 185, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Space Cards */
+.space-card {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(116, 185, 255, 0.2);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.space-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(116, 185, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.space-card:hover::before {
+  left: 100%;
+}
+
+.space-card:hover {
+  border-color: rgba(116, 185, 255, 0.5);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading Animation */
 .loader {
   position: fixed; 
   top: 0;
@@ -30,14 +131,227 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.9); 
+  background: var(--space-primary);
   z-index: 9999;
 }
-/* style.css or index.css */
-body {
-  transition: background-color 0.5s ease;
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.dark a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+::-webkit-scrollbar-track {
+  background: var(--space-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cosmic-purple);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cosmic-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .space-card {
+    margin: 10px;
+    border-radius: 15px;
+  }
+  
+  /* Mobile optimizations */
+  .cosmic-text {
+    font-size: 2rem;
+  }
+  
+  .float-animation {
+    animation-duration: 8s;
+  }
+  
+  .pulse-glow {
+    animation-duration: 3s;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+  
+  .space-card {
+    margin: 5px;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  
+  .cosmic-text {
+    font-size: 1.5rem;
+  }
+  
+  /* Reduce animation complexity on mobile */
+  .animate-float {
+    animation-duration: 12s;
+  }
+  
+  .animate-spin {
+    animation-duration: 30s;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .space-card {
+    margin: 15px;
+  }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1440px) {
+  .space-card {
+    margin: 20px;
+  }
+  
+  .cosmic-text {
+    font-size: 4rem;
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .space-card {
+    border-width: 0.5px;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-spin,
+  .animate-pulse,
+  .animate-bounce,
+  .animate-cosmic-shift,
+  .animate-cosmic-rotate {
+    animation: none;
+  }
+  
+  .space-card:hover {
+    transform: none;
+  }
+  
+  .group:hover .group-hover\:scale-110 {
+    transform: none;
+  }
+}
+
+/* Animation Utilities */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(116, 185, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(116, 185, 255, 0.6); }
+}
+
+@keyframes cosmic-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Shooting Stars Animation */
+@keyframes shooting-star {
+  0% {
+    transform: translateX(100vw) translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw) translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shooting-star-trail {
+  0% {
+    transform: translateX(100vw) translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(-100vw) translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.shooting-star {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(45deg, #ffffff, #74b9ff);
+  border-radius: 50%;
+  animation: shooting-star 3s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #74b9ff, transparent);
+  transform-origin: left center;
+  animation: shooting-star-trail 3s linear infinite;
+}
+
+.shooting-star-2 {
+  animation-delay: 1.5s;
+  animation-duration: 4s;
+}
+
+.shooting-star-3 {
+  animation-delay: 3s;
+  animation-duration: 3.5s;
+}
+
+.shooting-star-4 {
+  animation-delay: 4.5s;
+  animation-duration: 4.5s;
+}
+
+.shooting-star-5 {
+  animation-delay: 6s;
+  animation-duration: 3s;
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.cosmic-rotate {
+  animation: cosmic-rotate 20s linear infinite;
 }

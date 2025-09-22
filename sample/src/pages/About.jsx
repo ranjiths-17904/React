@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { FaSchool, FaUserTie, FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaGraduationCap, FaLaptopCode } from 'react-icons/fa';
-import { SiMongodb } from 'react-icons/si';
+import { FaSchool, FaUserTie, FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaGraduationCap, FaLaptopCode, FaRocket, FaDownload, FaStar, FaCode } from 'react-icons/fa';
+import { SiMongodb, SiTailwindcss, SiFigma } from 'react-icons/si';
 import '../assets/css/About.css';
 import aniprofile from '../assets/img/profile photo.jpg';
 import pdf from '../assets/pdf/RESUME .pdf';
@@ -15,131 +15,267 @@ const About = () => {
     }, 200);
   }, []);
 
+  const techSkills = [
+    { icon: SiMongodb, name: 'MongoDB', color: 'text-green-500', delay: 'delay-1' },
+    { icon: FaCss3Alt, name: 'CSS3', color: 'text-blue-500', delay: 'delay-2' },
+    { icon: FaHtml5, name: 'HTML5', color: 'text-red-500', delay: 'delay-3' },
+    { icon: FaReact, name: 'React', color: 'text-blue-400', delay: 'delay-4' },
+    { icon: FaJsSquare, name: 'JavaScript', color: 'text-yellow-500', delay: 'delay-5' },
+    { icon: SiTailwindcss, name: 'Tailwind', color: 'text-cyan-500', delay: 'delay-6' },
+    { icon: SiFigma, name: 'Figma', color: 'text-purple-500', delay: 'delay-7' },
+  ];
+
   return (
-    <div className="about-container flex flex-col lg:flex-row items-center  p-10 w-full h-full mx-auto rounded-xl shadow-2xl">
-
-      {/* Profile & Skills Section */}
-      <div className="lg:w-1/3 w-full flex flex-col items-center mb-10 relative">
-
-        {/* Top Decoration */}
-        <div className="absolute -top-3 text-gray-500 text-sm italic animate-pulse">Aspiring Web Developer</div>
-
-        {/* Profile Image */}
-        <div className="profile-wrapper relative mb-8">
-          <div className="absolute inset-0 rounded-full border-4 border-green-300 animate-ping"></div>
-          <img
-            src={aniprofile}
-            alt="Profile"
-            className="profile-image w-38 h-36 lg:w-30 lg:h-30 shadow-xl rounded-full object-cover z-10 relative"
-          />
-        </div>
-
-        {/* Skills Icons */}
-        <div className="flex justify-center items-center flex-wrap gap-4 mt-4">
-          <SiMongodb className="text-3xl text-green-500 hover:text-green-600 transition-transform transform hover:scale-110" />
-          <FaCss3Alt className="text-3xl text-blue-500 hover:text-blue-600 transition-transform transform hover:scale-110" />
-          <FaHtml5 className="text-3xl text-red-500 hover:text-red-600 transition-transform transform hover:scale-110" />
-          <FaReact className="text-3xl text-blue-400 hover:text-blue-500 transition-transform transform hover:scale-110" />
-          <FaJsSquare className="text-3xl text-yellow-500 hover:text-yellow-600 transition-transform transform hover:scale-110" />
-        </div>
-
-        {/* Bottom Tag */}
-        <div className="text-xs text-gray-400 mt-2 italic">Tech Explorer | Lifelong Learner</div>
-
-        {/* Resume Download */}
-        <a
-          href={pdf}
-          download="Ranjith_Resume.pdf"
-          className="flex justify-center gap-2 items-center mt-4 shadow-xl text-lg bg-gray-100 font-semibold relative z-10 px-4 py-1 border-2 rounded-full group overflow-hidden before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-purple-500 hover:text-gray-50 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 group pl-4"
-        >
-          Download Resume
-           <svg
-            className="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-50 text-gray-50 ease-linear duration-300 rounded-full border border-gray-700 group-hover:border-none p-2 rotate-45"
-            viewBox="0 0 16 19"
+    <div className="min-h-screen relative py-16 lg:py-20 px-4 lg:px-8">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Floating Tech Icons */}
+        {Array.from({ length: 20 }).map((_, i) => (
+          <div 
+            key={i} 
+            className="absolute w-8 h-8 opacity-10 animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${8 + Math.random() * 4}s`
+            }}
           >
-            <path
-              d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-              className="fill-gray-800 group-hover:fill-gray-800"
-            />
-          </svg>
-        </a>
+            <FaCode className="w-full h-full text-cosmic-blue" />
+          </div>
+        ))}
+        
+        {/* Cosmic Grid */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="grid grid-cols-12 gap-4 h-full">
+            {Array.from({ length: 144 }).map((_, i) => (
+              <div key={i} className="border border-cosmic-blue/20 rounded" />
+            ))}
+          </div>
+        </div>
       </div>
 
-     {/* Main Info Section */}
-{/* Main Info Section */}
-<div className={`lg:w-2/3 w-full transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'} animate-slideInRight`}>
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl lg:text-6xl font-orbitron font-black mb-4 lg:mb-6">
+            <span className="cosmic-text animate-cosmic-shift">About</span>
+            <span className="text-white ml-2 lg:ml-4">The Explorer</span>
+          </h2>
+          <p className="text-lg lg:text-xl text-gray-300 font-space max-w-3xl mx-auto">
+            Journey through the digital cosmos, discovering the story behind the code
+          </p>
+        </div>
 
-  {/* About Me Card */}
-    <div 
-      className={`about-section p-5 rounded-xl transition-colors duration-500 cursor-pointer ${hoverSection === 'about' ? 'about-hover' : ''}`}
-      onMouseEnter={() => setHoverSection('about')}
-      onMouseLeave={() => setHoverSection(null)}
-    >
-      <h1 className="text-3xl font-bold mb-4 text-gray-800">About Me</h1>
-      <p className="text-lg leading-relaxed text-gray-700">
-        Hello! I'm <span className="font-semibold text-green-600">Ranjith</span>, a passionate Computer Science Engineering student who thrives on solving real-world problems with creative digital solutions.
-        My strengths lie in building responsive web applications, refining user interfaces, and developing logical back-end structures. I'm constantly evolving by working on projects, taking internships, and enhancing my design thinking using tools like Figma.
-      </p>
-    </div>
-
-
-  <div className="mb-2 pt-4 grid grid-cols-1 md:grid-cols-2 gap-8">
-
-
-          {/* Education */}
-          <div
-            className={`education-section p-5 rounded-xl transition-colors duration-500 cursor-pointer ${hoverSection === 'education' ? 'education-hover' : ''}`}
-              onMouseEnter={() => setHoverSection('education')}
-              onMouseLeave={() => setHoverSection(null)}
-          >
-            <h2 className="text-2xl font-semibold text-gray-800 mb-3">📘 Education</h2>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start">
-                <FaSchool className="text-xl mt-1 mr-2 text-blue-500" />
-                <div>
-                  <span className="font-semibold">High School - M.N.C School</span><br />
-                  <span>10th Grade: <span className="text-green-600 font-medium">91%</span></span>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+          {/* Profile & Skills Section */}
+          <div className="lg:col-span-1 flex flex-col items-center">
+            {/* Profile Card */}
+            <div className="space-card p-6 lg:p-8 w-full max-w-sm text-center group">
+              {/* Status Badge */}
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <div className="bg-gradient-to-r from-cosmic-green to-neon-cyan px-4 py-1 mt-10 ml-8 rounded-full text-xs font-space font-semibold text-white animate-pulse">
+                  🚀 Active Explorer
                 </div>
-              </li>
-              <li className="flex items-start">
-                <FaSchool className="text-xl mt-1 mr-2 text-blue-500" />
-                <div>
-                  <span className="font-semibold">Higher Secondary - M.N.C School</span><br />
-                  <span>12th Grade: <span className="text-green-600 font-medium">87%</span></span>
+              </div>
+
+              {/* Profile Image */}
+              <div className="relative mb-10 mt-10">
+                <div className="absolute inset-0 rounded-full border-4 border-cosmic-blue/30 animate-ping"></div>
+                <div className="relative">
+                  <img
+                    src={aniprofile}
+                    alt="R-Forge - Space Developer"
+                    className="w-56 h-32 rounded-full ml-12 object-cover border-4 border-cosmic-blue/50 shadow-cosmic-lg group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-cosmic-green rounded-full flex items-center justify-center">
+                    <FaStar className="text-white text-sm" />
+                  </div>
                 </div>
-              </li>
-              <li className="flex items-start">
-                <FaGraduationCap className="text-xl mt-1 mr-2 text-indigo-500" />
-                <div>
-                  <span className="font-semibold">B.E. Computer Science - SIET College</span><br />
-                  <span>Current CGPA: <span className="text-green-600 font-medium">8.5</span></span><br />
-                  <span className="text-sm text-gray-600">Actively involved in inter-college fests, software events, and technical clubs.</span>
+              </div>
+
+              {/* Tech Skills Orbit */}
+              <div className="mb-6">
+                <h3 className="text-lg font-space font-semibold text-white mb-4">Tech Arsenal</h3>
+                <div className="grid grid-cols-3 gap-3 mb-2">
+                  {techSkills.slice(0, 6).map((skill, index) => {
+                    const Icon = skill.icon;
+                    return (
+                      <div 
+                        key={index}
+                        className={`group relative p-3 rounded-full bg-space-accent/50 border border-cosmic-blue/20 hover:border-cosmic-blue/50 transition-all duration-300 hover:scale-110 hover:shadow-cosmic ${skill.delay} flex flex-col items-center`}
+                      >
+                        <Icon className={`text-xl ${skill.color} group-hover:animate-bounce mb-1`} />
+                        <span className="text-xs text-gray-300 font-space">{skill.name}</span>
+                      </div>
+                    );
+                  })}
                 </div>
-              </li>
-            </ul>
+                {techSkills.length > 6 && (
+                  <div className="flex justify-center gap-3">
+                    {techSkills.slice(6).map((skill, index) => {
+                      const Icon = skill.icon;
+                      return (
+                        <div 
+                          key={index + 6}
+                          className={`group relative p-3 rounded-full bg-space-accent/50 border border-cosmic-blue/20 hover:border-cosmic-blue/50 transition-all duration-300 hover:scale-110 hover:shadow-cosmic ${skill.delay} flex flex-col items-center`}
+                        >
+                          <Icon className={`text-xl ${skill.color} group-hover:animate-bounce mb-1`} />
+                          <span className="text-xs text-gray-300 font-space">{skill.name}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              {/* Bottom Tag */}
+              <div className="text-sm text-cosmic-blue font-space font-medium mb-6">
+                🌟 Tech Explorer | 🚀 Lifelong Learner
+              </div>
+
+              {/* Resume Download */}
+              <a
+                href={pdf}
+                download="R-Forge_Resume.pdf"
+                className="group relative inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cosmic-purple to-cosmic-blue rounded-full text-white font-space font-semibold transition-all duration-300 hover:scale-105 hover:shadow-cosmic-lg overflow-hidden"
+              >
+                <FaDownload className="text-lg group-hover:animate-bounce relative z-10" />
+                <span className="relative z-10">Download Resume</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cosmic-blue to-cosmic-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </a>
+            </div>
           </div>
 
-          {/* Internships */}
-          <div
-            className={`internship-section p-5 rounded-xl transition-colors duration-500 cursor-pointer ${hoverSection === 'internship' ? 'internship-hover' : ''}`}
-            onMouseEnter={() => setHoverSection('internship')}
-            onMouseLeave={() => setHoverSection(null)}
-          >
-            <h2 className="text-2xl font-semibold text-gray-800 mb-3">💼 Internships</h2>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-center">
-                <FaUserTie className="text-xl mr-2 text-purple-500" />
-                <span><strong>UI/UX Intern</strong> at Shadow Fox (Remote)</span>
-              </li>
-              <li className="flex items-center">
-                <FaUserTie className="text-xl mr-2 text-purple-500" />
-                <span><strong>UI/UX Intern</strong> at CodSoft (Live Projects)</span>
-              </li>
-              <li className="flex items-center">
-                <FaLaptopCode className="text-xl mr-2 text-teal-500" />
-                <span><strong>Web Developer Trainee</strong> - Self Projects & College Hackathons</span>
-              </li>
-            </ul>
+          {/* Main Info Section */}
+          <div className="lg:col-span-2 space-y-6 lg:space-y-8">
+            {/* About Me Card */}
+            <div 
+              className={`space-card p-6 lg:p-8 transition-all duration-500 cursor-pointer group ${
+                hoverSection === 'about' ? 'border-cosmic-blue/50 shadow-cosmic-lg' : ''
+              }`}
+              onMouseEnter={() => setHoverSection('about')}
+              onMouseLeave={() => setHoverSection(null)}
+            >
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="p-2 bg-gradient-to-r from-cosmic-purple to-cosmic-blue rounded-lg">
+                  <FaRocket className="text-white text-xl" />
+                </div>
+                <h2 className="text-3xl font-orbitron font-bold text-white">About Me</h2>
+              </div>
+              
+              <p className="text-lg leading-relaxed text-gray-300 font-space">
+                Hello! I'm <span className="cosmic-text font-semibold">Ranjith</span>, a passionate Computer Science Engineering student who thrives on solving real-world problems with creative digital solutions.
+              </p>
+              
+              <p className="text-lg leading-relaxed text-gray-300 font-space mt-4">
+                My strengths lie in building responsive web applications, refining user interfaces, and developing logical back-end structures. I'm constantly evolving by working on projects, taking internships, and enhancing my design thinking using tools like Figma.
+              </p>
+
+              {/* Highlight Stats */}
+              <div className="grid grid-cols-3 gap-4 mt-6">
+                <div className="text-center p-4 bg-space-accent/30 rounded-lg border border-cosmic-blue/20">
+                  <div className="text-2xl font-orbitron font-bold text-cosmic-blue">2+</div>
+                  <div className="text-sm text-gray-400 font-space">Years Experience</div>
+                </div>
+                <div className="text-center p-4 bg-space-accent/30 rounded-lg border border-cosmic-green/20">
+                  <div className="text-2xl font-orbitron font-bold text-cosmic-green">15+</div>
+                  <div className="text-sm text-gray-400 font-space">Projects</div>
+                </div>
+                <div className="text-center p-4 bg-space-accent/30 rounded-lg border border-cosmic-orange/20">
+                  <div className="text-2xl font-orbitron font-bold text-cosmic-orange">8.5</div>
+                  <div className="text-sm text-gray-400 font-space">CGPA</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Education & Experience Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+              {/* Education */}
+              <div
+                className={`space-card p-5 lg:p-6 transition-all duration-500 cursor-pointer group ${
+                  hoverSection === 'education' ? 'border-cosmic-blue/50 shadow-cosmic-lg' : ''
+                }`}
+                onMouseEnter={() => setHoverSection('education')}
+                onMouseLeave={() => setHoverSection(null)}
+              >
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="p-2 bg-gradient-to-r from-cosmic-blue to-neon-cyan rounded-lg">
+                    <FaGraduationCap className="text-white text-lg" />
+                  </div>
+                  <h3 className="text-xl font-orbitron font-bold text-white">🎓 Education</h3>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3 p-3 bg-space-accent/20 rounded-lg border border-cosmic-blue/10">
+                    <FaSchool className="text-cosmic-blue text-lg mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="font-space font-semibold text-white">High School - M.N.C School</div>
+                      <div className="text-sm text-gray-400">10th Grade: <span className="text-cosmic-green font-medium">91%</span></div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3 p-3 bg-space-accent/20 rounded-lg border border-cosmic-blue/10">
+                    <FaSchool className="text-cosmic-blue text-lg mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="font-space font-semibold text-white">Higher Secondary - M.N.C School</div>
+                      <div className="text-sm text-gray-400">12th Grade: <span className="text-cosmic-green font-medium">87%</span></div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3 p-3 bg-space-accent/20 rounded-lg border border-cosmic-purple/20">
+                    <FaGraduationCap className="text-cosmic-purple text-lg mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="font-space font-semibold text-white">B.E. Computer Science - SIET College</div>
+                      <div className="text-sm text-gray-400">Current CGPA: <span className="text-cosmic-green font-medium">8.5</span></div>
+                      <div className="text-xs text-gray-500 mt-1">Actively involved in inter-college fests, software events, and technical clubs.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Internships */}
+              <div
+                className={`space-card p-5 lg:p-6 transition-all duration-500 cursor-pointer group ${
+                  hoverSection === 'internship' ? 'border-cosmic-blue/50 shadow-cosmic-lg' : ''
+                }`}
+                onMouseEnter={() => setHoverSection('internship')}
+                onMouseLeave={() => setHoverSection(null)}
+              >
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="p-2 bg-gradient-to-r from-cosmic-pink to-cosmic-purple rounded-lg">
+                    <FaUserTie className="text-white text-lg" />
+                  </div>
+                  <h3 className="text-xl font-orbitron font-bold text-white">💼 Experience</h3>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3 p-3 bg-space-accent/20 rounded-lg border border-cosmic-pink/10">
+                    <FaUserTie className="text-cosmic-pink text-lg mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="font-space font-semibold text-white">UI/UX Intern at Shadow Fox</div>
+                      <div className="text-sm text-gray-400">Remote • Design Systems</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3 p-3 bg-space-accent/20 rounded-lg border border-cosmic-pink/10">
+                    <FaUserTie className="text-cosmic-pink text-lg mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="font-space font-semibold text-white">UI/UX Intern at CodSoft</div>
+                      <div className="text-sm text-gray-400">Live Projects • Real-world Experience</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3 p-3 bg-space-accent/20 rounded-lg border border-cosmic-green/20">
+                    <FaLaptopCode className="text-cosmic-green text-lg mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="font-space font-semibold text-white">Web Developer Trainee</div>
+                      <div className="text-sm text-gray-400">Self Projects & College Hackathons</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
