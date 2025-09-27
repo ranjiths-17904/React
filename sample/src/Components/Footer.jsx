@@ -179,18 +179,18 @@ const Footer = () => {
             </div>
             
             <div className="flex items-center space-x-6 text-sm">
-              <span className="text-gray-400 font-space">Built with</span>
+              {/* <span className="text-gray-400 font-space">Built with</span> */}
               <div className="flex items-center space-x-2">
                 <FaStar className="text-cosmic-orange animate-pulse" />
-                <span className="text-cosmic-blue font-space">React</span>
+                {/* <span className="text-cosmic-blue font-space">React</span> */}
               </div>
               <div className="flex items-center space-x-2">
                 <FaStar className="text-cosmic-green animate-pulse" />
-                <span className="text-cosmic-blue font-space">Tailwind CSS</span>
+                {/* <span className="text-cosmic-blue font-space">Tailwind CSS</span> */}
               </div>
               <div className="flex items-center space-x-2">
                 <FaRocket className="text-cosmic-purple animate-pulse" />
-                <span className="text-cosmic-blue font-space">Space Theme</span>
+                {/* <span className="text-cosmic-blue font-space">Expl Theme</span> */}
               </div>
             </div>
           </div>

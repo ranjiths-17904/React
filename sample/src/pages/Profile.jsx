@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Profilex from '../assets/img/orig.webp';
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaRocket, FaCode, FaPaintBrush } from 'react-icons/fa';
-import { SiReact, SiJavascript} from 'react-icons/si';
+import { SiReact, SiJavascript } from 'react-icons/si';
 import '../assets/css/animation.scss';
 import Pattern from '../Components/Pattern'; 
 
@@ -10,7 +10,7 @@ const handleSocialClick = (platform) => {
 };
 
 const Profile = () => {
-    const titles = ["Software Developer", "MERN Stack Developer","UI/UX Designer"];
+    const titles = ["Software Developer", "MERN Stack Developer", "UI/UX Designer"];
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
     const [titleIndex, setTitleIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false); 
@@ -51,7 +51,14 @@ const Profile = () => {
     }, [titleIndex, isDeleting, pause, currentTitleIndex, speed, titles]);
 
     return (
-        <div className="min-h-screen relative overflow-hidden bg-galaxy flex flex-col lg:flex-row justify-start items-center p-8 lg:p-12 gap-16 pt-40 pb-64">
+        <div className="
+            min-h-screen relative overflow-hidden bg-galaxy 
+            flex flex-col lg:flex-row justify-start items-center 
+            p-4 sm:p-6 lg:p-12 
+            gap-8 sm:gap-10 lg:gap-20 
+            pt-16 sm:pt-20 lg:pt-32 
+            pb-12 sm:pb-16 lg:pb-32">
+            
             {/* Shooting Stars Background Animation */}
             <Pattern />
             
@@ -83,7 +90,7 @@ const Profile = () => {
                         <img 
                             src={Profilex} 
                             alt="R-Forge - Space Developer" 
-                            className="relative z-10 w-80 h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-cosmic-blue/30 shadow-2xl group-hover:scale-105 transition-transform duration-500" 
+                            className="relative z-10 w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-cosmic-blue/30 shadow-2xl group-hover:scale-105 transition-transform duration-500" 
                         />
                     </div>
                                    
@@ -91,10 +98,10 @@ const Profile = () => {
             </div>
 
             {/* Content Section */}
-            <div className="relative z-20 text-center lg:text-left max-w-2xl mb-10 mt-12 lg:mt-8">
+            <div className="relative z-20 text-center lg:text-left max-w-2xl">
                 {/* Welcome Text */}
                 <div className="mb-6">
-                    <h1 className="text-4xl lg:text-7xl font-orbitron font-black mb-4">
+                    <h1 className="text-4xl lg:text-6xl font-orbitron font-black mb-4">
                         <span className="cosmic-text animate-cosmic-shift">
                             Welcome to
                         </span>
@@ -129,7 +136,7 @@ const Profile = () => {
                     <button className="group relative px-8 py-4 bg-gradient-to-r from-cosmic-purple to-cosmic-blue rounded-full font-space font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-cosmic-lg">
                         <span className="relative z-10 flex items-center justify-center space-x-2">
                             <FaRocket className="text-lg group-hover:animate-bounce" />
-                            <span>Launch Project</span>
+                            <span>Explore</span>
                         </span>
                         <div className="absolute inset-0 bg-gradient-to-r from-cosmic-blue to-cosmic-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </button>
@@ -181,7 +188,7 @@ const Profile = () => {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+            <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
                 <div className="w-6 h-10 border-2 border-cosmic-blue rounded-full flex justify-center">
                     <div className="w-1 h-3 bg-cosmic-blue rounded-full mt-2 animate-pulse" />
                 </div>

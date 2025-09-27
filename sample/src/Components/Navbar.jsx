@@ -59,7 +59,9 @@ const Navbar = () => {
               <Rocket className="text-cosmic-blue text-2xl group-hover:animate-bounce transition-all duration-300" />
               <div className="absolute inset-0 text-cosmic-blue text-2xl animate-ping opacity-20" />
             </div>
-            <span className="font-orbitron font-black text-2xl cosmic-text">
+            <span className="font-orbitron font-black cosmic-text 
+              text-xl sm:text-2xl md:text-3xl lg:text-4xl 
+              tracking-wide leading-none">
               R-Forge
             </span>
           </div>
