@@ -95,33 +95,33 @@ const About = () => {
               </div>
 
               {/* Tech Skills Orbit */}
-              <div className="mb-6">
-                <h3 className="text-lg font-space font-semibold text-white mb-4">Tech Arsenal</h3>
-                <div className="grid grid-cols-3 gap-3 mb-2">
+              <div className="mb-6 w-full">
+                <h3 className="text-lg font-space font-semibold text-white mb-4 text-center sm:text-left">Tech Arsenal</h3>
+                <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-3 sm:gap-4 mb-2">
                   {techSkills.slice(0, 6).map((skill, index) => {
                     const Icon = skill.icon;
                     return (
                       <div 
                         key={index}
-                        className={`group relative p-3 rounded-full bg-space-accent/50 border border-cosmic-blue/20 hover:border-cosmic-blue/50 transition-all duration-300 hover:scale-110 hover:shadow-cosmic ${skill.delay} flex flex-col items-center`}
+                        className={`group relative p-2 sm:p-3 rounded-full bg-space-accent/50 border border-cosmic-blue/20 hover:border-cosmic-blue/50 transition-all duration-300 hover:scale-110 hover:shadow-cosmic ${skill.delay} flex flex-col items-center`}
                       >
-                        <Icon className={`text-xl ${skill.color} group-hover:animate-bounce mb-1`} />
-                        <span className="text-xs text-gray-300 font-space">{skill.name}</span>
+                        <Icon className={`text-base sm:text-xl ${skill.color} group-hover:animate-bounce mb-1`} />
+                        <span className="text-[10px] sm:text-xs text-gray-300 font-space">{skill.name}</span>
                       </div>
                     );
                   })}
                 </div>
                 {techSkills.length > 6 && (
-                  <div className="flex justify-center gap-3">
+                  <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
                     {techSkills.slice(6).map((skill, index) => {
                       const Icon = skill.icon;
                       return (
                         <div 
                           key={index + 6}
-                          className={`group relative p-3 rounded-full bg-space-accent/50 border border-cosmic-blue/20 hover:border-cosmic-blue/50 transition-all duration-300 hover:scale-110 hover:shadow-cosmic ${skill.delay} flex flex-col items-center`}
+                          className={`group relative p-2 sm:p-3 rounded-full bg-space-accent/50 border border-cosmic-blue/20 hover:border-cosmic-blue/50 transition-all duration-300 hover:scale-110 hover:shadow-cosmic ${skill.delay} flex flex-col items-center`}
                         >
-                          <Icon className={`text-xl ${skill.color} group-hover:animate-bounce mb-1`} />
-                          <span className="text-xs text-gray-300 font-space">{skill.name}</span>
+                          <Icon className={`text-base sm:text-xl ${skill.color} group-hover:animate-bounce mb-1`} />
+                          <span className="text-[10px] sm:text-xs text-gray-300 font-space">{skill.name}</span>
                         </div>
                       );
                     })}

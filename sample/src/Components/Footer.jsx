@@ -64,10 +64,10 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="p-2 bg-gradient-to-r from-cosmic-purple to-cosmic-blue rounded-lg">
-                <FaRocket className="text-white text-xl" />
+              <div className="p-1.5 bg-gradient-to-r from-cosmic-purple to-cosmic-blue rounded-lg">
+                <FaRocket className="text-white text-lg sm:text-xl" />
               </div>
-              <h3 className="text-2xl font-orbitron font-bold cosmic-text">
+              <h3 className="text-xl sm:text-2xl font-orbitron font-bold cosmic-text leading-none">
                 R-Forge
               </h3>
             </div>

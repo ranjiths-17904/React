@@ -53,7 +53,7 @@ const Profile = () => {
     return (
         <div className="
             min-h-screen relative overflow-hidden bg-galaxy 
-            flex flex-col lg:flex-row justify-start items-center 
+            flex flex-col lg:flex-row justify-center lg:justify-start items-center 
             p-4 sm:p-6 lg:p-12 
             gap-8 sm:gap-10 lg:gap-20 
             pt-16 sm:pt-20 lg:pt-32 
@@ -98,7 +98,7 @@ const Profile = () => {
             </div>
 
             {/* Content Section */}
-            <div className="relative z-20 text-center lg:text-left max-w-2xl">
+            <div className="relative z-20 text-center lg:text-left max-w-2xl mx-auto">
                 {/* Welcome Text */}
                 <div className="mb-6">
                     <h1 className="text-4xl lg:text-6xl font-orbitron font-black mb-4">

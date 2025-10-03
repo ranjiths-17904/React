@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaRocket } from "react-icons/fa";
 
 const ScrollToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -26,15 +27,16 @@ const ScrollToTopButton = () => {
     return (
         <button
             onClick={scrollToTop}
-            className={`fixed bottom-6 right-3 w-7 h-7 flex items-center justify-center text-slate-50 text-base bg-gradient-to-r from-rose-800 via-indigo-800 to-yellow-600 rounded-full shadow-xl transition-transform transform hover:scale-110 hover:shadow-slate-200 opacity-85 ${
+            aria-label="Scroll to top"
+            className={`fixed bottom-6 right-3 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-white bg-gradient-to-r from-cosmic-pink via-cosmic-purple to-cosmic-blue rounded-full shadow-xl transition-transform transform hover:scale-110 hover:shadow-cosmic ${
                 isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-            } animate-bounce`}
+            }`}
             style={{
                 backgroundSize: "200% 200%",
-                animation: "gradientAnimation 5s ease infinite, bounce 1s ease infinite",
+                animation: "gradientAnimation 6s ease infinite",
             }}
         >
-            &uarr;
+            <FaRocket className="text-lg sm:text-xl animate-bounce" />
         </button>
     );
 };
