@@ -50,16 +50,16 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       label: 'Email',
-      value: 'ranjith@example.com',
+      value: 'ranjithselvaraj04@gmail.com',
       color: 'from-blue-500 to-cyan-500',
-      link: 'mailto:ranjith@example.com'
+      link: 'mailto:ranjithselvaraj04@gmail.com'
     },
     {
       icon: FaPhone,
       label: 'Phone',
-      value: '+91 98765 43210',
+      value: '+91 73958 60211',
       color: 'from-green-500 to-emerald-500',
-      link: 'tel:+919876543210'
+      link: 'tel:+917395860211'
     },
     {
       icon: FaMapMarkerAlt,
