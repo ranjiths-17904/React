@@ -46,7 +46,7 @@ const Skills = () => {
     { 
       name: "Tailwind CSS", 
       level: "Intermediate", 
-      percentage: 65, 
+      percentage: 70, 
       icon: SiTailwindcss, 
       color: "from-teal-500 to-cyan-500",
       textColor: "text-teal-400",
@@ -63,8 +63,8 @@ const Skills = () => {
     },
     { 
       name: "MongoDB", 
-      level: "Beginner", 
-      percentage: 45, 
+      level: "Intermediate", 
+      percentage: 75, 
       icon: SiMongodb, 
       color: "from-green-600 to-green-400",
       textColor: "text-green-300",
@@ -73,7 +73,7 @@ const Skills = () => {
     { 
       name: "Java", 
       level: "Intermediate", 
-      percentage: 75, 
+      percentage: 70, 
       icon: FaJava, 
       color: "from-red-500 to-orange-500",
       textColor: "text-red-400",

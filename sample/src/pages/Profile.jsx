@@ -10,7 +10,7 @@ const handleSocialClick = (platform) => {
 };
 
 const Profile = () => {
-    const titles = ["Software Developer", "MERN Stack Developer", "UI/UX Designer"];
+    const titles = ["Software Developer", "MERN Stack Developer", "UI/UX Designer " , "Hero"];
     const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
     const [titleIndex, setTitleIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false); 

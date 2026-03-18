@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { FaSchool, FaUserTie, FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaGraduationCap, FaLaptopCode, FaRocket, FaDownload, FaStar, FaCode } from 'react-icons/fa';
 import { SiMongodb, SiTailwindcss, SiFigma } from 'react-icons/si';
 import '../assets/css/About.css';
-import aniprofile from '../assets/img/profile photo.jpg';
+import aniprofile from '../assets/img/Mine.jpeg';
 import pdf from '../assets/pdf/4 PAGE RESUME (4).pdf';
 
 const About = () => {
@@ -16,7 +16,7 @@ const About = () => {
   }, []);
 
   const techSkills = [
-    { icon: SiMongodb, name: 'MongoDB', color: 'text-green-500', delay: 'delay-1' },
+    { icon: SiMongodb, name: 'Mongo', color: 'text-green-500', delay: 'delay-1' },
     { icon: FaCss3Alt, name: 'CSS3', color: 'text-blue-500', delay: 'delay-2' },
     { icon: FaHtml5, name: 'HTML5', color: 'text-red-500', delay: 'delay-3' },
     { icon: FaReact, name: 'React', color: 'text-blue-400', delay: 'delay-4' },
@@ -73,55 +73,55 @@ const About = () => {
             {/* Profile Card */}
             <div className="space-card p-6 lg:p-8 w-full max-w-sm text-center group">
               {/* Status Badge */}
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <div className="bg-gradient-to-r from-cosmic-green to-neon-cyan px-4 py-1 mt-10 ml-8 rounded-full text-xs font-space font-semibold text-white animate-pulse">
+              <div className="relative mb-4 flex justify-center">
+                <div className="bg-gradient-to-r from-cosmic-green to-neon-cyan px-4 py-1 rounded-full text-xs font-space font-semibold text-white animate-pulse z-20">
                   🚀 Active Explorer
                 </div>
               </div>
 
               {/* Profile Image */}
-              <div className="relative mb-10 mt-10">
-                <div className="absolute inset-0 rounded-full border-4 border-cosmic-blue/30 animate-ping"></div>
-                <div className="relative">
+              <div className="relative mb-10 flex justify-center">
+                <div className="absolute inset-0 w-56 h-56 rounded-full border-4 border-cosmic-blue/30 animate-ping mx-auto"></div>
+                <div className="relative w-56 h-56">
                   <img
                     src={aniprofile}
                     alt="R-Forge - Space Developer"
-                    className="w-56 h-32 rounded-full ml-12 object-cover border-4 border-cosmic-blue/50 shadow-cosmic-lg group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full rounded-full object-cover border-4 border-cosmic-blue/50 shadow-cosmic-lg group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute -bottom-2 -right-2 w-6 h-6 -mb-3 bg-cosmic-green rounded-full flex items-center justify-center">
+                  <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-cosmic-green rounded-full flex items-center justify-center border-2 border-cosmic-blue/50">
                     <FaStar className="text-white text-sm" />
                   </div>
                 </div>
               </div>
 
               {/* Tech Skills Orbit */}
-              <div className="mb-6 w-full">
-                <h3 className="text-lg font-space font-semibold text-white mb-4 text-center sm:text-left">Tech Arsenal</h3>
-                <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-3 sm:gap-4 mb-2">
-                  {techSkills.slice(0, 6).map((skill, index) => {
+              <div className="mb-6 w-full px-2">
+                <h3 className="text-lg font-space font-semibold text-white mb-6 text-center">Tech Arsenal</h3>
+                <div className="grid grid-cols-4 gap-4 mb-4">
+                  {techSkills.slice(0, 4).map((skill, index) => {
                     const Icon = skill.icon;
                     return (
                       <div 
                         key={index}
-                        className={`group relative p-2 sm:p-3 rounded-full bg-space-accent/50 border border-cosmic-blue/20 hover:border-cosmic-blue/50 transition-all duration-300 hover:scale-110 hover:shadow-cosmic ${skill.delay} flex flex-col items-center`}
+                        className={`group relative p-3 rounded-full bg-space-accent/50 border border-cosmic-blue/20 hover:border-cosmic-blue/50 transition-all duration-300 hover:scale-110 hover:shadow-cosmic ${skill.delay} flex flex-col items-center justify-center`}
                       >
-                        <Icon className={`text-base sm:text-xl ${skill.color} group-hover:animate-bounce mb-1`} />
-                        <span className="text-[10px] sm:text-xs text-gray-300 font-space">{skill.name}</span>
+                        <Icon className={`text-xl ${skill.color} group-hover:animate-bounce mb-2`} />
+                        <span className="text-xs text-gray-300 font-space text-center">{skill.name}</span>
                       </div>
                     );
                   })}
                 </div>
-                {techSkills.length > 6 && (
-                  <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-                    {techSkills.slice(6).map((skill, index) => {
+                {techSkills.length > 4 && (
+                  <div className="grid grid-cols-3 gap-4 justify-center">
+                    {techSkills.slice(4).map((skill, index) => {
                       const Icon = skill.icon;
                       return (
                         <div 
-                          key={index + 6}
-                          className={`group relative p-2 sm:p-3 rounded-full bg-space-accent/50 border border-cosmic-blue/20 hover:border-cosmic-blue/50 transition-all duration-300 hover:scale-110 hover:shadow-cosmic ${skill.delay} flex flex-col items-center`}
+                          key={index + 4}
+                          className={`group relative p-3 rounded-full bg-space-accent/50 border border-cosmic-blue/20 hover:border-cosmic-blue/50 transition-all duration-300 hover:scale-110 hover:shadow-cosmic ${skill.delay} flex flex-col items-center justify-center`}
                         >
-                          <Icon className={`text-base sm:text-xl ${skill.color} group-hover:animate-bounce mb-1`} />
-                          <span className="text-[10px] sm:text-xs text-gray-300 font-space">{skill.name}</span>
+                          <Icon className={`text-xl ${skill.color} group-hover:animate-bounce mb-2`} />
+                          <span className="text-xs text-gray-300 font-space text-center">{skill.name}</span>
                         </div>
                       );
                     })}
